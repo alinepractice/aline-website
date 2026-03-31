@@ -18,14 +18,7 @@ export default function Home() {
     <>
       {/* ── Nav ── */}
       <nav className={s.nav}>
-        <Image
-          src="/images/logo.png"
-          alt="Aline Practice"
-          width={120}
-          height={36}
-          className={s.navLogo}
-          priority
-        />
+        <div />
         <a href="#connect" className={s.navConnect}>
           connect
         </a>
