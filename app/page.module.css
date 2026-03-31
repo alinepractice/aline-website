@@ -1,0 +1,188 @@
+/* ── Nav ── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem var(--side-padding);
+  background-color: rgba(243, 238, 218, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.navLogo {
+  height: 36px;
+  width: auto;
+}
+
+.navConnect {
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  transition: opacity 0.2s;
+}
+
+.navConnect:hover {
+  opacity: 0.5;
+}
+
+/* ── Hero / Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 6rem var(--side-padding) 4rem;
+}
+
+.heroLogo {
+  width: min(280px, 50vw);
+  height: auto;
+}
+
+/* ── Section base ── */
+.section {
+  padding: var(--section-spacing) var(--side-padding);
+}
+
+/* ── Values ── */
+.values {
+  display: flex;
+  justify-content: center;
+}
+
+.valuesText {
+  max-width: 680px;
+  text-align: center;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+/* ── Practices ── */
+.practices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.practiceColumns {
+  display: flex;
+  justify-content: center;
+  gap: clamp(4rem, 12vw, 10rem);
+}
+
+.practiceHeading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 200;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.practiceList {
+  text-align: center;
+}
+
+.practiceList li {
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-weight: 300;
+  line-height: 2.2;
+}
+
+/* ── Bios ── */
+.bios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.bioCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bioPhoto {
+  width: clamp(140px, 20vw, 200px);
+  height: clamp(140px, 20vw, 200px);
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.bioName {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
+}
+
+.bioSkills {
+  text-align: left;
+  max-width: 400px;
+}
+
+.bioSkills li {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.9;
+  padding-left: 0.75rem;
+  position: relative;
+}
+
+.bioSkills li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--text-light);
+}
+
+/* ── Connect ── */
+.connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 6rem;
+}
+
+.connectLink {
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-weight: 300;
+  transition: opacity 0.2s;
+}
+
+.connectLink:hover {
+  opacity: 0.5;
+}
+
+/* ── Mobile ── */
+@media (max-width: 680px) {
+  .header {
+    min-height: 60vh;
+  }
+
+  .heroLogo {
+    width: 180px;
+  }
+
+  .practiceColumns {
+    gap: 3rem;
+  }
+
+  .bios {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
