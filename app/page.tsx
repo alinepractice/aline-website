@@ -62,7 +62,7 @@ export default function Home() {
           <h2 className={s.practiceHeading}>Speech</h2>
         </div>
         <ul className={s.practiceList}>
-          <li>Two:One consultation</li>
+          <li>2:1 consultation</li>
           <li>Parent</li>
           <li>Support</li>
           <li>Social</li>
