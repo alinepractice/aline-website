@@ -81,13 +81,6 @@ export default function Home() {
             className={s.bioPhoto}
           />
           <p className={s.bioName}>Roxy Burke, [Credentials]</p>
-          <ul className={s.bioServices}>
-            <li>Two:One consultation</li>
-            <li>Parent</li>
-            <li>Support</li>
-            <li>Social</li>
-            <li>School</li>
-          </ul>
           <ul className={s.bioSkills}>
             {skills.map((skill) => (
               <li key={skill}>{skill}</li>
@@ -104,13 +97,6 @@ export default function Home() {
             className={s.bioPhoto}
           />
           <p className={s.bioName}>Tiffany [Last], [Credentials]</p>
-          <ul className={s.bioServices}>
-            <li>Two:One consultation</li>
-            <li>Parent</li>
-            <li>Support</li>
-            <li>Social</li>
-            <li>School</li>
-          </ul>
           <ul className={s.bioSkills}>
             {skills.map((skill) => (
               <li key={skill}>{skill}</li>
