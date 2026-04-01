@@ -39,12 +39,12 @@ export default function Home() {
       {/* ── Values ── */}
       <section className={`${s.section} ${s.values}`}>
         <p className={s.valuesText}>
-          Flexibility, Independence, Bravery, Safe Choices is a values based,
-          relational framework designed to support connection, communication, and
-          growth through everyday interactions. FIBS is an invitation to align
-          yourself in a moment. It encourages thoughtful awareness by creating
-          space to notice a learning opportunity and recognize which value is
-          needed before responding.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
         </p>
       </section>
 
