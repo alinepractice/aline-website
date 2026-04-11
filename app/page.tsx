@@ -44,7 +44,7 @@ export default function Home() {
             At Aline, we are relationship driven.
           </h2>
 
-          <p className={s.valuesText}>
+          <p className={`${s.valuesText} ${s.valuesBody}`}>
             Our work is grounded in connection and in noticing opportunities
             within everyday moments. Growth happens through shared experiences,
             through being present, and in how we respond to one another.

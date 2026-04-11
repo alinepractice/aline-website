@@ -82,6 +82,12 @@
   margin-top: 1.25rem;
 }
 
+.valuesBody {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .valuesGuide {
   margin-top: 3rem;
   margin-bottom: 2rem;
