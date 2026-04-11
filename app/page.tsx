@@ -60,7 +60,7 @@ export default function Home() {
           </p>
 
           <p className={s.valuesGuide}>
-            These are the values that guide our approach
+            The values that guide our approach
           </p>
 
           <div className={s.principlesGrid}>
