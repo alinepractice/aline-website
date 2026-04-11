@@ -56,7 +56,7 @@ export default function Home() {
             enjoyment, we join in moments and follow the child&rsquo;s lead. By
             honoring individual differences, we support each child&rsquo;s
             unique way of experiencing the world and shape how we align our
-            approach across ABA and speech.
+            approach across ABA and speech therapy.
           </p>
 
           <p className={s.valuesGuide}>
