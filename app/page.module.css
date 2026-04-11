@@ -83,8 +83,8 @@
 }
 
 .valuesGuide {
-  margin-top: 3.5rem;
-  margin-bottom: 1.25rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
   font-size: 0.85rem;
   font-weight: 300;
   letter-spacing: 0.18em;
@@ -96,19 +96,52 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem clamp(2rem, 5vw, 4rem);
-  text-align: left;
-  margin-top: 0.5rem;
+  text-align: center;
+  margin-top: 0;
 }
 
 .principle {
-  /* grid item */
+  background: none;
+  border: none;
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .principleName {
-  font-size: clamp(1rem, 1.9vw, 1.1rem);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
   font-weight: 400;
   letter-spacing: 0.02em;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0;
+  transition: opacity 0.25s ease;
+}
+
+.principleDesc {
+  max-width: 360px;
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
+}
+
+.principle:hover .principleDesc,
+.principle:focus-visible .principleDesc,
+.principleOpen .principleDesc {
+  max-height: 260px;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+
+.principle:hover .principleName,
+.principleOpen .principleName {
+  opacity: 0.6;
 }
 
 @media (max-width: 680px) {
