@@ -92,8 +92,16 @@
   color: var(--text-light);
 }
 
+.principlesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem clamp(2rem, 5vw, 4rem);
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
 .principle {
-  margin-top: 1.75rem;
+  /* grid item */
 }
 
 .principleName {
@@ -101,6 +109,14 @@
   font-weight: 400;
   letter-spacing: 0.02em;
   margin-bottom: 0.35rem;
+}
+
+@media (max-width: 680px) {
+  .principlesGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
 }
 
 /* ── Practices ── */

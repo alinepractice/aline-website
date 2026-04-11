@@ -58,38 +58,41 @@ export default function Home() {
             approach across ABA and speech.
           </p>
 
-          <p className={s.valuesGuide}>What guides our work</p>
+          <p className={s.valuesGuide}>Our values</p>
 
-          <div className={s.principle}>
-            <h3 className={s.principleName}>Flexibility</h3>
-            <p className={s.valuesText}>
-              Staying engaged as things shift. Making space for different ideas,
-              changes in plans, and new ways of approaching a moment.
-            </p>
-          </div>
+          <div className={s.principlesGrid}>
+            <div className={s.principle}>
+              <h3 className={s.principleName}>Flexibility</h3>
+              <p className={s.valuesText}>
+                Staying engaged as things shift. Making space for different
+                ideas, changes in plans, and new ways of approaching a moment.
+              </p>
+            </div>
 
-          <div className={s.principle}>
-            <h3 className={s.principleName}>Independence</h3>
-            <p className={s.valuesText}>
-              Supporting agency and participation. Recognizing that independence
-              includes knowing when to seek and accept support.
-            </p>
-          </div>
+            <div className={s.principle}>
+              <h3 className={s.principleName}>Independence</h3>
+              <p className={s.valuesText}>
+                Supporting agency and participation. Recognizing that
+                independence includes knowing when to seek and accept support.
+              </p>
+            </div>
 
-          <div className={s.principle}>
-            <h3 className={s.principleName}>Bravery</h3>
-            <p className={s.valuesText}>
-              Engaging with what feels unfamiliar or challenging. Showing up,
-              trying, and remaining present even when something feels hard.
-            </p>
-          </div>
+            <div className={s.principle}>
+              <h3 className={s.principleName}>Bravery</h3>
+              <p className={s.valuesText}>
+                Engaging with what feels unfamiliar or challenging. Showing up,
+                trying, and remaining present even when something feels hard.
+              </p>
+            </div>
 
-          <div className={s.principle}>
-            <h3 className={s.principleName}>Safe Choices</h3>
-            <p className={s.valuesText}>
-              Prioritizing physical, emotional, and relational safety. Supporting
-              clear boundaries that help individuals feel secure and understood.
-            </p>
+            <div className={s.principle}>
+              <h3 className={s.principleName}>Safe Choices</h3>
+              <p className={s.valuesText}>
+                Prioritizing physical, emotional, and relational safety.
+                Supporting clear boundaries that help individuals feel secure
+                and understood.
+              </p>
+            </div>
           </div>
         </div>
       </section>
