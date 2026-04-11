@@ -48,8 +48,8 @@ export default function Home() {
             Our work is grounded in connection and in noticing opportunities
             within everyday moments. Growth happens through shared experiences,
             through being present, and in how we respond to one another.
-            Learning unfolds within relationships. By staying attuned, we
-            recognize meaningful moments and support them with intention. We
+            By staying attuned, we recognize meaningful moments and support
+            them with intention. We
             prioritize pausing and tuning in, creating space to better
             understand and respond to each individual&rsquo;s sensory and
             emotional experience. Through respectful presence and shared
