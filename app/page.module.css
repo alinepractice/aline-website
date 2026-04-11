@@ -82,25 +82,13 @@
   margin-top: 1.25rem;
 }
 
-.valuesGuideBlock {
+.valuesGuide {
   margin-top: 3rem;
   margin-bottom: 2rem;
-}
-
-.valuesGuideLead {
   font-size: clamp(1rem, 1.8vw, 1.1rem);
   font-weight: 300;
   line-height: 1.5;
-  margin-bottom: 0.5rem;
-}
-
-.valuesGuide {
-  margin: 0;
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-light);
+  color: var(--text);
 }
 
 .principlesGrid {

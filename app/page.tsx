@@ -59,10 +59,9 @@ export default function Home() {
             approach across ABA and speech.
           </p>
 
-          <div className={s.valuesGuideBlock}>
-            <p className={s.valuesGuideLead}>What guides our approach</p>
-            <p className={s.valuesGuide}>Our values</p>
-          </div>
+          <p className={s.valuesGuide}>
+            These are the values we support and return to
+          </p>
 
           <div className={s.principlesGrid}>
             <ValueCard
