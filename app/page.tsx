@@ -56,12 +56,8 @@ export default function Home() {
             understand and respond to each individual&rsquo;s sensory and
             emotional experience. Through respectful presence and shared
             enjoyment, we join in moments and follow the child&rsquo;s lead.
-          </p>
-
-          <p className={s.valuesText}>
-            We recognize that development is interconnected. By honoring
-            individual differences, we support each child&rsquo;s unique way of
-            experiencing the world. This understanding shapes how we align our
+            By honoring individual differences, we support each child&rsquo;s
+            unique way of experiencing the world — shaping how we align our
             approach across ABA and speech.
           </p>
 
