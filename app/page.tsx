@@ -1,6 +1,5 @@
 import Image from "next/image";
 import s from "./page.module.css";
-import ValueCard from "./ValueCard";
 
 const skills = [
   "Play-based, naturalistic intervention (ESDM, PRT, JASPER, Project ImPACT)",
@@ -62,22 +61,33 @@ export default function Home() {
           <p className={s.valuesGuide}>Our values</p>
 
           <div className={s.principlesGrid}>
-            <ValueCard
-              name="Flexibility"
-              description="Staying engaged as things shift. Making space for different ideas, changes in plans, and new ways of approaching a moment."
-            />
-            <ValueCard
-              name="Independence"
-              description="Supporting agency and participation. Recognizing that independence includes knowing when to seek and accept support."
-            />
-            <ValueCard
-              name="Bravery"
-              description="Engaging with what feels unfamiliar or challenging. Showing up, trying, and remaining present even when something feels hard."
-            />
-            <ValueCard
-              name="Safe Choices"
-              description="Prioritizing physical, emotional, and relational safety. Supporting clear boundaries that help individuals feel secure and understood."
-            />
+            <div className={s.principle}>
+              <h3 className={s.principleName}>Flexibility</h3>
+              <p className={s.principleDesc}>
+                Staying engaged as things shift and making space for change.
+              </p>
+            </div>
+
+            <div className={s.principle}>
+              <h3 className={s.principleName}>Independence</h3>
+              <p className={s.principleDesc}>
+                Supporting agency, participation, and access to support.
+              </p>
+            </div>
+
+            <div className={s.principle}>
+              <h3 className={s.principleName}>Bravery</h3>
+              <p className={s.principleDesc}>
+                Showing up for what feels unfamiliar.
+              </p>
+            </div>
+
+            <div className={s.principle}>
+              <h3 className={s.principleName}>Safe Choices</h3>
+              <p className={s.principleDesc}>
+                Prioritizing physical, emotional, and relational safety.
+              </p>
+            </div>
           </div>
         </div>
       </section>
