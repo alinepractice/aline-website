@@ -48,16 +48,13 @@ export default function Home() {
             within everyday moments. Growth happens through shared experiences,
             through being present, and in how we respond to one another.
             Learning unfolds within relationships, and by staying attuned, we
-            recognize meaningful moments and support them with intention.
-          </p>
-
-          <p className={s.valuesText}>
-            We prioritize pausing and tuning in, creating space to better
+            recognize meaningful moments and support them with intention. We
+            prioritize pausing and tuning in, creating space to better
             understand and respond to each individual&rsquo;s sensory and
             emotional experience. Through respectful presence and shared
-            enjoyment, we join in moments and follow the child&rsquo;s lead.
-            By honoring individual differences, we support each child&rsquo;s
-            unique way of experiencing the world — shaping how we align our
+            enjoyment, we join in moments and follow the child&rsquo;s lead. By
+            honoring individual differences, we support each child&rsquo;s
+            unique way of experiencing the world, shaping how we align our
             approach across ABA and speech.
           </p>
 
