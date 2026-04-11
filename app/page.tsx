@@ -38,14 +38,23 @@ export default function Home() {
 
       {/* ── Values ── */}
       <section className={`${s.section} ${s.values}`}>
-        <p className={s.valuesText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-        </p>
+        <div className={s.valuesInner}>
+          <h2 className={s.valuesHeading}>VALUES</h2>
+          <p className={s.valuesText}>
+            At Aline, we are relationship driven.
+          </p>
+          <p className={s.valuesText}>
+            Our work is grounded in connection and in noticing opportunities
+            within everyday moments. We believe growth happens through shared
+            experiences, through being present, and through how we respond to
+            one another.
+          </p>
+          <p className={s.valuesText}>
+            We approach learning as something that unfolds within
+            relationships. By staying attuned, we are able to recognize
+            meaningful moments and support them with intention.
+          </p>
+        </div>
       </section>
 
       {/* ── Practices ── */}
