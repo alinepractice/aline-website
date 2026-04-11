@@ -45,8 +45,9 @@ export default function Home() {
 
           <p className={s.valuesText}>
             Our work is grounded in connection and in noticing opportunities
-            within everyday moments. Growth happens through shared experiences,
-            through being present, and through how we respond to one another.
+            within everyday moments. We believe growth happens through shared
+            experiences, through being present, and through how we respond to
+            one another.
           </p>
 
           <p className={s.valuesText}>
