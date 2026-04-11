@@ -47,10 +47,7 @@ export default function Home() {
             Our work is grounded in connection and in noticing opportunities
             within everyday moments. Growth happens through shared experiences,
             through being present, and in how we respond to one another.
-          </p>
-
-          <p className={s.valuesText}>
-            Learning unfolds within relationships. By staying attuned, we
+            Learning unfolds within relationships, and by staying attuned, we
             recognize meaningful moments and support them with intention.
           </p>
 
