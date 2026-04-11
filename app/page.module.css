@@ -101,24 +101,49 @@
 }
 
 .principle {
+  background: none;
+  border: none;
+  padding: 0.75rem 0.5rem;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .principleName {
   font-size: clamp(1.05rem, 2vw, 1.2rem);
   font-weight: 400;
   letter-spacing: 0.02em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+  transition: opacity 0.25s ease;
 }
 
 .principleDesc {
-  max-width: 360px;
-  font-size: clamp(0.95rem, 1.7vw, 1.05rem);
+  max-width: 320px;
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
   font-weight: 300;
   line-height: 1.55;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
+}
+
+.principle:hover .principleDesc,
+.principle:focus-visible .principleDesc,
+.principleOpen .principleDesc {
+  max-height: 240px;
+  opacity: 1;
+  margin-top: 0.6rem;
+}
+
+.principle:hover .principleName,
+.principleOpen .principleName {
+  opacity: 0.6;
 }
 
 @media (max-width: 860px) {

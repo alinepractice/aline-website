@@ -1,5 +1,6 @@
 import Image from "next/image";
 import s from "./page.module.css";
+import ValueCard from "./ValueCard";
 
 const skills = [
   "Play-based, naturalistic intervention (ESDM, PRT, JASPER, Project ImPACT)",
@@ -61,33 +62,22 @@ export default function Home() {
           <p className={s.valuesGuide}>Our values</p>
 
           <div className={s.principlesGrid}>
-            <div className={s.principle}>
-              <h3 className={s.principleName}>Flexibility</h3>
-              <p className={s.principleDesc}>
-                Staying engaged as things shift and making space for change.
-              </p>
-            </div>
-
-            <div className={s.principle}>
-              <h3 className={s.principleName}>Independence</h3>
-              <p className={s.principleDesc}>
-                Supporting agency, participation, and access to support.
-              </p>
-            </div>
-
-            <div className={s.principle}>
-              <h3 className={s.principleName}>Bravery</h3>
-              <p className={s.principleDesc}>
-                Showing up for what feels unfamiliar.
-              </p>
-            </div>
-
-            <div className={s.principle}>
-              <h3 className={s.principleName}>Safe Choices</h3>
-              <p className={s.principleDesc}>
-                Prioritizing physical, emotional, and relational safety.
-              </p>
-            </div>
+            <ValueCard
+              name="Flexibility"
+              description="Staying engaged as things shift and making space for change."
+            />
+            <ValueCard
+              name="Independence"
+              description="Supporting agency, participation, and access to support."
+            />
+            <ValueCard
+              name="Bravery"
+              description="Showing up for what feels unfamiliar."
+            />
+            <ValueCard
+              name="Safe Choices"
+              description="Prioritizing physical, emotional, and relational safety."
+            />
           </div>
         </div>
       </section>
