@@ -41,7 +41,7 @@
 }
 
 .heroLogo {
-  width: min(280px, 50vw);
+  width: min(322px, 57.5vw);
   height: auto;
 }
 
@@ -174,7 +174,7 @@
   }
 
   .heroLogo {
-    width: 180px;
+    width: 207px;
   }
 
   .practiceColumns {
