@@ -57,27 +57,27 @@
 }
 
 .valuesInner {
-  max-width: 660px;
+  max-width: 780px;
   width: 100%;
   text-align: center;
 }
 
 .valuesHeading {
-  font-size: clamp(1.1rem, 1.95vw, 1.2rem);
-  font-weight: 400;
+  font-size: clamp(1.1rem, 2.27vw, 1.34rem);
+  font-weight: 300;
   letter-spacing: 0.01em;
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
 }
 
 .valuesText {
-  font-size: clamp(1.075rem, 1.9vw, 1.18rem);
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
   font-weight: 300;
-  line-height: 1.45;
+  line-height: 1.75;
 }
 
 .valuesText + .valuesText {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .valuesGuide {
