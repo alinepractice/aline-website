@@ -41,7 +41,7 @@
 }
 
 .heroLogo {
-  width: min(418px, 75vw);
+  width: min(376px, 67.5vw);
   height: auto;
 }
 
@@ -59,7 +59,7 @@
 .valuesInner {
   max-width: 780px;
   width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 .valuesHeading {
@@ -211,7 +211,7 @@
   }
 
   .heroLogo {
-    width: 269px;
+    width: 242px;
   }
 
   .practiceColumns {
