@@ -45,14 +45,27 @@ export default function Home() {
 
           <p className={s.valuesText}>
             Our work is grounded in connection and in noticing opportunities
-            within everyday moments. We believe growth happens through shared
-            experiences, through being present, and in how we respond to
-            one another.
+            within everyday moments. Growth happens through shared experiences,
+            through being present, and in how we respond to one another.
           </p>
 
           <p className={s.valuesText}>
             Learning unfolds within relationships. By staying attuned, we
             recognize meaningful moments and support them with intention.
+          </p>
+
+          <p className={s.valuesText}>
+            We prioritize pausing and tuning in, creating space to better
+            understand and respond to each individual&rsquo;s sensory and
+            emotional experience. Through respectful presence and shared
+            enjoyment, we join in moments and follow the child&rsquo;s lead.
+          </p>
+
+          <p className={s.valuesText}>
+            We recognize that development is interconnected. By honoring
+            individual differences, we support each child&rsquo;s unique way of
+            experiencing the world. This understanding shapes how we align our
+            approach across ABA and speech.
           </p>
 
           <p className={s.valuesGuide}>What guides our work</p>
