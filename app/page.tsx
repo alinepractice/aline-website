@@ -39,11 +39,9 @@ export default function Home() {
       {/* ── Values ── */}
       <section className={`${s.section} ${s.values}`}>
         <div className={s.valuesInner}>
-          <h2 className={s.valuesHeading}>VALUES</h2>
-
-          <p className={`${s.valuesText} ${s.valuesLead}`}>
+          <h2 className={s.valuesHeading}>
             At Aline, we are relationship driven.
-          </p>
+          </h2>
 
           <p className={s.valuesText}>
             Our work is grounded in connection

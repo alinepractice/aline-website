@@ -57,15 +57,17 @@
 }
 
 .valuesInner {
-  max-width: 720px;
+  max-width: 960px;
+  width: 100%;
   text-align: center;
 }
 
 .valuesHeading {
-  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  font-size: clamp(1.25rem, 2.8vw, 1.6rem);
   font-weight: 300;
-  letter-spacing: 0.25em;
-  margin-bottom: 3rem;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  margin-bottom: 3.5rem;
 }
 
 .valuesText {
@@ -76,10 +78,6 @@
 
 .valuesText + .valuesText {
   margin-top: 2rem;
-}
-
-.valuesLead {
-  margin-bottom: 2.5rem;
 }
 
 .valuesGuide {
