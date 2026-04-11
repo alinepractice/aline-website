@@ -57,7 +57,7 @@
 }
 
 .valuesInner {
-  max-width: 680px;
+  max-width: 720px;
   text-align: center;
 }
 
@@ -65,7 +65,7 @@
   font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   font-weight: 300;
   letter-spacing: 0.25em;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .valuesText {
@@ -75,7 +75,29 @@
 }
 
 .valuesText + .valuesText {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+.valuesLead {
+  margin-bottom: 2.5rem;
+}
+
+.valuesGuide {
+  margin-top: 4rem !important;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  color: var(--text-light);
+}
+
+.principle {
+  margin-top: 2.5rem;
+}
+
+.principleName {
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
 }
 
 /* ── Practices ── */

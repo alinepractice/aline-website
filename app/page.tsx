@@ -40,20 +40,72 @@ export default function Home() {
       <section className={`${s.section} ${s.values}`}>
         <div className={s.valuesInner}>
           <h2 className={s.valuesHeading}>VALUES</h2>
-          <p className={s.valuesText}>
+
+          <p className={`${s.valuesText} ${s.valuesLead}`}>
             At Aline, we are relationship driven.
           </p>
+
           <p className={s.valuesText}>
-            Our work is grounded in connection and in noticing opportunities
-            within everyday moments. We believe growth happens through shared
-            experiences, through being present, and through how we respond to
-            one another.
+            Our work is grounded in connection
+            <br />
+            and in noticing opportunities within everyday moments.
           </p>
+
           <p className={s.valuesText}>
-            We approach learning as something that unfolds within
-            relationships. By staying attuned, we are able to recognize
-            meaningful moments and support them with intention.
+            We believe growth happens through shared experiences,
+            <br />
+            through being present,
+            <br />
+            and through how we respond to one another.
           </p>
+
+          <p className={s.valuesText}>
+            We approach learning as something that unfolds within relationships.
+            <br />
+            By staying attuned, we are able to recognize meaningful moments
+            <br />
+            and support them with intention.
+          </p>
+
+          <p className={`${s.valuesText} ${s.valuesGuide}`}>
+            What guides our work:
+          </p>
+
+          <div className={s.principle}>
+            <h3 className={s.principleName}>Flexibility</h3>
+            <p className={s.valuesText}>
+              Staying engaged as things shift. Making space for different ideas,
+              <br />
+              changes in plans, and new ways of approaching a moment.
+            </p>
+          </div>
+
+          <div className={s.principle}>
+            <h3 className={s.principleName}>Independence</h3>
+            <p className={s.valuesText}>
+              Supporting agency and participation. Recognizing that independence
+              <br />
+              includes knowing when to seek and accept support.
+            </p>
+          </div>
+
+          <div className={s.principle}>
+            <h3 className={s.principleName}>Bravery</h3>
+            <p className={s.valuesText}>
+              Engaging with what feels unfamiliar or challenging. Showing up, trying,
+              <br />
+              and remaining present even when something feels hard.
+            </p>
+          </div>
+
+          <div className={s.principle}>
+            <h3 className={s.principleName}>Safe Choices</h3>
+            <p className={s.valuesText}>
+              Prioritizing physical, emotional, and relational safety. Supporting clear,
+              <br />
+              supportive boundaries that help individuals feel secure and understood.
+            </p>
+          </div>
         </div>
       </section>
 
