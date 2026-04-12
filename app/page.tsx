@@ -30,8 +30,8 @@ export default function Home() {
         <Image
           src="/images/logo.png"
           alt="Aline Practice logo"
-          width={560}
-          height={480}
+          width={830}
+          height={905}
           className={s.heroLogo}
           priority
         />
