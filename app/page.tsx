@@ -37,56 +37,6 @@ export default function Home() {
         />
       </header>
 
-      {/* ── Practices ── */}
-      <section className={`${s.section} ${s.practices}`}>
-        <div className={s.practiceColumns}>
-          <h2 className={s.practiceHeading}>ABA</h2>
-          <h2 className={s.practiceHeading}>Speech</h2>
-        </div>
-        <ul className={s.practiceList}>
-          <li>2:1 consultation</li>
-          <li>Parent</li>
-          <li>Support</li>
-          <li>Social</li>
-          <li>School</li>
-        </ul>
-      </section>
-
-      {/* ── Bios ── */}
-      <section className={`${s.section} ${s.bios}`}>
-        <div className={s.bioCard}>
-          <Image
-            src="/images/bio-roxy.png"
-            alt="Roxy Burke"
-            width={400}
-            height={400}
-            className={s.bioPhoto}
-          />
-          <p className={s.bioName}>Roxy Burke, [Credentials]</p>
-          <ul className={s.bioSkills}>
-            {skills.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div className={s.bioCard}>
-          <Image
-            src="/images/bio-tiffany.png"
-            alt="Tiffany [Last]"
-            width={400}
-            height={400}
-            className={s.bioPhoto}
-          />
-          <p className={s.bioName}>Tiffany [Last], [Credentials]</p>
-          <ul className={s.bioSkills}>
-            {skills.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       {/* ── Values ── */}
       <section className={`${s.section} ${s.values}`}>
         <div className={s.valuesInner}>
@@ -132,6 +82,56 @@ export default function Home() {
             />
           </div>
         </div>
+      </section>
+
+      {/* ── Bios ── */}
+      <section className={`${s.section} ${s.bios}`}>
+        <div className={s.bioCard}>
+          <Image
+            src="/images/bio-roxy.png"
+            alt="Roxy Burke"
+            width={400}
+            height={400}
+            className={s.bioPhoto}
+          />
+          <p className={s.bioName}>Roxy Burke, [Credentials]</p>
+          <ul className={s.bioSkills}>
+            {skills.map((skill) => (
+              <li key={skill}>{skill}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className={s.bioCard}>
+          <Image
+            src="/images/bio-tiffany.png"
+            alt="Tiffany [Last]"
+            width={400}
+            height={400}
+            className={s.bioPhoto}
+          />
+          <p className={s.bioName}>Tiffany [Last], [Credentials]</p>
+          <ul className={s.bioSkills}>
+            {skills.map((skill) => (
+              <li key={skill}>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── Practices ── */}
+      <section className={`${s.section} ${s.practices}`}>
+        <div className={s.practiceColumns}>
+          <h2 className={s.practiceHeading}>ABA</h2>
+          <h2 className={s.practiceHeading}>Speech</h2>
+        </div>
+        <ul className={s.practiceList}>
+          <li>2:1 consultation</li>
+          <li>Parent</li>
+          <li>Support</li>
+          <li>Social</li>
+          <li>School</li>
+        </ul>
       </section>
 
       {/* ── Connect ── */}
