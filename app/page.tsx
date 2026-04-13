@@ -129,16 +129,14 @@ export default function Home() {
               Tiffany approaches speech and language support through a relational
               and developmental lens, with a focus on meaningful, functional
               communication across everyday contexts. Her work is grounded in
-              connection, attunement, and naturalistic play-based support,
-              supporting individuals in finding ways of communicating that feel
-              natural and meaningful for them.
+              connection, attunement, and naturalistic play-based support.
             </p>
             <p>
               She partners closely with families and interdisciplinary teams to
               build communication that carries over into daily life. Tiffany
               supports a range of communication styles, including spoken
               language, AAC, and multimodal communication, while honoring each
-              individual&rsquo;s strengths, preferences, and pace. Her work
+              individual&rsquo;s strengths and preferences. Her work
               emphasizes engagement, regulation, and shared experience as the
               foundation for communication development.
             </p>
