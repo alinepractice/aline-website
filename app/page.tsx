@@ -90,10 +90,11 @@ export default function Home() {
             <p>
               Roxy approaches behavior analysis as a way to understand learning
               and organizes support around developmental and relational
-              capacities. Her work is grounded in connection, attunement, and
-              naturalistic play-based support, with a focus on communication,
-              social engagement, and meaningful growth across home, school, and
-              community settings.
+              capacities. With over a decade of experience supporting children
+              and families across home, school, and community settings, her work
+              is grounded in connection, attunement, and naturalistic play-based
+              support, with a focus on communication, social engagement, and
+              meaningful growth.
             </p>
             <p>
               She designs individualized, relationship-centered support that
@@ -128,17 +129,19 @@ export default function Home() {
             <p>
               Tiffany approaches speech and language support through a relational
               and developmental lens, with a focus on meaningful, functional
-              communication across everyday contexts. Her work is grounded in
-              connection, attunement, and naturalistic play-based support.
+              communication across everyday contexts. With over a decade of
+              experience supporting children and adults across school and private
+              practice settings, her work is grounded in connection, attunement,
+              and naturalistic play-based support.
             </p>
             <p>
               She partners closely with families and interdisciplinary teams to
               build communication that carries over into daily life. Tiffany
               supports a range of communication styles, including spoken
-              language, AAC, and multimodal communication, while honoring each
-              individual&rsquo;s strengths and preferences. Her work
-              emphasizes engagement, regulation, and shared experience as the
-              foundation for communication development.
+              language, AAC, and multimodal communication, and brings a
+              thoughtful, engaging approach that meets each individual where they
+              are. Her work emphasizes engagement, regulation, and shared
+              experience as the foundation for communication development.
             </p>
             <p>
               Her approach is informed by developmental, play-based models
