@@ -122,35 +122,31 @@ export default function Home() {
           />
           <p className={s.bioName}>Tiffany Marino, M.S., CCC-SLP, TSSLD</p>
           <div className={s.bioText}>
-            <p>
-              Tiffany Marino, M.S., CCC-SLP, TSSLD, is a New York State
-              licensed speech-language pathologist with over a decade of
-              experience supporting children and adults across school-based and
-              private practice settings.
+            <p className={s.bioTagline}>
+              Connection driven. Grounded in communication and development.
             </p>
             <p>
-              Tiffany takes a collaborative, relationship-centered approach,
-              partnering with families and interdisciplinary teams to support
-              communication that carries into everyday life. Grounded in a
-              neurodiversity-affirming perspective, she has extensive experience
-              with neurodivergent individuals and draws from developmental,
-              play-based frameworks including the Early Start Denver Model,
-              DIR/Floortime, and JASPER to support engagement, regulation, and
-              communication across modalities, including speech and AAC.
+              Tiffany approaches speech and language support through a relational
+              and developmental lens, with a focus on meaningful, functional
+              communication across everyday contexts. Her work is grounded in
+              connection, attunement, and naturalistic play-based support,
+              supporting individuals in finding ways of communicating that feel
+              natural and meaningful for them.
             </p>
             <p>
-              She is trained in Dynamic Temporal and Tactile Cueing (DTTC) for
-              childhood apraxia of speech, and works with individuals who stutter
-              using Lidcombe and Parent-Child Interaction Therapy (PCI). She also
-              supports clients with voice and language-based challenges.
+              She partners closely with families and interdisciplinary teams to
+              build communication that carries over into daily life. Tiffany
+              supports a range of communication styles, including spoken
+              language, AAC, and multimodal communication, while honoring each
+              individual&rsquo;s strengths, preferences, and pace. Her work
+              emphasizes engagement, regulation, and shared experience as the
+              foundation for communication development.
             </p>
             <p>
-              Known for her intuitive, engaging style, Tiffany incorporates play,
-              music, and each client&rsquo;s interests to create individualized
-              experiences. She previously served as a speech teacher trainer
-              within the NYC Department of Education, leading professional
-              development in AAC, fluency, and communication strategies for
-              complex learners.
+              Her approach is informed by developmental, play-based models
+              including ESDM, DIR/Floortime, and JASPER, alongside specialized
+              training in childhood apraxia of speech (DTTC), fluency (including
+              Lidcombe and PCI), and voice and language-based support.
             </p>
           </div>
         </div>
