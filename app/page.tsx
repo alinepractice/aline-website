@@ -90,11 +90,11 @@ export default function Home() {
             <p>
               Roxy approaches behavior analysis as a way to understand learning
               and organizes support around developmental and relational
-              capacities. With over a decade of experience supporting children
-              and families across home, school, and community settings, her work
-              is grounded in connection, attunement, and naturalistic play-based
-              support, with a focus on communication, social engagement, and
-              meaningful growth.
+              capacities, with a focus on connection, communication, and
+              meaningful growth. Her work is grounded in connection, attunement,
+              and naturalistic play-based support, with a focus on
+              communication, social engagement, and meaningful growth across
+              home, school, and community settings.
             </p>
             <p>
               She designs individualized, relationship-centered support that
@@ -132,7 +132,8 @@ export default function Home() {
               communication across everyday contexts. With over a decade of
               experience supporting children and adults across school and private
               practice settings, her work is grounded in connection, attunement,
-              and naturalistic play-based support.
+              and naturalistic play-based support, within a
+              neurodiversity-affirming approach.
             </p>
             <p>
               She partners closely with families and interdisciplinary teams to
