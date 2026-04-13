@@ -1,6 +1,7 @@
 import Image from "next/image";
 import s from "./page.module.css";
 import ValueCard from "./ValueCard";
+import FadeIn from "./FadeIn";
 
 export default function Home() {
   return (
@@ -26,53 +27,56 @@ export default function Home() {
       </header>
 
       {/* ── Values ── */}
-      <section className={`${s.section} ${s.values}`}>
-        <div className={s.valuesInner}>
-          <h2 className={s.valuesHeading}>
-            At Aline, we are relationship driven.
-          </h2>
+      <FadeIn>
+        <section className={`${s.section} ${s.values}`}>
+          <div className={s.valuesInner}>
+            <h2 className={s.valuesHeading}>
+              At Aline, we are relationship driven.
+            </h2>
 
-          <p className={`${s.valuesText} ${s.valuesBody}`}>
-            Our work is grounded in connection and in noticing opportunities
-            within everyday moments. Growth happens through shared experiences,
-            through being present, and in how we respond to one another.
-            Learning unfolds within relationships. By staying attuned, we
-            recognize meaningful moments and support them with intention. We
-            prioritize pausing and tuning in, creating space to better
-            understand and respond to each individual&rsquo;s sensory and
-            emotional experience. Through respectful presence and shared
-            enjoyment, we join in moments and follow the child&rsquo;s lead. By
-            honoring individual differences, we support each child&rsquo;s
-            unique way of experiencing the world and shape how we align our
-            approach across ABA and speech therapy.
-          </p>
+            <p className={`${s.valuesText} ${s.valuesBody}`}>
+              Our work is grounded in connection and in noticing opportunities
+              within everyday moments. Growth happens through shared experiences,
+              through being present, and in how we respond to one another.
+              Learning unfolds within relationships. By staying attuned, we
+              recognize meaningful moments and support them with intention. We
+              prioritize pausing and tuning in, creating space to better
+              understand and respond to each individual&rsquo;s sensory and
+              emotional experience. Through respectful presence and shared
+              enjoyment, we join in moments and follow the child&rsquo;s lead. By
+              honoring individual differences, we support each child&rsquo;s
+              unique way of experiencing the world and shape how we align our
+              approach across ABA and speech therapy.
+            </p>
 
-          <p className={s.valuesGuide}>
-            The values that guide our approach
-          </p>
+            <p className={s.valuesGuide}>
+              The values that guide our approach
+            </p>
 
-          <div className={s.principlesGrid}>
-            <ValueCard
-              name="Flexibility"
-              description="Staying connected through change."
-            />
-            <ValueCard
-              name="Independence"
-              description="Noticing yourself and your needs."
-            />
-            <ValueCard
-              name="Bravery"
-              description="Engagement with uncertainty."
-            />
-            <ValueCard
-              name="Safe Choices"
-              description="Recognizing limits and responding with clarity."
-            />
+            <div className={s.principlesGrid}>
+              <ValueCard
+                name="Flexibility"
+                description="Staying connected through change."
+              />
+              <ValueCard
+                name="Independence"
+                description="Noticing yourself and your needs."
+              />
+              <ValueCard
+                name="Bravery"
+                description="Engagement with uncertainty."
+              />
+              <ValueCard
+                name="Safe Choices"
+                description="Recognizing limits and responding with clarity."
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeIn>
 
       {/* ── Bios ── */}
+      <FadeIn>
       <section className={`${s.section} ${s.bios}`}>
         <div className={s.bioCard}>
           <Image
@@ -153,8 +157,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
       {/* ── Practices ── */}
+      <FadeIn>
       <section className={`${s.section} ${s.practices}`}>
         <div className={s.practiceColumns}>
           <h2 className={s.practiceHeading}>ABA</h2>
@@ -168,8 +174,10 @@ export default function Home() {
           <li>School</li>
         </ul>
       </section>
+      </FadeIn>
 
       {/* ── Connect ── */}
+      <FadeIn>
       <section id="connect" className={`${s.section} ${s.connect}`}>
         <a href="mailto:connect@alinepractice.com" className={s.connectLink}>
           connect@alinepractice.com
@@ -183,6 +191,7 @@ export default function Home() {
           @aline_practice
         </a>
       </section>
+      </FadeIn>
     </>
   );
 }

@@ -20,9 +20,9 @@
 }
 
 .navConnect {
-  font-size: 0.9rem;
-  font-weight: 300;
-  letter-spacing: 0.08em;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   text-transform: lowercase;
   transition: opacity 0.2s;
 }
@@ -48,6 +48,18 @@
 /* ── Section base ── */
 .section {
   padding: var(--section-spacing) var(--side-padding);
+}
+
+/* ── Fade-in on scroll ── */
+.fadeIn {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fadeInVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ── Values ── */
