@@ -43,6 +43,21 @@
 .heroLogo {
   width: min(310px, 55.6vw);
   height: auto;
+  animation: logoRollIn 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes logoRollIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px) rotate(-90deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
 }
 
 /* ── Section base ── */

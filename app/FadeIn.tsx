@@ -19,29 +19,28 @@ export default function FadeIn({
     const rect = el.getBoundingClientRect();
     const vh = window.innerHeight;
 
-    // How far into the viewport the element is (0 = just entering bottom, 1 = fully in view)
+    // progress: 0 when element bottom-edge enters viewport, 1 when ~40% into view
     const progress = Math.min(
       1,
-      Math.max(0, (vh - rect.top) / (vh * 0.6))
+      Math.max(0, (vh - rect.top) / (vh * 0.5))
     );
 
-    // Soft eased progress for a gentle roll
-    const eased = progress * progress * (3 - 2 * progress); // smoothstep
+    // Smooth ease-out curve
+    const eased = 1 - Math.pow(1 - progress, 3);
+
+    // Parallax: content rises from further away with noticeable depth
+    const translateY = (1 - eased) * 80;
+    const scale = 0.92 + eased * 0.08;
+    const rotateX = (1 - eased) * 4;
 
     el.style.opacity = `${eased}`;
-    el.style.transform = `
-      translateY(${(1 - eased) * 40}px)
-      scale(${0.97 + eased * 0.03})
-      perspective(1200px)
-      rotateX(${(1 - eased) * 2}deg)
-    `;
+    el.style.transform = `perspective(1000px) translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
   }, []);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    // Initial state
     update();
 
     const onScroll = () => requestAnimationFrame(update);
