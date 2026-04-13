@@ -105,17 +105,56 @@ export default function Home() {
         <div className={s.bioCard}>
           <Image
             src="/images/bio-tiffany.png"
-            alt="Tiffany [Last]"
+            alt="Tiffany Marino"
             width={400}
             height={400}
             className={s.bioPhoto}
           />
-          <p className={s.bioName}>Tiffany [Last], [Credentials]</p>
-          <ul className={s.bioSkills}>
-            {skills.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
+          <p className={s.bioName}>Tiffany Marino, M.S., CCC-SLP, TSSLD</p>
+          <div className={s.bioText}>
+            <p>
+              Tiffany is a New York State licensed speech-language pathologist
+              with over a decade of experience supporting both children and
+              adults. She earned her master&rsquo;s degree from Adelphi
+              University and has worked across school-based and private practice
+              settings.
+            </p>
+            <p>
+              Tiffany takes a collaborative, relationship-centered approach,
+              partnering with families and interdisciplinary teams to support
+              communication that carries over into everyday life. She has
+              extensive experience working with neurodivergent individuals and is
+              passionate about helping each person find a way of communicating
+              that feels authentic and effective&mdash;whether through speech,
+              AAC, or a combination of modalities. Grounded in a
+              neurodiversity-affirming perspective, her work draws from
+              developmental, play-based frameworks such as the Early Start Denver
+              Model, DIR/Floortime, and JASPER to support engagement, regulation,
+              and communication.
+            </p>
+            <p>
+              She has experience supporting individuals with childhood apraxia of
+              speech and is trained in Dynamic Temporal and Tactile Cueing
+              (DTTC). Tiffany also works with individuals who stutter, using
+              approaches such as Lidcombe and Parent-Child Interaction Therapy
+              (PCI), and supports clients with voice and language-based
+              challenges.
+            </p>
+            <p>
+              Known for her intuitive and engaging style, Tiffany incorporates
+              play, music, and each child&rsquo;s interests to create
+              meaningful, individualized experiences. She builds strong,
+              collaborative relationships with the individuals and families she
+              works with. Tiffany previously served as a speech teacher trainer
+              within the NYC Department of Education, where she led professional
+              development in AAC, fluency, and communication strategies for
+              complex learners.
+            </p>
+            <p>
+              Tiffany creates a supportive, engaging space where clients feel
+              understood and confident in their communication.
+            </p>
+          </div>
         </div>
       </section>
 
