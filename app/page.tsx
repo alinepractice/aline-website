@@ -2,18 +2,6 @@ import Image from "next/image";
 import s from "./page.module.css";
 import ValueCard from "./ValueCard";
 
-const skills = [
-  "Play-based, naturalistic intervention (ESDM, PRT, JASPER, Project ImPACT)",
-  "Relationship-based, developmentally informed practice",
-  "ACT-informed caregiver support and values-based coaching",
-  "Co-regulation and emotional development strategies",
-  "Communication, social play, and AAC support (including low- and high-tech systems)",
-  "Strength-based assessment and observational data analysis",
-  "Creation of developmentally aligned supports, visuals, and training resources",
-  "Video modeling and in-the-moment coaching",
-  "Visual supports, routines, and environment shaping",
-];
-
 export default function Home() {
   return (
     <>
@@ -94,12 +82,34 @@ export default function Home() {
             height={400}
             className={s.bioPhoto}
           />
-          <p className={s.bioName}>Roxy Burke, [Credentials]</p>
-          <ul className={s.bioSkills}>
-            {skills.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
+          <p className={s.bioName}>Roxanne Burke, M.Ed., BCBA, LBA</p>
+          <div className={s.bioText}>
+            <p className={s.bioTagline}>
+              Connection driven. Grounded in development and learning.
+            </p>
+            <p>
+              Roxy approaches behavior analysis as a way to understand learning
+              and organizes support around developmental and relational
+              capacities. Her work is grounded in connection, attunement, and
+              naturalistic play-based support, with a focus on communication,
+              social engagement, and meaningful growth across home, school, and
+              community settings.
+            </p>
+            <p>
+              She designs individualized, relationship-centered support that
+              integrates communication, flexibility, and coping skills into
+              everyday routines and child-led interactions. Roxy partners closely
+              with families and providers through coaching, modeling, and
+              reflective collaboration to build shared understanding and support
+              connection-based care.
+            </p>
+            <p>
+              Her approach is informed by naturalistic developmental and
+              behavioral models, including ESDM, PRT, JASPER, Project ImPACT,
+              and DIR/Floortime, alongside strengths-based assessment, AAC
+              support, and co-regulation strategies.
+            </p>
+          </div>
         </div>
 
         <div className={s.bioCard}>
