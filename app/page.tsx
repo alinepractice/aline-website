@@ -66,19 +66,19 @@ export default function Home() {
           <div className={s.principlesGrid}>
             <ValueCard
               name="Flexibility"
-              description="Staying engaged as things shift and making space for change."
+              description="Staying connected through change."
             />
             <ValueCard
               name="Independence"
-              description="Supporting agency, participation, and access to support."
+              description="Noticing yourself and your needs."
             />
             <ValueCard
               name="Bravery"
-              description="Showing up for what feels unfamiliar."
+              description="Engagement with uncertainty."
             />
             <ValueCard
               name="Safe Choices"
-              description="Prioritizing physical, emotional, and relational safety."
+              description="Recognizing limits and responding with clarity."
             />
           </div>
         </div>
