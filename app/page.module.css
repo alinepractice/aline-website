@@ -77,7 +77,8 @@
 .ring {
   transform-box: fill-box;
   transform-origin: 50% 100%;
-  animation: ring-spring 4s ease-in-out 4.1s 1 both;
+  animation: ring-pop 0.4s cubic-bezier(0.22, 1, 0.36, 1) 4.1s 1 both,
+             ring-breathe 3.5s ease-in-out 4.5s 1 both;
 }
 
 @keyframes roll-in {
@@ -101,11 +102,17 @@
   100% { transform: rotate(360deg); }
 }
 
-@keyframes ring-spring {
+/* Quick surprised pop — flat line to overshoot */
+@keyframes ring-pop {
   0%   { transform: scaleY(0.04); }
-  25%  { transform: scaleY(1.15); }
-  50%  { transform: scaleY(0.97); }
-  75%  { transform: scaleY(1.02); }
+  100% { transform: scaleY(1.4); }
+}
+
+/* Slow exhale — settles from overshoot into resting shape */
+@keyframes ring-breathe {
+  0%   { transform: scaleY(1.4); }
+  30%  { transform: scaleY(0.96); }
+  60%  { transform: scaleY(1.03); }
   100% { transform: scaleY(1.0); }
 }
 
