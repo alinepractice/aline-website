@@ -43,20 +43,78 @@
 .heroLogo {
   width: min(310px, 55.6vw);
   height: auto;
-  animation: logoRollIn 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  display: block;
+  overflow: visible;
+  shape-rendering: geometricPrecision;
 }
 
-@keyframes logoRollIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-120px) rotate(-90deg);
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotate(0deg);
+/* GPU-accelerated, sub-pixel smooth transforms */
+.blobTranslate,
+.blobBounce,
+.blobRotate,
+.ring {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Blob: rolls in, leans in curiously, recoils */
+.blobTranslate {
+  animation: roll-in 2.2s cubic-bezier(0.33, 0, 0.2, 1) 0s 1 forwards;
+}
+.blobBounce {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: blob-lean 3.2s ease-in-out 2.5s 1 forwards;
+}
+.blobRotate {
+  transform-box: fill-box;
+  transform-origin: 50% 55%;
+  animation: roll-and-settle 2.2s cubic-bezier(0.33, 0, 0.2, 1) 0s 1 forwards;
+}
+
+/* Ring: flat until blob leans in, then springs open */
+.ring {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: ring-spring 2.0s cubic-bezier(0.22, 1, 0.36, 1) 4.1s 1 both;
+}
+
+@keyframes roll-in {
+  0%   { transform: translateX(-1150px); }
+  85%  { transform: translateX(-30px); }
+  100% { transform: translateX(0px); }
+}
+
+@keyframes blob-lean {
+  0%   { transform: rotate(0deg); }
+  31%  { transform: rotate(13deg); }
+  50%  { transform: rotate(13deg); }
+  60%  { transform: rotate(-8deg); }
+  80%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes roll-and-settle {
+  0%   { transform: rotate(0deg); }
+  85%  { transform: rotate(348deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes ring-spring {
+  0%   { transform: scaleY(0.04); }
+  22%  { transform: scaleY(1.45); }
+  50%  { transform: scaleY(1.2); }
+  75%  { transform: scaleY(1.0); }
+  100% { transform: scaleY(1.0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blobTranslate,
+  .blobBounce,
+  .blobRotate,
+  .ring {
+    animation: none;
   }
 }
 
