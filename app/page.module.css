@@ -77,7 +77,7 @@
 .ring {
   transform-box: fill-box;
   transform-origin: 50% 100%;
-  animation: ring-spring 3.2s cubic-bezier(0.25, 0.1, 0.25, 1) 4.1s 1 both;
+  animation: ring-spring 4s ease-in-out 4.1s 1 both;
 }
 
 @keyframes roll-in {
@@ -103,12 +103,9 @@
 
 @keyframes ring-spring {
   0%   { transform: scaleY(0.04); }
-  15%  { transform: scaleY(1.28); }
-  30%  { transform: scaleY(0.94); }
-  45%  { transform: scaleY(1.1); }
-  60%  { transform: scaleY(0.98); }
-  75%  { transform: scaleY(1.03); }
-  88%  { transform: scaleY(0.995); }
+  25%  { transform: scaleY(1.15); }
+  50%  { transform: scaleY(0.97); }
+  75%  { transform: scaleY(1.02); }
   100% { transform: scaleY(1.0); }
 }
 
