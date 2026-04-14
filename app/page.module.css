@@ -73,12 +73,12 @@
   animation: roll-and-settle 2.2s cubic-bezier(0.33, 0, 0.2, 1) 0s 1 forwards;
 }
 
-/* Ring: flat until blob leans in, then springs open */
+/* Ring: flat line, surprised pop, then breathes to rest */
 .ring {
   transform-box: fill-box;
   transform-origin: 50% 100%;
-  animation: ring-pop 0.4s cubic-bezier(0.22, 1, 0.36, 1) 4.1s 1 both,
-             ring-breathe 3.5s ease-in-out 4.5s 1 both;
+  transform: scaleY(0.04);
+  animation: ring-life 4.5s ease-in-out 4.1s 1 both;
 }
 
 @keyframes roll-in {
@@ -102,17 +102,13 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Quick surprised pop — flat line to overshoot */
-@keyframes ring-pop {
+/* Flat → surprised pop → slow breath to rest */
+@keyframes ring-life {
   0%   { transform: scaleY(0.04); }
-  100% { transform: scaleY(1.4); }
-}
-
-/* Slow exhale — settles from overshoot into resting shape */
-@keyframes ring-breathe {
-  0%   { transform: scaleY(1.4); }
-  30%  { transform: scaleY(0.96); }
-  60%  { transform: scaleY(1.03); }
+  8%   { transform: scaleY(1.4); }
+  35%  { transform: scaleY(0.95); }
+  58%  { transform: scaleY(1.04); }
+  80%  { transform: scaleY(0.99); }
   100% { transform: scaleY(1.0); }
 }
 
