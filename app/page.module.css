@@ -292,14 +292,41 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.bioCardLeft {
+  transform: translateX(-60px);
+}
+
+.bioCardRight {
+  transform: translateX(60px);
+}
+
+.bioCardVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.bioPhotoWrap {
+  position: relative;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: 50%;
+  width: clamp(140px, 20vw, 200px);
+  height: clamp(140px, 20vw, 200px);
 }
 
 .bioPhoto {
-  width: clamp(140px, 20vw, 200px);
-  height: clamp(140px, 20vw, 200px);
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 1.5rem;
+  transition: transform 0.6s ease;
+}
+
+.bioCard:hover .bioPhoto {
+  transform: scale(1.06);
 }
 
 .bioName {
@@ -307,6 +334,14 @@
   font-weight: 400;
   margin-bottom: 1.5rem;
   letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+}
+
+.bioCardVisible .bioName {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .bioSkills {
@@ -340,6 +375,14 @@
 
 .bioTagline {
   font-style: italic;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.7s ease 0.25s, transform 0.7s ease 0.25s;
+}
+
+.bioCardVisible .bioTagline {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .bioText p {
@@ -347,6 +390,17 @@
   font-weight: 300;
   line-height: 1.75;
   margin-bottom: 1rem;
+}
+
+.bioParagraph {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.bioCardVisible .bioParagraph {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .bioText p:last-child {
@@ -389,5 +443,10 @@
   .bios {
     grid-template-columns: 1fr;
     gap: 4rem;
+  }
+
+  .bioCardLeft,
+  .bioCardRight {
+    transform: translateY(40px);
   }
 }

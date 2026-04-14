@@ -2,6 +2,7 @@ import Image from "next/image";
 import s from "./page.module.css";
 import ValueCard from "./ValueCard";
 import FadeIn from "./FadeIn";
+import BioCard from "./BioCard";
 
 export default function Home() {
   return (
@@ -96,88 +97,32 @@ export default function Home() {
       </FadeIn>
 
       {/* ── Bios ── */}
-      <FadeIn>
       <section className={`${s.section} ${s.bios}`}>
-        <div className={s.bioCard}>
-          <Image
-            src="/images/bio-roxy.png"
-            alt="Roxy Burke"
-            width={400}
-            height={400}
-            className={s.bioPhoto}
-          />
-          <p className={s.bioName}>Roxanne Burke, M.Ed., BCBA, LBA</p>
-          <div className={s.bioText}>
-            <p className={s.bioTagline}>
-              Connection driven. Grounded in development and learning.
-            </p>
-            <p>
-              Roxy approaches behavior analysis as a way to understand learning
-              and organizes support around developmental and relational
-              capacities, with a focus on connection, communication, and
-              meaningful growth. Her work is grounded in connection, attunement,
-              and naturalistic play-based support, with a focus on
-              communication, social engagement, and meaningful growth across
-              home, school, and community settings.
-            </p>
-            <p>
-              She designs individualized, relationship-centered support that
-              integrates communication, flexibility, and coping skills into
-              everyday routines and child-led interactions. Roxy partners closely
-              with families and providers through coaching, modeling, and
-              reflective collaboration to build shared understanding and support
-              connection-based care.
-            </p>
-            <p>
-              Her approach is informed by naturalistic developmental and
-              behavioral models, including ESDM, PRT, JASPER, Project ImPACT,
-              and DIR/Floortime, alongside strengths-based assessment, AAC
-              support, and co-regulation strategies.
-            </p>
-          </div>
-        </div>
-
-        <div className={s.bioCard}>
-          <Image
-            src="/images/bio-tiffany.png"
-            alt="Tiffany Marino"
-            width={400}
-            height={400}
-            className={s.bioPhoto}
-          />
-          <p className={s.bioName}>Tiffany Marino, M.S., CCC-SLP, TSSLD</p>
-          <div className={s.bioText}>
-            <p className={s.bioTagline}>
-              Connection driven. Grounded in communication and development.
-            </p>
-            <p>
-              Tiffany approaches speech and language support through a relational
-              and developmental lens, with a focus on meaningful, functional
-              communication across everyday contexts. With over a decade of
-              experience supporting children and adults across school and private
-              practice settings, her work is grounded in connection, attunement,
-              and naturalistic play-based support, within a
-              neurodiversity-affirming approach.
-            </p>
-            <p>
-              She partners closely with families and interdisciplinary teams to
-              build communication that carries over into daily life. Tiffany
-              supports a range of communication styles, including spoken
-              language, AAC, and multimodal communication, and brings a
-              thoughtful, engaging approach that meets each individual where they
-              are. Her work emphasizes engagement, regulation, and shared
-              experience as the foundation for communication development.
-            </p>
-            <p>
-              Her approach is informed by developmental, play-based models
-              including ESDM, DIR/Floortime, and JASPER, alongside specialized
-              training in childhood apraxia of speech (DTTC), fluency (including
-              Lidcombe and PCI), and voice and language-based support.
-            </p>
-          </div>
-        </div>
+        <BioCard
+          src="/images/bio-roxy.png"
+          alt="Roxy Burke"
+          name="Roxanne Burke, M.Ed., BCBA, LBA"
+          tagline="Connection driven. Grounded in development and learning."
+          direction="left"
+          paragraphs={[
+            "Roxy approaches behavior analysis as a way to understand learning and organizes support around developmental and relational capacities, with a focus on connection, communication, and meaningful growth. Her work is grounded in connection, attunement, and naturalistic play-based support, with a focus on communication, social engagement, and meaningful growth across home, school, and community settings.",
+            "She designs individualized, relationship-centered support that integrates communication, flexibility, and coping skills into everyday routines and child-led interactions. Roxy partners closely with families and providers through coaching, modeling, and reflective collaboration to build shared understanding and support connection-based care.",
+            "Her approach is informed by naturalistic developmental and behavioral models, including ESDM, PRT, JASPER, Project ImPACT, and DIR/Floortime, alongside strengths-based assessment, AAC support, and co-regulation strategies.",
+          ]}
+        />
+        <BioCard
+          src="/images/bio-tiffany.png"
+          alt="Tiffany Marino"
+          name="Tiffany Marino, M.S., CCC-SLP, TSSLD"
+          tagline="Connection driven. Grounded in communication and development."
+          direction="right"
+          paragraphs={[
+            "Tiffany approaches speech and language support through a relational and developmental lens, with a focus on meaningful, functional communication across everyday contexts. With over a decade of experience supporting children and adults across school and private practice settings, her work is grounded in connection, attunement, and naturalistic play-based support, within a neurodiversity-affirming approach.",
+            "She partners closely with families and interdisciplinary teams to build communication that carries over into daily life. Tiffany supports a range of communication styles, including spoken language, AAC, and multimodal communication, and brings a thoughtful, engaging approach that meets each individual where they are. Her work emphasizes engagement, regulation, and shared experience as the foundation for communication development.",
+            "Her approach is informed by developmental, play-based models including ESDM, DIR/Floortime, and JASPER, alongside specialized training in childhood apraxia of speech (DTTC), fluency (including Lidcombe and PCI), and voice and language-based support.",
+          ]}
+        />
       </section>
-      </FadeIn>
 
       {/* ── Practices ── */}
       <FadeIn>
