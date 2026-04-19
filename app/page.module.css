@@ -400,8 +400,24 @@
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
-  padding-top: clamp(7rem, 13vw, 11rem);
+  padding-top: 0;
   padding-bottom: clamp(6rem, 10vw, 9rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.connectArcWrap {
+  width: calc(100% + var(--side-padding) * 2);
+  margin-left: calc(var(--side-padding) * -1);
+  margin-right: calc(var(--side-padding) * -1);
+  margin-bottom: clamp(5rem, 10vw, 8rem);
+  line-height: 0;
+}
+
+.connectArcSvg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .connectLabel {
