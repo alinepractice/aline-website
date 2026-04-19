@@ -4,6 +4,7 @@ import ValueCard from "./ValueCard";
 import FadeIn from "./FadeIn";
 import BioCard from "./BioCard";
 import StaggerList from "./StaggerList";
+import DrawCircle from "./DrawCircle";
 
 export default function Home() {
   return (
@@ -151,21 +152,7 @@ export default function Home() {
           <p className={s.connectSub}>
             <span className={s.connectCircleWrap}>
               We can take it one step at a time.
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                className={s.connectCircleSvg}
-                viewBox="0 0 100 22"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M 51,2 C 74,1 97,5.5 97.5,11 C 97,16.5 73,20.5 49,20 C 25,20.5 3,16 2.5,11 C 3,5.5 28,1.5 51,2 Z"
-                  fill="none"
-                  stroke="#9A1124"
-                  strokeWidth="1.5"
-                  vectorEffect="non-scaling-stroke"
-                />
-              </svg>
+              <DrawCircle />
             </span>
           </p>
           <div className={s.connectButtons}>
