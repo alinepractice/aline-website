@@ -13,7 +13,6 @@ export default function DrawCircle() {
     const len = el.getTotalLength();
     if (!len) return;
 
-    // Start invisible
     el.style.strokeDasharray  = `${len}`;
     el.style.strokeDashoffset = `${len}`;
 
@@ -25,11 +24,10 @@ export default function DrawCircle() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
-        // rAF ensures the browser has painted the hidden state
-        // before the transition begins
         requestAnimationFrame(() => {
           el.style.transition = "stroke-dashoffset 2.4s cubic-bezier(0.4, 0, 0.25, 1)";
-          el.style.strokeDashoffset = "0";
+          // Animate slightly past 0 so the oval closes completely with no gap
+          el.style.strokeDashoffset = "-2";
         });
         observer.disconnect();
       },
@@ -45,18 +43,19 @@ export default function DrawCircle() {
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       className={s.connectCircleSvg}
-      viewBox="0 0 100 30"
+      viewBox="0 0 100 20"
       preserveAspectRatio="none"
     >
       <ellipse
         ref={ellipseRef}
         cx="50"
-        cy="14"
-        rx="46"
-        ry="13"
+        cy="9"
+        rx="47"
+        ry="8.5"
         fill="none"
         stroke="#9A1124"
         strokeWidth="0.6"
+        strokeLinecap="round"
       />
     </svg>
   );
