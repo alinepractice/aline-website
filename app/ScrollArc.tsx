@@ -21,17 +21,25 @@ export default function ScrollArc() {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
       const scrollTop = window.scrollY;
-      const maxScroll = Math.max(1, document.documentElement.scrollHeight - vh);
-      const raw = Math.min(1, scrollTop / maxScroll);
 
       svg.setAttribute("viewBox", `0 0 ${vw} ${vh}`);
 
-      // Whisper of a bow — almost a straight line, just barely perceptible
       const bow = vh * 0.035;
 
-      // Arc Y: starts below viewport, sweeps upward as you scroll
-      // Enters viewport at ~8% scroll (right as values heading appears), fully dark by ~70%
-      const curveY = vh * (1.08 - smooth(raw) * 1.72);
+      // Anchor the fade to the actual DOM position of the values section —
+      // arc enters from below exactly when "At Aline, we are relationship driven."
+      // comes into view, then sweeps upward over ~1.8 viewport heights until fully dark.
+      const valuesEl = document.getElementById("values-section");
+      const sectionTop = valuesEl
+        ? valuesEl.getBoundingClientRect().top + scrollTop
+        : vh * 0.92;
+
+      const fadeStart = sectionTop - vh;        // values top at viewport bottom
+      const fadeEnd   = sectionTop + vh * 1.8; // fully dark 1.8 viewport-heights later
+      const t = Math.max(0, Math.min(1, (scrollTop - fadeStart) / (fadeEnd - fadeStart)));
+      const eased = smooth(t);
+
+      const curveY = vh * (1.0 - eased * 1.25);
 
       // Extend path well beyond viewport sides to prevent blur fringe at edges
       const pad = 800;

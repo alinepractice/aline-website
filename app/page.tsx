@@ -50,7 +50,7 @@ export default function Home() {
 
       {/* ── Values ── */}
       <FadeIn>
-        <section className={`${s.section} ${s.values}`}>
+        <section id="values-section" className={`${s.section} ${s.values}`}>
           <div className={s.valuesInner}>
             <h2 className={s.valuesHeading}>
               At Aline, we are relationship driven.
@@ -155,14 +155,14 @@ export default function Home() {
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 className={s.connectCircleSvg}
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
+                viewBox="0 0 400 48"
+                preserveAspectRatio="xMidYMid meet"
               >
                 <defs>
-                  <filter id="connect-wobble" x="-5%" y="-30%" width="110%" height="160%">
+                  <filter id="connect-wobble" x="-10%" y="-40%" width="120%" height="180%">
                     <feTurbulence
                       type="fractalNoise"
-                      baseFrequency="0.02 0.09"
+                      baseFrequency="0.015 0.04"
                       numOctaves="3"
                       seed="7"
                       result="noise"
@@ -170,21 +170,20 @@ export default function Home() {
                     <feDisplacementMap
                       in="SourceGraphic"
                       in2="noise"
-                      scale="0.7"
+                      scale="3.5"
                       xChannelSelector="R"
                       yChannelSelector="G"
                     />
                   </filter>
                 </defs>
                 <ellipse
-                  cx="50"
-                  cy="50"
-                  rx="46"
-                  ry="44"
+                  cx="200"
+                  cy="24"
+                  rx="194"
+                  ry="20"
                   fill="none"
                   stroke="#981327"
-                  strokeWidth="3"
-                  vectorEffect="non-scaling-stroke"
+                  strokeWidth="2.5"
                   filter="url(#connect-wobble)"
                 />
               </svg>
