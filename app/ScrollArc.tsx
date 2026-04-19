@@ -105,16 +105,6 @@ export default function ScrollArc() {
             <path ref={maskPathRef} fill="white" filter="url(#arc-edge-blur)" />
           </mask>
 
-          {/* Grain: fractal noise for the soft film-texture feel */}
-          <filter id="grain">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.68"
-              numOctaves="4"
-              stitchTiles="stitch"
-            />
-            <feColorMatrix type="saturate" values="0" />
-          </filter>
         </defs>
 
         {/* Earthy tone — fades in from arc edge, stays dark to bottom */}
@@ -125,18 +115,6 @@ export default function ScrollArc() {
           height="30000"
           fill="#D1CBB4"
           mask="url(#arc-mask)"
-        />
-
-        {/* Grain texture layered over the dark zone */}
-        <rect
-          x="-800"
-          y="-800"
-          width="30000"
-          height="30000"
-          filter="url(#grain)"
-          mask="url(#arc-mask)"
-          opacity="0.1"
-          style={{ mixBlendMode: "soft-light" } as React.CSSProperties}
         />
       </svg>
     </div>
