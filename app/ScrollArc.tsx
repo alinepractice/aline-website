@@ -1,57 +1,45 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+
+// Cream → warm greige  (#f3eeda → #D1CBB4)
+const FROM = { r: 243, g: 238, b: 218 };
+const TO   = { r: 209, g: 203, b: 180 };
+
+function smooth(t: number) {
+  return t * t * (3 - 2 * t);
+}
+
+function lerp(a: number, b: number, t: number) {
+  return a + (b - a) * t;
+}
 
 export default function ScrollArc() {
-  const maskPathRef = useRef<SVGPathElement>(null);
-  const svgRef = useRef<SVGSVGElement>(null);
-
   useEffect(() => {
     let raf = 0;
 
-    function smooth(t: number) {
-      return t * t * (3 - 2 * t);
-    }
-
     function update() {
-      const maskPath = maskPathRef.current;
-      const svg = svgRef.current;
-      if (!maskPath || !svg) return;
-
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
+      const vh        = window.innerHeight;
       const scrollTop = window.scrollY;
 
-      svg.setAttribute("viewBox", `0 0 ${vw} ${vh}`);
-
-      const bow = vh * 0.035;
-
-      // Anchor the fade to the actual DOM position of the values section —
-      // arc enters from below exactly when "At Aline, we are relationship driven."
-      // comes into view, then sweeps upward over ~1.8 viewport heights until fully dark.
-      const valuesEl = document.getElementById("values-section");
+      // Anchor the transition to the values section so it's
+      // consistent regardless of screen size or content length.
+      const valuesEl  = document.getElementById("values-section");
       const sectionTop = valuesEl
         ? valuesEl.getBoundingClientRect().top + scrollTop
-        : vh * 0.92;
+        : vh * 0.9;
 
-      const fadeStart = sectionTop - vh;        // values top at viewport bottom
-      const fadeEnd   = sectionTop + vh * 1.8; // fully dark 1.8 viewport-heights later
-      const t = Math.max(0, Math.min(1, (scrollTop - fadeStart) / (fadeEnd - fadeStart)));
-      const eased = smooth(t);
+      const fadeStart = sectionTop - vh * 0.3;
+      const fadeEnd   = sectionTop + vh * 2.2;
+      const t = smooth(
+        Math.max(0, Math.min(1, (scrollTop - fadeStart) / (fadeEnd - fadeStart)))
+      );
 
-      const curveY = vh * (1.0 - eased * 1.25);
+      const r = Math.round(lerp(FROM.r, TO.r, t));
+      const g = Math.round(lerp(FROM.g, TO.g, t));
+      const b = Math.round(lerp(FROM.b, TO.b, t));
 
-      // Extend path well beyond viewport sides to prevent blur fringe at edges
-      const pad = 800;
-      const d = [
-        `M ${-pad},${curveY + bow * 0.3}`,
-        `C ${vw * 0.28},${curveY - bow}  ${vw * 0.72},${curveY - bow}  ${vw + pad},${curveY + bow * 0.3}`,
-        `L ${vw + pad},12000`,
-        `L ${-pad},12000`,
-        "Z",
-      ].join(" ");
-
-      maskPath.setAttribute("d", d);
+      document.documentElement.style.setProperty("--bg", `rgb(${r},${g},${b})`);
     }
 
     function onScroll() {
@@ -67,56 +55,9 @@ export default function ScrollArc() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", update);
       cancelAnimationFrame(raf);
+      document.documentElement.style.removeProperty("--bg");
     };
   }, []);
 
-  return (
-    <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: -1,
-        pointerEvents: "none",
-        overflow: "hidden",
-      }}
-    >
-      <svg
-        ref={svgRef}
-        width="100%"
-        height="100%"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ display: "block" }}
-      >
-        <defs>
-          {/* Vertical-only blur → soft horizontal fade at the arc boundary */}
-          <filter id="arc-edge-blur">
-            <feGaussianBlur stdDeviation="0 55" />
-          </filter>
-
-          {/* Mask: blurred arc shape fills the zone below the curve */}
-          <mask
-            id="arc-mask"
-            maskUnits="userSpaceOnUse"
-            x="-1000"
-            y="-1000"
-            width="30000"
-            height="30000"
-          >
-            <path ref={maskPathRef} fill="white" filter="url(#arc-edge-blur)" />
-          </mask>
-
-        </defs>
-
-        {/* Earthy tone — fades in from arc edge, stays dark to bottom */}
-        <rect
-          x="-800"
-          y="-800"
-          width="30000"
-          height="30000"
-          fill="#D1CBB4"
-          mask="url(#arc-mask)"
-        />
-      </svg>
-    </div>
-  );
+  return null;
 }
