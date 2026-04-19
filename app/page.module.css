@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 82vh;
+  min-height: 92vh;
   padding: 6rem var(--side-padding) 3rem;
 }
 
