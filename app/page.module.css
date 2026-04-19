@@ -447,8 +447,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% + 5em);
-  height: 4em;
+  width: calc(100% + 7em);
+  height: 5em;
   pointer-events: none;
   overflow: visible;
 }
