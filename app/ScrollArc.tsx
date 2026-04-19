@@ -30,8 +30,8 @@ export default function ScrollArc() {
       const bow = vh * 0.035;
 
       // Arc Y: starts below viewport, sweeps upward as you scroll
-      // Enters viewport at ~25% scroll (just after values grid clears), fully dark by ~80%
-      const curveY = vh * (1.25 - smooth(raw) * 1.62);
+      // Enters viewport at ~18% scroll (mid-values section), fully dark by ~80%
+      const curveY = vh * (1.13 - smooth(raw) * 1.50);
 
       // Extend path well beyond viewport sides to prevent blur fringe at edges
       const pad = 800;
