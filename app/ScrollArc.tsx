@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 export default function ScrollArc() {
-  const pathRef = useRef<SVGPathElement>(null);
+  const maskPathRef = useRef<SVGPathElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
@@ -13,37 +13,10 @@ export default function ScrollArc() {
       return t * t * (3 - 2 * t);
     }
 
-    // Build a closed organic oval using 4 cubic bezier curves.
-    // Slight asymmetry in control points = organic, not mechanical.
-    function ovalPath(
-      cx: number,
-      cy: number,
-      rx: number,
-      ry: number
-    ): string {
-      // Bezier approximation constant for ellipse ≈ 0.5523
-      // Vary slightly per quadrant for organic feel
-      const kx = rx * 0.555;
-      const ky = ry * 0.555;
-
-      return [
-        `M ${cx},${cy - ry}`,
-        // Right arc (top-right → bottom-right)
-        `C ${cx + kx * 0.92},${cy - ry}  ${cx + rx},${cy - ky * 0.88}  ${cx + rx},${cy}`,
-        // Bottom arc (bottom-right → bottom-left) — curves UPWARD
-        `C ${cx + rx},${cy + ky * 1.06}  ${cx + kx * 0.88},${cy + ry}  ${cx},${cy + ry}`,
-        // Left arc (bottom-left → top-left)
-        `C ${cx - kx * 0.95},${cy + ry}  ${cx - rx},${cy + ky * 0.94}  ${cx - rx},${cy}`,
-        // Top arc (top-left → top-right)
-        `C ${cx - rx},${cy - ky * 0.98}  ${cx - kx * 0.9},${cy - ry}  ${cx},${cy - ry}`,
-        "Z",
-      ].join(" ");
-    }
-
     function update() {
-      const path = pathRef.current;
+      const maskPath = maskPathRef.current;
       const svg = svgRef.current;
-      if (!path || !svg) return;
+      if (!maskPath || !svg) return;
 
       const vw = window.innerWidth;
       const vh = window.innerHeight;
@@ -53,22 +26,25 @@ export default function ScrollArc() {
 
       svg.setAttribute("viewBox", `0 0 ${vw} ${vh}`);
 
-      // Oval dimensions — stretched horizontally, flatter vertically
-      const rx = vw * 0.68 + 220; // bleeds well off both sides → arcs feel wide and sweeping
-      const ry = vh * 0.72;        // flatter than viewport → more elliptical, less circular
+      // Whisper of a bow — almost a straight line, just barely perceptible
+      const bow = vh * 0.035;
 
-      // Center X: slightly left of center for organic asymmetry
-      const cx = vw * 0.49;
+      // Arc Y: starts below viewport, sweeps upward as you scroll
+      // Timing mirrors the old oval — enters around 47% scroll, fully dark by ~86%
+      // At raw=1, arc is well above viewport → page stays dark all the way to the end
+      const curveY = vh * (1.85 - smooth(raw) * 2.2);
 
-      // Center Y: oval enters from below, sweeps through mid-scroll, exits above
-      // - raw 0:    centerY = 2.25vh  → top of oval at 1.2vh (just below viewport)
-      // - raw 0.3:  entering viewport from bottom
-      // - raw 0.55: centered in viewport — peak of darker zone
-      // - raw 0.8:  exiting above viewport
-      // - raw 1.0:  completely above viewport → background returns to base
-      const centerY = vh * (2.25 - smooth(raw) * 3.4);
+      // Extend path well beyond viewport sides to prevent blur fringe at edges
+      const pad = 800;
+      const d = [
+        `M ${-pad},${curveY + bow * 0.3}`,
+        `C ${vw * 0.28},${curveY - bow}  ${vw * 0.72},${curveY - bow}  ${vw + pad},${curveY + bow * 0.3}`,
+        `L ${vw + pad},12000`,
+        `L ${-pad},12000`,
+        "Z",
+      ].join(" ");
 
-      path.setAttribute("d", ovalPath(cx, centerY, rx, ry));
+      maskPath.setAttribute("d", d);
     }
 
     function onScroll() {
@@ -105,17 +81,55 @@ export default function ScrollArc() {
         style={{ display: "block" }}
       >
         <defs>
-          <clipPath id="oval-clip" clipPathUnits="userSpaceOnUse">
-            <path ref={pathRef} />
-          </clipPath>
+          {/* Vertical-only blur → soft horizontal fade at the arc boundary */}
+          <filter id="arc-edge-blur">
+            <feGaussianBlur stdDeviation="0 55" />
+          </filter>
+
+          {/* Mask: blurred arc shape fills the zone below the curve */}
+          <mask
+            id="arc-mask"
+            maskUnits="userSpaceOnUse"
+            x="-1000"
+            y="-1000"
+            width="30000"
+            height="30000"
+          >
+            <path ref={maskPathRef} fill="white" filter="url(#arc-edge-blur)" />
+          </mask>
+
+          {/* Grain: fractal noise for the soft film-texture feel */}
+          <filter id="grain">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.68"
+              numOctaves="4"
+              stitchTiles="stitch"
+            />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
         </defs>
 
-        {/* Earthy mid-scroll tone — contained within the organic oval */}
+        {/* Earthy tone — fades in from arc edge, stays dark to bottom */}
         <rect
-          x="0" y="0"
-          width="10000" height="10000"
+          x="-800"
+          y="-800"
+          width="30000"
+          height="30000"
           fill="#D1CBB4"
-          clipPath="url(#oval-clip)"
+          mask="url(#arc-mask)"
+        />
+
+        {/* Grain texture layered over the dark zone */}
+        <rect
+          x="-800"
+          y="-800"
+          width="30000"
+          height="30000"
+          filter="url(#grain)"
+          mask="url(#arc-mask)"
+          opacity="0.1"
+          style={{ mixBlendMode: "soft-light" } as React.CSSProperties}
         />
       </svg>
     </div>

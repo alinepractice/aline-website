@@ -398,10 +398,6 @@
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
-  /* Inverse arc of the nav — upward curve completing the oval loop */
-  border-radius: 50% 50% 0 0 / 32px 32px 0 0;
-  /* Same color as page top — visual loop resolves back to origin */
-  background: var(--bg);
   padding-top: clamp(5rem, 9vw, 7.5rem);
   padding-bottom: clamp(6rem, 10vw, 9rem);
   margin-top: clamp(1rem, 3vw, 2rem);
