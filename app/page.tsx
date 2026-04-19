@@ -155,11 +155,11 @@ export default function Home() {
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 className={s.connectCircleSvg}
-                viewBox="0 0 400 48"
+                viewBox="0 0 400 80"
                 preserveAspectRatio="xMidYMid meet"
               >
                 <defs>
-                  <filter id="connect-wobble" x="-10%" y="-40%" width="120%" height="180%">
+                  <filter id="connect-wobble" x="-10%" y="-30%" width="120%" height="160%">
                     <feTurbulence
                       type="fractalNoise"
                       baseFrequency="0.015 0.04"
@@ -170,7 +170,7 @@ export default function Home() {
                     <feDisplacementMap
                       in="SourceGraphic"
                       in2="noise"
-                      scale="3.5"
+                      scale="4"
                       xChannelSelector="R"
                       yChannelSelector="G"
                     />
@@ -178,12 +178,12 @@ export default function Home() {
                 </defs>
                 <ellipse
                   cx="200"
-                  cy="24"
-                  rx="194"
-                  ry="20"
+                  cy="40"
+                  rx="188"
+                  ry="34"
                   fill="none"
                   stroke="#981327"
-                  strokeWidth="2.5"
+                  strokeWidth="1.8"
                   filter="url(#connect-wobble)"
                 />
               </svg>

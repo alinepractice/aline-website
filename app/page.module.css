@@ -448,7 +448,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: calc(100% + 2.6em);
-  height: 3.5em;
+  height: 5em;
   pointer-events: none;
   overflow: visible;
 }
