@@ -394,40 +394,53 @@
 
 /* ── Connect ── */
 .connect {
+  /* padding-top: 0 so the divider sits flush at the section edge */
+  padding-top: 0;
+  padding-bottom: clamp(5rem, 9vw, 7rem);
+}
+
+.connectDivider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.13);
+  /* break out of the section's horizontal padding so line goes edge-to-edge */
+  margin: 0 calc(-1 * var(--side-padding));
+}
+
+.connectBody {
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+.connectHeading {
+  font-size: clamp(1.3rem, 2.4vw, 1.65rem);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+/* Single horizontal row: subtext left, links right */
+.connectRow {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(2rem, 6vw, 5rem);
-  padding-top: clamp(5rem, 9vw, 7rem);
-  padding-bottom: clamp(6rem, 10vw, 8rem);
-}
-
-.connectLeft {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.55rem;
-}
-
-.connectHeading {
-  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
-  font-weight: 300;
-  letter-spacing: 0.01em;
-  color: var(--text);
+  gap: 2rem;
 }
 
 .connectSub {
   font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   font-weight: 300;
   color: var(--text-light);
+  white-space: nowrap; /* keeps the sentence on one line on desktop */
 }
 
-.connectRight {
+.connectLinks {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.4rem;
+  gap: 0.3rem;
   flex-shrink: 0;
 }
 
@@ -484,13 +497,18 @@
     transform: translateY(32px);
   }
 
-  .connect {
+  .connectRow {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2.5rem;
+    gap: 1.25rem;
   }
 
-  .connectRight {
+  .connectSub {
+    white-space: normal;
+  }
+
+  .connectLinks {
     align-items: flex-start;
+    gap: 0.35rem;
   }
 }

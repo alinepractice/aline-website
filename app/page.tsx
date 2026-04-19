@@ -148,27 +148,30 @@ export default function Home() {
       {/* ── Connect ── */}
       <FadeIn>
         <section id="connect" className={`${s.section} ${s.connect}`}>
-          <div className={s.connectLeft}>
+          <hr className={s.connectDivider} />
+          <div className={s.connectBody}>
             <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
-            <p className={s.connectSub}>
-              <span className={s.connectCircleWrap}>
-                We can take it one step at a time.
-                <DrawCircle />
-              </span>
-            </p>
-          </div>
-          <div className={s.connectRight}>
-            <a
-              href="https://instagram.com/aline.practice"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={s.connectBtn}
-            >
-              @aline.practice
-            </a>
-            <a href="mailto:connect@alinepractice.com" className={s.connectBtn}>
-              connect@alinepractice.com
-            </a>
+            <div className={s.connectRow}>
+              <p className={s.connectSub}>
+                <span className={s.connectCircleWrap}>
+                  We can take it one step at a time.
+                  <DrawCircle />
+                </span>
+              </p>
+              <div className={s.connectLinks}>
+                <a
+                  href="https://instagram.com/aline.practice"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={s.connectBtn}
+                >
+                  @aline.practice
+                </a>
+                <a href="mailto:connect@alinepractice.com" className={s.connectBtn}>
+                  connect@alinepractice.com
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </FadeIn>
