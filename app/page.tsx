@@ -147,18 +147,21 @@ export default function Home() {
       {/* ── Connect ── */}
       <FadeIn>
         <section id="connect" className={`${s.section} ${s.connect}`}>
-          <p className={s.connectLabel}>get in touch</p>
-          <a href="mailto:connect@alinepractice.com" className={s.connectLink}>
-            connect@alinepractice.com
-          </a>
-          <a
-            href="https://instagram.com/aline_practice"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={s.connectLink}
-          >
-            @aline_practice
-          </a>
+          <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
+          <p className={s.connectSub}>We can take it one step at a time.</p>
+          <div className={s.connectButtons}>
+            <a
+              href="https://instagram.com/aline.practice"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.connectBtn}
+            >
+              @aline.practice
+            </a>
+            <a href="mailto:connect@alinepractice.com" className={s.connectBtn}>
+              connect@alinepractice.com
+            </a>
+          </div>
         </section>
       </FadeIn>
     </>
