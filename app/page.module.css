@@ -453,21 +453,6 @@
   overflow: visible;
 }
 
-/* Draw-on animation */
-.drawCirclePath {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-}
-
-.drawCircleVisible {
-  animation: draw-circle 2s ease-in-out forwards;
-}
-
-@keyframes draw-circle {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 
 /* ── Mobile ── */
 @media (max-width: 680px) {
