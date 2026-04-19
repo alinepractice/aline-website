@@ -18,23 +18,24 @@ export default function ScrollArc() {
       const vh = window.innerHeight;
       const scrollTop = window.scrollY;
       const maxScroll = Math.max(1, document.documentElement.scrollHeight - vh);
-      const progress = Math.min(1, scrollTop / maxScroll);
 
-      // Update SVG dimensions to match viewport
+      // Ease the progress slightly so arc enters smoothly around mid-scroll
+      const raw = Math.min(1, scrollTop / maxScroll);
+      const progress = raw * raw * (3 - 2 * raw); // smoothstep
+
       svg.setAttribute("viewBox", `0 0 ${vw} ${vh}`);
 
-      // Arc Y: starts just below viewport (fully hidden), sweeps past top as you scroll
-      const y = vh * 1.08 - progress * (vh * 1.25);
+      // Arc enters from the bottom ~30% through the page, exits top at ~100%
+      const y = vh * 1.1 - progress * (vh * 1.35);
 
-      // Curve bulge — gentle wave, slightly asymmetric for organic feel
-      const bulge = vh * 0.13;
+      // Gentle asymmetric wave — left rises, right trails
+      const bulge = vh * 0.09;
 
-      // Quadratic bezier arc, fills downward
       const d = `
-        M 0,${y}
-        Q ${vw * 0.45},${y - bulge} ${vw},${y + bulge * 0.4}
-        L ${vw},${vh * 12}
-        L 0,${vh * 12}
+        M 0,${y + bulge * 0.3}
+        Q ${vw * 0.5},${y - bulge} ${vw},${y + bulge * 0.5}
+        L ${vw},${vh * 15}
+        L 0,${vh * 15}
         Z
       `;
       path.setAttribute("d", d);
@@ -78,13 +79,11 @@ export default function ScrollArc() {
             <path ref={pathRef} />
           </clipPath>
         </defs>
-        {/* Slightly deeper warm tone — same family as #f3eeda */}
+        {/* Earthier tone — deeper warmth, same family */}
         <rect
-          x="0"
-          y="0"
-          width="10000"
-          height="10000"
-          fill="#e8dfc8"
+          x="0" y="0"
+          width="10000" height="10000"
+          fill="#e5d9be"
           clipPath="url(#arc-clip)"
         />
       </svg>

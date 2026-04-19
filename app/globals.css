@@ -9,9 +9,10 @@
 :root {
   --bg: #f3eeda;
   --text: rgba(0, 0, 0, 0.82);
-  --text-light: rgba(0, 0, 0, 0.55);
+  --text-light: rgba(0, 0, 0, 0.48);
+  --text-faint: rgba(0, 0, 0, 0.32);
   --max-width: 1200px;
-  --section-spacing: 10rem;
+  --section-spacing: clamp(5rem, 8vw, 7rem);
   --side-padding: clamp(1.5rem, 5vw, 6rem);
 }
 

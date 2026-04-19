@@ -3,6 +3,7 @@ import s from "./page.module.css";
 import ValueCard from "./ValueCard";
 import FadeIn from "./FadeIn";
 import BioCard from "./BioCard";
+import StaggerList from "./StaggerList";
 
 export default function Home() {
   return (
@@ -126,36 +127,39 @@ export default function Home() {
 
       {/* ── Practices ── */}
       <FadeIn>
-      <section className={`${s.section} ${s.practices}`}>
-        <div className={s.practiceColumns}>
-          <h2 className={s.practiceHeading}>ABA</h2>
-          <h2 className={s.practiceHeading}>Speech</h2>
-        </div>
-        <ul className={s.practiceList}>
-          <li>2:1 consultation</li>
-          <li>Parent</li>
-          <li>Support</li>
-          <li>Social</li>
-          <li>School</li>
-        </ul>
-      </section>
+        <section className={`${s.section} ${s.practices}`}>
+          <div className={s.practiceColumns}>
+            <h2 className={s.practiceHeading}>ABA</h2>
+            <h2 className={s.practiceHeading}>Speech</h2>
+          </div>
+          <StaggerList
+            items={[
+              "2:1 consultation",
+              "Parent",
+              "Support",
+              "Social",
+              "School",
+            ]}
+          />
+        </section>
       </FadeIn>
 
       {/* ── Connect ── */}
       <FadeIn>
-      <section id="connect" className={`${s.section} ${s.connect}`}>
-        <a href="mailto:connect@alinepractice.com" className={s.connectLink}>
-          connect@alinepractice.com
-        </a>
-        <a
-          href="https://instagram.com/aline_practice"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={s.connectLink}
-        >
-          @aline_practice
-        </a>
-      </section>
+        <section id="connect" className={`${s.section} ${s.connect}`}>
+          <p className={s.connectLabel}>get in touch</p>
+          <a href="mailto:connect@alinepractice.com" className={s.connectLink}>
+            connect@alinepractice.com
+          </a>
+          <a
+            href="https://instagram.com/aline_practice"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={s.connectLink}
+          >
+            @aline_practice
+          </a>
+        </section>
       </FadeIn>
     </>
   );

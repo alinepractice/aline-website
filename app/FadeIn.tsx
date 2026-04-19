@@ -19,22 +19,22 @@ export default function FadeIn({
     const rect = el.getBoundingClientRect();
     const vh = window.innerHeight;
 
-    // progress: 0 when element bottom-edge enters viewport, 1 when ~40% into view
+    // Progress: 0 when bottom edge enters viewport, 1 when 45% in view
     const progress = Math.min(
       1,
-      Math.max(0, (vh - rect.top) / (vh * 0.5))
+      Math.max(0, (vh - rect.top) / (vh * 0.55))
     );
 
-    // Smooth ease-out curve
+    // Gentle cubic ease — guide not grab
     const eased = 1 - Math.pow(1 - progress, 3);
 
-    // Parallax: content rises from further away with noticeable depth
-    const translateY = (1 - eased) * 80;
-    const scale = 0.92 + eased * 0.08;
-    const rotateX = (1 - eased) * 4;
+    // Subtle — motion supports flow, doesn't perform
+    const translateY = (1 - eased) * 36;
+    const scale = 0.97 + eased * 0.03;
+    const rotateX = (1 - eased) * 1.5;
 
-    el.style.opacity = `${eased}`;
-    el.style.transform = `perspective(1000px) translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
+    el.style.opacity = `${Math.min(1, eased * 1.1)}`;
+    el.style.transform = `perspective(1200px) translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
   }, []);
 
   useEffect(() => {
@@ -43,21 +43,24 @@ export default function FadeIn({
 
     update();
 
-    const onScroll = () => requestAnimationFrame(update);
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
     };
   }, [update]);
 
   return (
-    <div
-      ref={ref}
-      className={`${s.fadeIn} ${className}`}
-    >
+    <div ref={ref} className={`${s.fadeIn} ${className}`}>
       {children}
     </div>
   );
