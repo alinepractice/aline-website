@@ -437,6 +437,21 @@
   opacity: 0.4;
 }
 
+.connectCircleWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.connectCircleSvg {
+  position: absolute;
+  top: -0.55em;
+  left: -0.65em;
+  width: calc(100% + 1.3em);
+  height: calc(100% + 1.1em);
+  pointer-events: none;
+  overflow: visible;
+}
+
 /* ── Mobile ── */
 @media (max-width: 680px) {
   .header {

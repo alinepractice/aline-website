@@ -148,7 +148,48 @@ export default function Home() {
       <FadeIn>
         <section id="connect" className={`${s.section} ${s.connect}`}>
           <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
-          <p className={s.connectSub}>We can take it one step at a time.</p>
+          <p className={s.connectSub}>
+            <span className={s.connectCircleWrap}>
+              We can take it one step at a time.
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                className={s.connectCircleSvg}
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                <defs>
+                  <filter id="connect-wobble" x="-5%" y="-30%" width="110%" height="160%">
+                    <feTurbulence
+                      type="fractalNoise"
+                      baseFrequency="0.02 0.09"
+                      numOctaves="3"
+                      seed="7"
+                      result="noise"
+                    />
+                    <feDisplacementMap
+                      in="SourceGraphic"
+                      in2="noise"
+                      scale="0.7"
+                      xChannelSelector="R"
+                      yChannelSelector="G"
+                    />
+                  </filter>
+                </defs>
+                <ellipse
+                  cx="50"
+                  cy="50"
+                  rx="46"
+                  ry="44"
+                  fill="none"
+                  stroke="#981327"
+                  strokeWidth="3"
+                  vectorEffect="non-scaling-stroke"
+                  filter="url(#connect-wobble)"
+                />
+              </svg>
+            </span>
+          </p>
           <div className={s.connectButtons}>
             <a
               href="https://instagram.com/aline.practice"
