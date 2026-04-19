@@ -3,8 +3,7 @@
 import { useEffect, useRef } from "react";
 
 export default function ScrollArc() {
-  const darkPathRef = useRef<SVGPathElement>(null);
-  const lightPathRef = useRef<SVGPathElement>(null);
+  const pathRef = useRef<SVGPathElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
@@ -14,28 +13,37 @@ export default function ScrollArc() {
       return t * t * (3 - 2 * t);
     }
 
-    // Build an organic arc path using cubic bezier — asymmetric, oval-like
-    function arcPath(vw: number, vh: number, y: number, bulge: number): string {
-      // Cubic bezier: control points offset left and right of center
-      // creates a wide oval-arc shape, not a perfect circle arc
-      const cp1x = vw * 0.28;
-      const cp1y = y - bulge * 1.1;
-      const cp2x = vw * 0.72;
-      const cp2y = y - bulge * 0.7;
-      return `
-        M 0,${y + bulge * 0.35}
-        C ${cp1x},${cp1y} ${cp2x},${cp2y} ${vw},${y + bulge * 0.2}
-        L ${vw},${vh * 15}
-        L 0,${vh * 15}
-        Z
-      `;
+    // Build a closed organic oval using 4 cubic bezier curves.
+    // Slight asymmetry in control points = organic, not mechanical.
+    function ovalPath(
+      cx: number,
+      cy: number,
+      rx: number,
+      ry: number
+    ): string {
+      // Bezier approximation constant for ellipse ≈ 0.5523
+      // Vary slightly per quadrant for organic feel
+      const kx = rx * 0.555;
+      const ky = ry * 0.555;
+
+      return [
+        `M ${cx},${cy - ry}`,
+        // Right arc (top-right → bottom-right)
+        `C ${cx + kx * 0.92},${cy - ry}  ${cx + rx},${cy - ky * 0.88}  ${cx + rx},${cy}`,
+        // Bottom arc (bottom-right → bottom-left) — curves UPWARD
+        `C ${cx + rx},${cy + ky * 1.06}  ${cx + kx * 0.88},${cy + ry}  ${cx},${cy + ry}`,
+        // Left arc (bottom-left → top-left)
+        `C ${cx - kx * 0.95},${cy + ry}  ${cx - rx},${cy + ky * 0.94}  ${cx - rx},${cy}`,
+        // Top arc (top-left → top-right)
+        `C ${cx - rx},${cy - ky * 0.98}  ${cx - kx * 0.9},${cy - ry}  ${cx},${cy - ry}`,
+        "Z",
+      ].join(" ");
     }
 
     function update() {
-      const darkPath = darkPathRef.current;
-      const lightPath = lightPathRef.current;
+      const path = pathRef.current;
       const svg = svgRef.current;
-      if (!darkPath || !lightPath || !svg) return;
+      if (!path || !svg) return;
 
       const vw = window.innerWidth;
       const vh = window.innerHeight;
@@ -45,19 +53,23 @@ export default function ScrollArc() {
 
       svg.setAttribute("viewBox", `0 0 ${vw} ${vh}`);
 
-      const bulge = vh * 0.1;
+      // Oval dimensions — wide enough to bleed off screen edges,
+      // tall enough to create soft transitions as it sweeps through
+      const rx = vw * 0.56 + 140; // bleeds off both sides → only top/bottom arcs visible
+      const ry = vh * 1.05;        // slightly taller than viewport
 
-      // Arc 1 — dark tone sweeps in (0–65% of scroll)
-      const darkRaw = Math.min(1, raw / 0.68);
-      const darkP = smooth(darkRaw);
-      const darkY = vh * 1.08 - darkP * (vh * 1.3);
-      darkPath.setAttribute("d", arcPath(vw, vh, darkY, bulge));
+      // Center X: slightly left of center for organic asymmetry
+      const cx = vw * 0.49;
 
-      // Arc 2 — light return sweeps in (50–100% of scroll), covering dark
-      const lightRaw = Math.max(0, (raw - 0.48) / 0.52);
-      const lightP = smooth(lightRaw);
-      const lightY = vh * 1.08 - lightP * (vh * 1.3);
-      lightPath.setAttribute("d", arcPath(vw, vh, lightY, bulge));
+      // Center Y: oval enters from below, sweeps through mid-scroll, exits above
+      // - raw 0:    centerY = 2.25vh  → top of oval at 1.2vh (just below viewport)
+      // - raw 0.3:  entering viewport from bottom
+      // - raw 0.55: centered in viewport — peak of darker zone
+      // - raw 0.8:  exiting above viewport
+      // - raw 1.0:  completely above viewport → background returns to base
+      const centerY = vh * (2.25 - smooth(raw) * 3.4);
+
+      path.setAttribute("d", ovalPath(cx, centerY, rx, ry));
     }
 
     function onScroll() {
@@ -94,21 +106,18 @@ export default function ScrollArc() {
         style={{ display: "block" }}
       >
         <defs>
-          <clipPath id="arc-dark" clipPathUnits="userSpaceOnUse">
-            <path ref={darkPathRef} />
-          </clipPath>
-          <clipPath id="arc-light" clipPathUnits="userSpaceOnUse">
-            <path ref={lightPathRef} />
+          <clipPath id="oval-clip" clipPathUnits="userSpaceOnUse">
+            <path ref={pathRef} />
           </clipPath>
         </defs>
 
-        {/* Mid-scroll: earthy darker warmth */}
-        <rect x="0" y="0" width="10000" height="10000"
-          fill="#e5d9be" clipPath="url(#arc-dark)" />
-
-        {/* Return to origin tone — same as page top, completing the loop */}
-        <rect x="0" y="0" width="10000" height="10000"
-          fill="#f3eeda" clipPath="url(#arc-light)" />
+        {/* Earthy mid-scroll tone — contained within the organic oval */}
+        <rect
+          x="0" y="0"
+          width="10000" height="10000"
+          fill="#e5d9be"
+          clipPath="url(#oval-clip)"
+        />
       </svg>
     </div>
   );
