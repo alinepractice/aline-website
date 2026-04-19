@@ -19,10 +19,13 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
 }
 
 body {
-  background-color: var(--bg);
+  background: transparent;
+  position: relative;
+  isolation: isolate;
   color: var(--text);
   font-weight: 300;
   line-height: 1.7;
