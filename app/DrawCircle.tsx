@@ -13,8 +13,11 @@ export default function DrawCircle() {
     const len = el.getTotalLength();
     if (!len) return;
 
-    el.style.strokeDasharray  = `${len}`;
-    el.style.strokeDashoffset = `${len}`;
+    // Add a small buffer so the stroke always draws past the start point —
+    // this guarantees a fully closed oval with no gap at the join.
+    const dash = len + 4;
+    el.style.strokeDasharray  = `${dash}`;
+    el.style.strokeDashoffset = `${dash}`;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       el.style.strokeDashoffset = "0";
@@ -26,8 +29,7 @@ export default function DrawCircle() {
         if (!entry.isIntersecting) return;
         requestAnimationFrame(() => {
           el.style.transition = "stroke-dashoffset 2.4s cubic-bezier(0.4, 0, 0.25, 1)";
-          // Animate slightly past 0 so the oval closes completely with no gap
-          el.style.strokeDashoffset = "-2";
+          el.style.strokeDashoffset = "0";
         });
         observer.disconnect();
       },

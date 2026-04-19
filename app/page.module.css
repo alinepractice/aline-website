@@ -395,41 +395,47 @@
 /* ── Connect ── */
 .connect {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1.25rem;
-  padding-top: clamp(5rem, 9vw, 7.5rem);
-  padding-bottom: clamp(6rem, 10vw, 9rem);
-  margin-top: clamp(1rem, 3vw, 2rem);
+  justify-content: space-between;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding-top: clamp(5rem, 9vw, 7rem);
+  padding-bottom: clamp(6rem, 10vw, 8rem);
+}
+
+.connectLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
 }
 
 .connectHeading {
-  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
   font-weight: 300;
   letter-spacing: 0.01em;
   color: var(--text);
-  margin-bottom: 0.4rem;
 }
 
 .connectSub {
-  font-size: clamp(0.88rem, 1.6vw, 1rem);
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   font-weight: 300;
   color: var(--text-light);
-  margin-bottom: 1.25rem;
 }
 
-.connectButtons {
+.connectRight {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: flex-end;
+  gap: 0.4rem;
+  flex-shrink: 0;
 }
 
 .connectBtn {
-  font-size: clamp(0.88rem, 1.6vw, 1rem);
+  font-size: clamp(0.82rem, 1.4vw, 0.9rem);
   font-weight: 300;
   letter-spacing: 0.02em;
-  color: var(--text);
+  color: var(--text-light);
   transition: opacity 0.3s ease;
 }
 
@@ -447,8 +453,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100% + 2.5em);
-  height: 3.2em;
+  width: calc(100% + 2.4em);
+  height: 3em;
   pointer-events: none;
   overflow: visible;
 }
@@ -476,5 +482,15 @@
   .bioCardLeft,
   .bioCardRight {
     transform: translateY(32px);
+  }
+
+  .connect {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+
+  .connectRight {
+    align-items: flex-start;
   }
 }

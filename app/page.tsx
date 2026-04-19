@@ -148,14 +148,16 @@ export default function Home() {
       {/* ── Connect ── */}
       <FadeIn>
         <section id="connect" className={`${s.section} ${s.connect}`}>
-          <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
-          <p className={s.connectSub}>
-            <span className={s.connectCircleWrap}>
-              We can take it one step at a time.
-              <DrawCircle />
-            </span>
-          </p>
-          <div className={s.connectButtons}>
+          <div className={s.connectLeft}>
+            <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
+            <p className={s.connectSub}>
+              <span className={s.connectCircleWrap}>
+                We can take it one step at a time.
+                <DrawCircle />
+              </span>
+            </p>
+          </div>
+          <div className={s.connectRight}>
             <a
               href="https://instagram.com/aline.practice"
               target="_blank"
