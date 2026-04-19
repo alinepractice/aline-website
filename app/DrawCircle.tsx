@@ -41,15 +41,21 @@ export default function DrawCircle() {
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       className={s.connectCircleSvg}
-      viewBox="0 0 100 22"
+      viewBox="0 0 100 26"
       preserveAspectRatio="none"
     >
+      {/*
+        Perfect ellipse via 4-arc cubic bezier (k = 0.5523).
+        cx=50 cy=12 rx=46 ry=11.
+        Center sits slightly above the mathematical midpoint (13)
+        so the text reads as optically centered within the oval.
+      */}
       <path
         ref={pathRef}
-        d="M 51,2 C 74,1 97,5.5 97.5,11 C 97,16.5 73,20.5 49,20 C 25,20.5 3,16 2.5,11 C 3,5.5 28,1.5 51,2 Z"
+        d="M 50,1 C 75.4,1 96,5.9 96,12 C 96,18.1 75.4,23 50,23 C 24.6,23 4,18.1 4,12 C 4,5.9 24.6,1 50,1 Z"
         fill="none"
         stroke="#9A1124"
-        strokeWidth="1.5"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
         vectorEffect="non-scaling-stroke"
