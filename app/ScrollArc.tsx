@@ -114,7 +114,7 @@ export default function ScrollArc() {
         <rect
           x="0" y="0"
           width="10000" height="10000"
-          fill="#E9E6E2"
+          fill="#D1CBB4"
           clipPath="url(#oval-clip)"
         />
       </svg>
