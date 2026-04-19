@@ -53,10 +53,9 @@ export default function ScrollArc() {
 
       svg.setAttribute("viewBox", `0 0 ${vw} ${vh}`);
 
-      // Oval dimensions — wide enough to bleed off screen edges,
-      // tall enough to create soft transitions as it sweeps through
-      const rx = vw * 0.56 + 140; // bleeds off both sides → only top/bottom arcs visible
-      const ry = vh * 1.05;        // slightly taller than viewport
+      // Oval dimensions — stretched horizontally, flatter vertically
+      const rx = vw * 0.68 + 220; // bleeds well off both sides → arcs feel wide and sweeping
+      const ry = vh * 0.72;        // flatter than viewport → more elliptical, less circular
 
       // Center X: slightly left of center for organic asymmetry
       const cx = vw * 0.49;
@@ -115,7 +114,7 @@ export default function ScrollArc() {
         <rect
           x="0" y="0"
           width="10000" height="10000"
-          fill="#e5d9be"
+          fill="#E9E6E2"
           clipPath="url(#oval-clip)"
         />
       </svg>
