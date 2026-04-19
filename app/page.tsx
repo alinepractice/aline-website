@@ -147,20 +147,6 @@ export default function Home() {
       {/* ── Connect ── */}
       <FadeIn>
         <section id="connect" className={`${s.section} ${s.connect}`}>
-          {/* Arc top edge — echoes the scroll arc language */}
-          <div className={s.connectArcWrap} aria-hidden="true">
-            <svg
-              className={s.connectArcSvg}
-              viewBox="0 0 1440 72"
-              preserveAspectRatio="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M 0,52 Q 360,4 720,44 Q 1080,80 1440,28 L 1440,72 L 0,72 Z"
-                fill="#f5f0e6"
-              />
-            </svg>
-          </div>
           <p className={s.connectLabel}>get in touch</p>
           <a href="mailto:connect@alinepractice.com" className={s.connectLink}>
             connect@alinepractice.com
