@@ -102,21 +102,21 @@ export default function BlobTransition() {
     >
       <div
         style={{
-          maxWidth:  "580px",
+          maxWidth:  "720px",
           width:     "100%",
-          padding:   "0 clamp(1.5rem, 5vw, 6rem)",
+          padding:   "0 clamp(1.5rem, 5vw, 5rem)",
           textAlign: "center",
         }}
       >
         {/* Heading — forms word by word */}
         <p
           style={{
-            fontSize:      "clamp(1.12rem, 2.3vw, 1.38rem)",
+            fontSize:      "clamp(1.4rem, 3vw, 1.85rem)",
             fontWeight:    300,
-            lineHeight:    1.45,
-            letterSpacing: "0.01em",
+            lineHeight:    1.5,
+            letterSpacing: "0.015em",
             color:         "rgba(0, 0, 0, 0.82)",
-            marginBottom:  "2.5rem",
+            marginBottom:  "2.75rem",
           }}
         >
           {PHRASES.map(({ text }, i) => (
@@ -134,9 +134,9 @@ export default function BlobTransition() {
         <div
           ref={bodyRef}
           style={{
-            fontSize:   "clamp(0.95rem, 1.7vw, 1.05rem)",
+            fontSize:   "clamp(1rem, 1.9vw, 1.15rem)",
             fontWeight: 300,
-            lineHeight: 1.85,
+            lineHeight: 2.0,
             color:      "rgba(0, 0, 0, 0.82)",
             opacity:    0,
             willChange: "opacity, transform",
