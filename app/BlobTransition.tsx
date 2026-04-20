@@ -111,12 +111,12 @@ export default function BlobTransition() {
         {/* Heading — forms word by word */}
         <p
           style={{
-            fontSize:      "clamp(1.4rem, 3vw, 1.85rem)",
-            fontWeight:    300,
+            fontSize:      "clamp(1.6rem, 3.4vw, 2.15rem)",
+            fontWeight:    400,
             lineHeight:    1.5,
             letterSpacing: "0.015em",
             color:         "#9A1124",
-            marginBottom:  "2.5rem",
+            marginBottom:  "3.5rem",
           }}
         >
           {PHRASES.map(({ text }, i) => (
