@@ -396,9 +396,9 @@
   display: flex;
   flex-direction: column;
   gap: clamp(0.5rem, 1vw, 0.75rem);
-  padding-top: clamp(1rem, 2vw, 1.4rem);
-  padding-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
-  background: #F3EEDA;
+  padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2rem);
+  background: #26231E;
 }
 
 
@@ -406,7 +406,7 @@
   font-size: clamp(1.265rem, 2.2vw, 1.54rem);
   font-weight: 400;
   letter-spacing: 0.03em;
-  color: rgba(0, 0, 0, 0.88);
+  color: rgba(243, 238, 218, 0.95);
 }
 
 .connectRow {
@@ -418,7 +418,7 @@
 .connectSub {
   font-size: clamp(0.82rem, 1.35vw, 0.94rem);
   font-weight: 300;
-  color: rgba(0, 0, 0, 0.58);
+  color: rgba(243, 238, 218, 0.5);
   white-space: nowrap;
 }
 
@@ -434,7 +434,7 @@
   font-size: clamp(0.78rem, 1.25vw, 0.88rem);
   font-weight: 300;
   letter-spacing: 0.02em;
-  color: rgba(0, 0, 0, 0.52);
+  color: rgba(243, 238, 218, 0.42);
   transition: opacity 0.3s ease;
 }
 
