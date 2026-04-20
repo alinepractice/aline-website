@@ -154,7 +154,8 @@ export default function BlobTransition() {
           enjoyment, we join in moments and follow the child&rsquo;s lead. By
           honoring individual differences, we support each child&rsquo;s
           unique way of experiencing the world and shape how we align our
-          approach across ABA and speech therapy.
+          approach across<br />
+          ABA and speech therapy.
         </div>
       </div>
     </div>
