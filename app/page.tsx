@@ -4,6 +4,7 @@ import FadeIn from "./FadeIn";
 import BioCard from "./BioCard";
 import StaggerList from "./StaggerList";
 import DrawCircle from "./DrawCircle";
+import BlobParticles from "./BlobParticles";
 
 export default function Home() {
   return (
@@ -17,9 +18,10 @@ export default function Home() {
       </nav>
 
       {/* ── Header ── */}
-      <header className={s.header}>
+      <header className={s.header} data-hero>
         <svg
           className={s.heroLogo}
+          data-hero-logo
           viewBox="246 269 500 550"
           xmlns="http://www.w3.org/2000/svg"
           shapeRendering="geometricPrecision"
@@ -52,7 +54,7 @@ export default function Home() {
       <FadeIn>
         <section id="values-section" className={`${s.section} ${s.values}`}>
           <div className={s.valuesInner}>
-            <h2 className={s.valuesHeading}>
+            <h2 className={s.valuesHeading} data-values-heading>
               At Aline, we are relationship driven.
             </h2>
 
@@ -169,6 +171,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <BlobParticles />
     </>
   );
 }
