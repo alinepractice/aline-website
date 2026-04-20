@@ -9,7 +9,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem var(--side-padding);
-  /* Fully transparent — no background, no blur, no lines */
 }
 
 .navConnect {
@@ -417,10 +416,8 @@
   color: var(--text);
 }
 
-/* Single horizontal row: subtext left, links right */
 .connectRow {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -468,7 +465,6 @@
   pointer-events: none;
   overflow: visible;
 }
-
 
 /* ── Mobile ── */
 @media (max-width: 680px) {

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import s from "./page.module.css";
 import ValueCard from "./ValueCard";
 import FadeIn from "./FadeIn";
