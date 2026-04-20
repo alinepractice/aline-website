@@ -143,8 +143,9 @@ export default function BlobTransition() {
             willChange: "opacity, transform",
           }}
         >
-          Our work is grounded in connection and in noticing opportunities
-          within everyday moments. Growth happens through shared experiences,
+          Our work is grounded in connection<br />
+          and in noticing opportunities within everyday moments.<br />
+          Growth happens through shared experiences,
           through being present, and in how we respond to one another.
           Learning unfolds within relationships. By staying attuned, we
           recognize meaningful moments and support them with intention. We
