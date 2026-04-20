@@ -88,22 +88,8 @@ export default function Home() {
             />
           </div>
 
-          <p className={`${s.valuesText} ${s.valuesBody}`}>
-            Our work is grounded in connection and in noticing opportunities
-            within everyday moments. Growth happens through shared experiences,
-            through being present, and in how we respond to one another.
-            Learning unfolds within relationships. By staying attuned, we
-            recognize meaningful moments and support them with intention. We
-            prioritize pausing and tuning in, creating space to better
-            understand and respond to each individual&rsquo;s sensory and
-            emotional experience. Through respectful presence and shared
-            enjoyment, we join in moments and follow the child&rsquo;s lead. By
-            honoring individual differences, we support each child&rsquo;s
-            unique way of experiencing the world and shape how we align our
-            approach across ABA and speech therapy.
-          </p>
-          </div>
-        </section>
+        </div>
+      </section>
 
       {/* ── Bios ── */}
       <section className={`${s.section} ${s.bios}`}>

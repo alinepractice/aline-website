@@ -19,8 +19,6 @@ const appear = (prog: number, start: number, dur = 0.13) =>
 export default function BlobTransition() {
   const spanRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const bodyRef  = useRef<HTMLDivElement>(null);
-  const guideRef = useRef<HTMLParagraphElement>(null);
-  const gridRef  = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Reduced-motion: show everything immediately, skip animation
@@ -31,12 +29,10 @@ export default function BlobTransition() {
         w.style.transform = "none";
         w.style.filter    = "none";
       });
-      [bodyRef, guideRef, gridRef].forEach(r => {
-        if (r.current) {
-          r.current.style.opacity   = "1";
-          r.current.style.transform = "none";
-        }
-      });
+      if (bodyRef.current) {
+        bodyRef.current.style.opacity   = "1";
+        bodyRef.current.style.transform = "none";
+      }
       return;
     }
 
@@ -74,19 +70,6 @@ export default function BlobTransition() {
         bodyRef.current.style.transform = `translateY(${(1 - t) * 10}px)`;
       }
 
-      // Guide label
-      if (guideRef.current) {
-        const t = appear(prog, 0.74);
-        guideRef.current.style.opacity   = `${t}`;
-        guideRef.current.style.transform = `translateY(${(1 - t) * 8}px)`;
-      }
-
-      // Values names
-      if (gridRef.current) {
-        const t = appear(prog, 0.82);
-        gridRef.current.style.opacity   = `${t}`;
-        gridRef.current.style.transform = `translateY(${(1 - t) * 8}px)`;
-      }
     }
 
     function onScroll() {
@@ -147,51 +130,7 @@ export default function BlobTransition() {
           ))}
         </p>
 
-        {/* Guide label — appears after heading */}
-        <p
-          ref={guideRef}
-          style={{
-            fontSize:      "0.75rem",
-            fontWeight:    400,
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-            color:         "rgba(0, 0, 0, 0.32)",
-            opacity:       0,
-            marginBottom:  "2rem",
-            willChange:    "opacity, transform",
-          }}
-        >
-          The values that guide our approach
-        </p>
-
-        {/* Values */}
-        <div
-          ref={gridRef}
-          style={{
-            display:             "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap:                 "0 clamp(1rem, 3vw, 2rem)",
-            textAlign:           "center",
-            opacity:             0,
-            marginBottom:        "clamp(3rem, 5vw, 4.5rem)",
-            willChange:          "opacity, transform",
-          }}
-        >
-          {["Flexibility", "Independence", "Bravery", "Safe Choices"].map(name => (
-            <div
-              key={name}
-              style={{
-                fontSize:   "clamp(1rem, 1.9vw, 1.15rem)",
-                fontWeight: 400,
-                color:      "rgba(0, 0, 0, 0.82)",
-              }}
-            >
-              {name}
-            </div>
-          ))}
-        </div>
-
-        {/* Body paragraph — appears last */}
+        {/* Body paragraph — appears after heading */}
         <div
           ref={bodyRef}
           style={{
