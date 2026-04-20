@@ -146,8 +146,8 @@ export default function Home() {
 
       {/* ── Connect ── */}
       <section id="connect" className={`${s.section} ${s.connect}`}>
+        <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
         <div className={s.connectRow}>
-          <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
           <p className={s.connectSub}>
             <span className={s.connectCircleWrap}>
               We can take it one step at a time.

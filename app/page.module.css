@@ -393,6 +393,9 @@
 
 /* ── Connect ── */
 .connect {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
   padding-top: clamp(1rem, 2vw, 1.4rem);
   padding-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
   background: #F3EEDA;
@@ -400,22 +403,19 @@
 
 
 .connectHeading {
-  flex: 1;
   font-size: clamp(1.265rem, 2.2vw, 1.54rem);
   font-weight: 300;
   letter-spacing: 0.01em;
   color: rgba(0, 0, 0, 0.88);
-  white-space: nowrap;
 }
 
 .connectRow {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
 
 .connectSub {
-  flex: 1;
-  text-align: center;
   font-size: clamp(1rem, 1.7vw, 1.15rem);
   font-weight: 300;
   color: rgba(0, 0, 0, 0.88);
@@ -485,11 +485,7 @@
   .connectRow {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.9rem;
-  }
-
-  .connectHeading {
-    white-space: normal;
+    gap: 0.75rem;
   }
 
   .connectSub {
