@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 
-// Cream → warm greige  (#f3eeda → #D1CBB4)
-const FROM = { r: 243, g: 238, b: 218 };
-const TO   = { r: 209, g: 203, b: 180 };
+// Warm cream → deep warm tan  (#EDE4D0 → #B8AA8E)
+const FROM = { r: 237, g: 228, b: 208 };
+const TO   = { r: 184, g: 170, b: 142 };
 
 function smooth(t: number) {
   return t * t * (3 - 2 * t);
