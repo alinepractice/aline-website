@@ -144,23 +144,19 @@ export default function BlobTransition() {
             willChange: "opacity, transform",
           }}
         >
-          <p style={{ marginBottom: "1.6rem" }}>
+          <p>
             Our work is grounded in connection and in noticing opportunities
             within everyday moments. Growth happens through shared experiences,
             through being present, and in how we respond to one another.
-            Learning unfolds within relationships.
-          </p>
-          <p style={{ marginBottom: "1.6rem" }}>
-            By staying attuned, we recognize meaningful moments and support
-            them with intention. We prioritize pausing and tuning in, creating
-            space to better understand and respond to each individual&rsquo;s
-            sensory and emotional experience.
-          </p>
-          <p>
-            Through respectful presence and shared enjoyment, we join in
-            moments and follow the child&rsquo;s lead. By honoring individual
-            differences, we support each child&rsquo;s unique way of
-            experiencing the world and shape how we align our approach across
+            Learning unfolds within relationships. By staying attuned, we
+            recognize meaningful moments and support them with intention. We
+            prioritize pausing and tuning in, creating space to better
+            understand and respond to each individual&rsquo;s sensory and
+            emotional experience. Through respectful presence and shared
+            enjoyment, we join in moments and follow the child&rsquo;s lead. By
+            honoring individual differences, we support each child&rsquo;s
+            unique way of experiencing the world and shape how we align our
+            approach across<br />
             ABA and speech therapy.
           </p>
         </div>
