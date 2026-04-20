@@ -115,7 +115,7 @@ export default function BlobTransition() {
             fontWeight:    300,
             lineHeight:    1.5,
             letterSpacing: "0.015em",
-            color:         "rgba(0, 0, 0, 0.92)",
+            color:         "#9A1124",
             marginBottom:  "2.5rem",
           }}
         >
