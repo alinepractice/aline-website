@@ -67,25 +67,25 @@ export default function BlobTransition() {
         w.style.filter    = `blur(${(1 - t) * 5}px)`;
       });
 
-      // Guide label — appears once heading has settled
-      if (guideRef.current) {
+      // Body paragraph — appears once heading has settled
+      if (bodyRef.current) {
         const t = appear(prog, 0.60);
+        bodyRef.current.style.opacity   = `${t}`;
+        bodyRef.current.style.transform = `translateY(${(1 - t) * 10}px)`;
+      }
+
+      // Guide label
+      if (guideRef.current) {
+        const t = appear(prog, 0.74);
         guideRef.current.style.opacity   = `${t}`;
-        guideRef.current.style.transform = `translateY(${(1 - t) * 10}px)`;
+        guideRef.current.style.transform = `translateY(${(1 - t) * 8}px)`;
       }
 
       // Values names
       if (gridRef.current) {
-        const t = appear(prog, 0.70);
+        const t = appear(prog, 0.82);
         gridRef.current.style.opacity   = `${t}`;
         gridRef.current.style.transform = `translateY(${(1 - t) * 8}px)`;
-      }
-
-      // Body paragraph
-      if (bodyRef.current) {
-        const t = appear(prog, 0.80);
-        bodyRef.current.style.opacity   = `${t}`;
-        bodyRef.current.style.transform = `translateY(${(1 - t) * 8}px)`;
       }
     }
 
