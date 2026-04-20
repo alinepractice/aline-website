@@ -420,7 +420,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: clamp(1.5rem, 4vw, 4rem);
 }
 
 .connectSub {
@@ -428,14 +428,7 @@
   font-weight: 300;
   color: var(--text-light);
   white-space: nowrap;
-}
-
-.connectLinks {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.3rem;
-  flex-shrink: 0;
+  flex: 1;
 }
 
 .connectBtn {
@@ -493,15 +486,10 @@
   .connectRow {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .connectSub {
     white-space: normal;
-  }
-
-  .connectLinks {
-    align-items: flex-start;
-    gap: 0.35rem;
   }
 }
