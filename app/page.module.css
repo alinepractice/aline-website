@@ -394,27 +394,27 @@
 
 /* ── Connect ── */
 .connect {
-  /* padding-top: 0 so the divider sits flush at the section edge */
-  padding-top: 0;
+  /* Space above the divider */
+  padding-top: clamp(3.5rem, 7vw, 5rem);
   padding-bottom: clamp(5rem, 9vw, 7rem);
 }
 
 .connectDivider {
   border: none;
-  /* Exactly 1px — rgba opacity keeps it soft, never bold */
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  margin: 0 calc(-1 * var(--side-padding));
+  /* 1px only — soft, light, never harsh */
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  /* margin shorthand: sides use --side-padding breakout, bottom adds space below line */
+  margin: 0 calc(-1 * var(--side-padding)) clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .connectBody {
-  padding-top: clamp(2rem, 4vw, 2.75rem);
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 1.8vw, 1.35rem);
+  gap: clamp(1.2rem, 2vw, 1.6rem);
 }
 
 .connectHeading {
-  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
   font-weight: 300;
   letter-spacing: 0.01em;
   color: var(--text);
@@ -430,7 +430,7 @@
 }
 
 .connectSub {
-  font-size: clamp(0.82rem, 1.4vw, 0.92rem);
+  font-size: clamp(0.8rem, 1.35vw, 0.9rem);
   font-weight: 300;
   color: var(--text-light);
   white-space: nowrap;
@@ -440,15 +440,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.25rem;
+  gap: 0.3rem;
   flex-shrink: 0;
 }
 
 .connectBtn {
-  font-size: clamp(0.8rem, 1.3vw, 0.88rem);
+  font-size: clamp(0.78rem, 1.2vw, 0.86rem);
   font-weight: 300;
   letter-spacing: 0.02em;
-  color: rgba(0, 0, 0, 0.42);
+  color: rgba(0, 0, 0, 0.38);
   transition: opacity 0.3s ease;
 }
 
