@@ -4,7 +4,7 @@ import FadeIn from "./FadeIn";
 import BioCard from "./BioCard";
 import StaggerList from "./StaggerList";
 import DrawCircle from "./DrawCircle";
-import BlobParticles from "./BlobParticles";
+import BlobTransition from "./BlobTransition";
 
 export default function Home() {
   return (
@@ -17,38 +17,45 @@ export default function Home() {
         </a>
       </nav>
 
-      {/* ── Header ── */}
-      <header className={s.header} data-hero>
-        <svg
-          className={s.heroLogo}
-          data-hero-logo
-          viewBox="246 269 500 550"
-          xmlns="http://www.w3.org/2000/svg"
-          shapeRendering="geometricPrecision"
-          preserveAspectRatio="xMidYMid meet"
-          aria-label="Aline logo"
-        >
-          <g className={s.blobTranslate}>
-            <g className={s.blobBounce}>
-              <g className={s.blobRotate}>
-                <path
-                  fill="#000000"
-                  d="M 283.957 519.5625 C 282.988 466.8086 304.902 410.4219 353.7266 366.0234 C 388.414 334.4805 429.1719 313.625 476.3594 308.9258 C 537.0742 302.8828 582.8828 328.1094 613.9141 379.9531 C 633.3516 412.418 639.6133 448.2852 637.5664 485.793 C 635.6523 520.8164 626.5273 554.2031 614.3203 586.8242 C 598.8398 628.1797 579.6328 667.6992 553.6992 703.6055 C 537.6563 725.8164 518.0859 744.4023 493.3789 756.8828 C 450.4531 778.5625 407.0156 773.1406 370.5625 741.8242 C 307.5273 687.6719 285.4219 599.4336 283.957 519.5625 Z"
+      {/* ── Hero / Transition zone ── */}
+      <div data-transition-zone style={{ height: "260vh" }}>
+        <div style={{ position: "sticky", top: 0, height: "100vh" }}>
+          <div style={{ position: "relative", height: "100%" }}>
+            <header className={s.header} data-hero>
+              <svg
+                className={s.heroLogo}
+                data-hero-logo
+                viewBox="246 269 500 550"
+                xmlns="http://www.w3.org/2000/svg"
+                shapeRendering="geometricPrecision"
+                preserveAspectRatio="xMidYMid meet"
+                aria-label="Aline logo"
+              >
+                <g className={s.blobTranslate}>
+                  <g className={s.blobBounce}>
+                    <g className={s.blobRotate}>
+                      <path
+                        fill="#000000"
+                        d="M 283.957 519.5625 C 282.988 466.8086 304.902 410.4219 353.7266 366.0234 C 388.414 334.4805 429.1719 313.625 476.3594 308.9258 C 537.0742 302.8828 582.8828 328.1094 613.9141 379.9531 C 633.3516 412.418 639.6133 448.2852 637.5664 485.793 C 635.6523 520.8164 626.5273 554.2031 614.3203 586.8242 C 598.8398 628.1797 579.6328 667.6992 553.6992 703.6055 C 537.6563 725.8164 518.0859 744.4023 493.3789 756.8828 C 450.4531 778.5625 407.0156 773.1406 370.5625 741.8242 C 307.5273 687.6719 285.4219 599.4336 283.957 519.5625 Z"
+                      />
+                    </g>
+                  </g>
+                </g>
+                <circle
+                  className={s.ring}
+                  cx="672.8"
+                  cy="737.4"
+                  r="34.3"
+                  fill="none"
+                  stroke="#981327"
+                  strokeWidth="5.2"
                 />
-              </g>
-            </g>
-          </g>
-          <circle
-            className={s.ring}
-            cx="672.8"
-            cy="737.4"
-            r="34.3"
-            fill="none"
-            stroke="#981327"
-            strokeWidth="5.2"
-          />
-        </svg>
-      </header>
+              </svg>
+            </header>
+            <BlobTransition />
+          </div>
+        </div>
+      </div>
 
       {/* ── Values ── */}
       <FadeIn>
@@ -171,7 +178,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <BlobParticles />
     </>
   );
 }
