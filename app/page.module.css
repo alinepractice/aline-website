@@ -403,23 +403,19 @@
   margin: 0 calc(-1 * var(--side-padding)) clamp(0.5rem, 1vw, 0.7rem);
 }
 
-.connectBody {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.7rem, 1.4vw, 0.95rem);
-}
-
 .connectHeading {
   font-size: clamp(1.15rem, 2vw, 1.4rem);
   font-weight: 300;
   letter-spacing: 0.01em;
   color: var(--text);
+  white-space: nowrap;
 }
 
 .connectRow {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 3rem);
 }
 
 .connectSub {
@@ -491,7 +487,11 @@
   .connectRow {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.9rem;
+  }
+
+  .connectHeading {
+    white-space: normal;
   }
 
   .connectSub {
@@ -499,6 +499,6 @@
   }
 
   .connectLinks {
-    gap: 1rem;
+    gap: 0.75rem;
   }
 }
