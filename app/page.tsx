@@ -58,14 +58,14 @@ export default function Home() {
       </div>
 
       {/* ── Values ── */}
-      <FadeIn>
-        <section id="values-section" className={`${s.section} ${s.values}`}>
-          <div className={s.valuesInner}>
-            <h2 className={s.valuesHeading} data-values-heading>
-              At Aline, we are relationship driven.
-            </h2>
+      <section id="values-section" className={`${s.section} ${s.values}`}>
+        <div className={s.valuesInner}>
+          {/* Heading shown in the scroll transition; kept here for accessibility only */}
+          <h2 className={s.valuesHeadingHidden} aria-hidden="true">
+            At Aline, we are relationship driven.
+          </h2>
 
-            <p className={`${s.valuesText} ${s.valuesBody}`}>
+          <p className={`${s.valuesText} ${s.valuesBody}`}>
               Our work is grounded in connection and in noticing opportunities
               within everyday moments. Growth happens through shared experiences,
               through being present, and in how we respond to one another.
@@ -104,7 +104,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </FadeIn>
 
       {/* ── Bios ── */}
       <section className={`${s.section} ${s.bios}`}>
