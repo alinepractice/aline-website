@@ -393,20 +393,20 @@
 
 /* ── Connect ── */
 .connect {
-  padding-top: clamp(1.8rem, 3.6vw, 2.7rem);
-  padding-bottom: clamp(2.25rem, 4.5vw, 3.15rem);
+  padding-top: clamp(1.62rem, 3.24vw, 2.43rem);
+  padding-bottom: clamp(2.025rem, 4.05vw, 2.835rem);
 }
 
 .connectDivider {
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.07);
-  margin: 0 calc(-1 * var(--side-padding)) clamp(0.675rem, 1.35vw, 0.9rem);
+  margin: 0 calc(-1 * var(--side-padding)) clamp(0.61rem, 1.22vw, 0.81rem);
 }
 
 .connectBody {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.9rem, 1.8vw, 1.25rem);
+  gap: clamp(0.81rem, 1.62vw, 1.13rem);
 }
 
 .connectHeading {
