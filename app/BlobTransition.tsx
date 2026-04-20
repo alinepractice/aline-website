@@ -102,9 +102,9 @@ export default function BlobTransition() {
     >
       <div
         style={{
-          maxWidth:  "720px",
+          maxWidth:  "600px",
           width:     "100%",
-          padding:   "0 clamp(1.5rem, 5vw, 5rem)",
+          padding:   "0 clamp(1.5rem, 3vw, 2.5rem)",
           textAlign: "center",
         }}
       >
