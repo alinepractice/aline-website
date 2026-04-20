@@ -395,9 +395,7 @@
 .connect {
   padding-top: clamp(1rem, 2vw, 1.4rem);
   padding-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
-  background: rgba(255, 255, 255, 0.09);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: #F3EEDA;
 }
 
 
