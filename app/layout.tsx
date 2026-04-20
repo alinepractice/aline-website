@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-import ScrollArc from "./ScrollArc";
 
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
@@ -23,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sourceSans.className}>
-        <ScrollArc />
         {children}
       </body>
     </html>

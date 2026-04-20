@@ -19,19 +19,19 @@ export default function FadeIn({
     const rect = el.getBoundingClientRect();
     const vh = window.innerHeight;
 
-    // Progress: 0 when bottom edge enters viewport, 1 when 45% in view
+    // Progress: 0 when bottom edge enters viewport, 1 when 50% in view
     const progress = Math.min(
       1,
-      Math.max(0, (vh - rect.top) / (vh * 0.55))
+      Math.max(0, (vh - rect.top) / (vh * 0.5))
     );
 
-    // Gentle cubic ease — guide not grab
-    const eased = 1 - Math.pow(1 - progress, 3);
+    // Springy quart ease — snappy entry, settles softly
+    const eased = 1 - Math.pow(1 - progress, 4);
 
-    // Subtle — motion supports flow, doesn't perform
-    const translateY = (1 - eased) * 36;
-    const scale = 0.97 + eased * 0.03;
-    const rotateX = (1 - eased) * 1.5;
+    // More travel + a touch of tilt for liveliness
+    const translateY = (1 - eased) * 52;
+    const scale = 0.96 + eased * 0.04;
+    const rotateX = (1 - eased) * 2.5;
 
     el.style.opacity = `${Math.min(1, eased * 1.1)}`;
     el.style.transform = `perspective(1200px) translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
