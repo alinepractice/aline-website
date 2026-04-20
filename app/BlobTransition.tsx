@@ -2,29 +2,40 @@
 
 import { useEffect, useRef } from "react";
 
-// Heading split into phrases — each settles independently as you scroll
 const PHRASES = [
-  { text: "At",           start: 0.08 },
-  { text: "Aline,",       start: 0.17 },
-  { text: "we are",       start: 0.27 },
-  { text: "relationship", start: 0.38 },
-  { text: "driven.",      start: 0.50 },
+  { text: "At",           start: 0.06 },
+  { text: "Aline,",       start: 0.14 },
+  { text: "we are",       start: 0.22 },
+  { text: "relationship", start: 0.30 },
+  { text: "driven.",      start: 0.40 },
 ];
+const PHRASE_DUR = 0.16;
 
-const DUR   = 0.18; // each phrase takes 18% of scroll-progress to fully resolve
-const ease3 = (t: number) => 1 - (1 - t) ** 3;
+const ease3  = (t: number) => 1 - (1 - t) ** 3;
+const clamp  = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
+const appear = (prog: number, start: number, dur = 0.13) =>
+  ease3(clamp((prog - start) / dur, 0, 1));
 
 export default function BlobTransition() {
   const spanRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const bodyRef  = useRef<HTMLDivElement>(null);
+  const guideRef = useRef<HTMLParagraphElement>(null);
+  const gridRef  = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Respect reduced-motion: show all words immediately, skip scroll binding
+    // Reduced-motion: show everything immediately, skip animation
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       spanRefs.current.forEach(w => {
         if (!w) return;
         w.style.opacity   = "1";
         w.style.transform = "none";
         w.style.filter    = "none";
+      });
+      [bodyRef, guideRef, gridRef].forEach(r => {
+        if (r.current) {
+          r.current.style.opacity   = "1";
+          r.current.style.transform = "none";
+        }
       });
       return;
     }
@@ -41,28 +52,41 @@ export default function BlobTransition() {
       if (!zone) return;
 
       const scrollZone = zone.offsetHeight - window.innerHeight;
-      const progress   = scrollZone > 0
-        ? Math.min(1, Math.max(0, scroll / scrollZone))
-        : 0;
+      const prog       = scrollZone > 0 ? clamp(scroll / scrollZone, 0, 1) : 0;
 
-      // Logo dissolves in the first 45% of the transition
+      // Logo dissolves in first 38% of scroll
       const logo = document.querySelector<SVGSVGElement>("[data-hero-logo]");
-      if (logo) {
-        logo.style.opacity = `${Math.max(0, 1 - progress / 0.45)}`;
-      }
+      if (logo) logo.style.opacity = `${Math.max(0, 1 - prog / 0.38)}`;
 
-      // Phrases form progressively, then gently fade out in the last 15%
-      // so the sticky zone exits cleanly into the real values section
-      const fadeOut = progress > 0.85 ? (1 - progress) / 0.15 : 1;
-
+      // Heading phrases form word by word
       spanRefs.current.forEach((w, i) => {
         if (!w) return;
-        const raw = Math.min(1, Math.max(0, (progress - PHRASES[i].start) / DUR));
-        const t   = ease3(raw);
-        w.style.opacity   = `${t * fadeOut}`;
-        w.style.transform = `translateY(${(1 - t) * 18}px)`;
+        const t = ease3(clamp((prog - PHRASES[i].start) / PHRASE_DUR, 0, 1));
+        w.style.opacity   = `${t}`;
+        w.style.transform = `translateY(${(1 - t) * 16}px)`;
         w.style.filter    = `blur(${(1 - t) * 5}px)`;
       });
+
+      // Guide label — appears once heading has settled
+      if (guideRef.current) {
+        const t = appear(prog, 0.60);
+        guideRef.current.style.opacity   = `${t}`;
+        guideRef.current.style.transform = `translateY(${(1 - t) * 10}px)`;
+      }
+
+      // Values names
+      if (gridRef.current) {
+        const t = appear(prog, 0.70);
+        gridRef.current.style.opacity   = `${t}`;
+        gridRef.current.style.transform = `translateY(${(1 - t) * 8}px)`;
+      }
+
+      // Body paragraph
+      if (bodyRef.current) {
+        const t = appear(prog, 0.80);
+        bodyRef.current.style.opacity   = `${t}`;
+        bodyRef.current.style.transform = `translateY(${(1 - t) * 8}px)`;
+      }
     }
 
     function onScroll() {
@@ -83,7 +107,6 @@ export default function BlobTransition() {
 
   return (
     <div
-      aria-hidden="true"
       style={{
         position:       "absolute",
         inset:          0,
@@ -94,29 +117,106 @@ export default function BlobTransition() {
         zIndex:         5,
       }}
     >
-      <p
+      <div
         style={{
-          fontSize:      "clamp(1.12rem, 2.3vw, 1.38rem)",
-          fontWeight:    300,
-          lineHeight:    1.45,
-          letterSpacing: "0.01em",
-          textAlign:     "center",
-          maxWidth:      "580px",
-          padding:       "0 clamp(1.5rem, 5vw, 6rem)",
-          color:         "rgba(0, 0, 0, 0.82)",
-          margin:        0,
+          maxWidth:  "580px",
+          width:     "100%",
+          padding:   "0 clamp(1.5rem, 5vw, 6rem)",
+          textAlign: "center",
         }}
       >
-        {PHRASES.map(({ text }, i) => (
-          <span
-            key={i}
-            ref={el => { spanRefs.current[i] = el; }}
-            style={{ display: "inline", opacity: 0, willChange: "opacity, transform, filter" }}
-          >
-            {text}{" "}
-          </span>
-        ))}
-      </p>
+        {/* Heading — forms word by word */}
+        <p
+          style={{
+            fontSize:      "clamp(1.12rem, 2.3vw, 1.38rem)",
+            fontWeight:    300,
+            lineHeight:    1.45,
+            letterSpacing: "0.01em",
+            color:         "rgba(0, 0, 0, 0.82)",
+            marginBottom:  "2.5rem",
+          }}
+        >
+          {PHRASES.map(({ text }, i) => (
+            <span
+              key={i}
+              ref={el => { spanRefs.current[i] = el; }}
+              style={{ display: "inline", opacity: 0, willChange: "opacity, transform, filter" }}
+            >
+              {text}{" "}
+            </span>
+          ))}
+        </p>
+
+        {/* Guide label — appears after heading */}
+        <p
+          ref={guideRef}
+          style={{
+            fontSize:      "0.75rem",
+            fontWeight:    400,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color:         "rgba(0, 0, 0, 0.32)",
+            opacity:       0,
+            marginBottom:  "2rem",
+            willChange:    "opacity, transform",
+          }}
+        >
+          The values that guide our approach
+        </p>
+
+        {/* Values */}
+        <div
+          ref={gridRef}
+          style={{
+            display:             "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap:                 "0 clamp(1rem, 3vw, 2rem)",
+            textAlign:           "center",
+            opacity:             0,
+            marginBottom:        "clamp(3rem, 5vw, 4.5rem)",
+            willChange:          "opacity, transform",
+          }}
+        >
+          {["Flexibility", "Independence", "Bravery", "Safe Choices"].map(name => (
+            <div
+              key={name}
+              style={{
+                fontSize:   "clamp(1rem, 1.9vw, 1.15rem)",
+                fontWeight: 400,
+                color:      "rgba(0, 0, 0, 0.82)",
+              }}
+            >
+              {name}
+            </div>
+          ))}
+        </div>
+
+        {/* Body paragraph — appears last */}
+        <div
+          ref={bodyRef}
+          style={{
+            fontSize:   "clamp(0.95rem, 1.7vw, 1.05rem)",
+            fontWeight: 300,
+            lineHeight: 1.85,
+            color:      "rgba(0, 0, 0, 0.82)",
+            opacity:    0,
+            willChange: "opacity, transform",
+          }}
+        >
+          Our work is grounded in connection and in noticing opportunities
+          within everyday moments. Growth happens through shared experiences,
+          through being present, and in how we respond to one another.
+          Learning unfolds within relationships. By staying attuned, we
+          recognize meaningful moments and support them with intention. We
+          prioritize pausing and tuning in, creating space to better
+          understand and respond to each individual&rsquo;s sensory and
+          emotional experience. Through respectful presence and shared
+          enjoyment, we join in moments and follow the child&rsquo;s lead. By
+          honoring individual differences, we support each child&rsquo;s
+          unique way of experiencing the world and shape how we align our
+          approach across ABA and speech therapy.
+        </div>
+      </div>
     </div>
   );
 }
