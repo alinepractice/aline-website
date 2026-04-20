@@ -157,17 +157,19 @@ export default function Home() {
                   <DrawCircle />
                 </span>
               </p>
-              <a
-                href="https://instagram.com/aline.practice"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={s.connectBtn}
-              >
-                @aline.practice
-              </a>
-              <a href="mailto:connect@alinepractice.com" className={s.connectBtn}>
-                connect@alinepractice.com
-              </a>
+              <div className={s.connectLinks}>
+                <a
+                  href="https://instagram.com/aline.practice"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={s.connectBtn}
+                >
+                  @aline.practice
+                </a>
+                <a href="mailto:connect@alinepractice.com" className={s.connectBtn}>
+                  connect@alinepractice.com
+                </a>
+              </div>
             </div>
           </div>
         </section>
