@@ -394,23 +394,20 @@
 
 /* ── Connect ── */
 .connect {
-  /* Space above the divider */
-  padding-top: clamp(3.5rem, 7vw, 5rem);
-  padding-bottom: clamp(5rem, 9vw, 7rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .connectDivider {
   border: none;
-  /* 1px only — soft, light, never harsh */
   border-top: 1px solid rgba(0, 0, 0, 0.07);
-  /* margin shorthand: sides use --side-padding breakout, bottom adds space below line */
-  margin: 0 calc(-1 * var(--side-padding)) clamp(2.5rem, 5vw, 3.5rem);
+  margin: 0 calc(-1 * var(--side-padding)) clamp(1.5rem, 3vw, 2rem);
 }
 
 .connectBody {
   display: flex;
   flex-direction: column;
-  gap: clamp(1.2rem, 2vw, 1.6rem);
+  gap: clamp(0.9rem, 1.5vw, 1.2rem);
 }
 
 .connectHeading {
@@ -426,7 +423,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .connectSub {
