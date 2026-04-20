@@ -137,6 +137,7 @@ export default function BlobTransition() {
             fontSize:   "clamp(1rem, 1.9vw, 1.15rem)",
             fontWeight: 300,
             lineHeight: 2.0,
+            textAlign:  "left",
             color:      "rgba(0, 0, 0, 0.82)",
             textWrap:   "pretty",
             opacity:    0,
