@@ -3,6 +3,7 @@ import ValuesGrid from "./ValuesGrid";
 import FadeIn from "./FadeIn";
 import BioCard from "./BioCard";
 import ServiceCarousel from "./ServiceCarousel";
+import TitleBubble from "./TitleBubble";
 import BlobTransition from "./BlobTransition";
 
 export default function Home() {
@@ -64,9 +65,7 @@ export default function Home() {
             At Aline, we are relationship driven.
           </h2>
 
-          <p className={s.valuesGuide}>
-            Values and approach
-          </p>
+          <TitleBubble />
 
           <ValuesGrid />
 

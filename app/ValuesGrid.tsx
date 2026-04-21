@@ -22,11 +22,13 @@ export default function ValuesGrid() {
   // Stable random offsets, generated once per mount
   const offsets = useRef(
     VALUES.map((_, i) => ({
-      fromLeft: Math.random() < 0.5,
-      xDist:    340 + Math.random() * 200,     // 340–540 px — clearly off-screen
-      yDrift:   (Math.random() - 0.5) * 52,    // ±26 px arc — more organic path
-      delay:    0.16 * i + Math.random() * 0.2, // 0 → ~1.5 s stagger
-      glare:    Math.random() < 0.55,           // ~half get a second line glare
+      fromLeft:    Math.random() < 0.5,
+      xDist:       340 + Math.random() * 200,
+      yDrift:      (Math.random() - 0.5) * 64,    // ±32 px — wider arc
+      delay:       0.16 * i + Math.random() * 0.2,
+      glare:       Math.random() < 0.55,
+      bubbleSize:  Math.round(44 + Math.random() * 40), // 44–84 px
+      bubbleShape: Math.floor(Math.random() * 6),        // 0–5
     }))
   );
 
@@ -51,7 +53,7 @@ export default function ValuesGrid() {
   return (
     <div ref={gridRef} className={s.principlesGrid}>
       {VALUES.map(({ name, description }, i) => {
-        const { fromLeft, xDist, yDrift, delay, glare } = offsets.current[i];
+        const { fromLeft, xDist, yDrift, delay, glare, bubbleSize, bubbleShape } = offsets.current[i];
         return (
           <ValueCard
             key={name}
@@ -63,6 +65,8 @@ export default function ValuesGrid() {
             yDrift={yDrift}
             delay={delay}
             glare={glare}
+            bubbleSize={bubbleSize}
+            bubbleShape={bubbleShape}
           />
         );
       })}

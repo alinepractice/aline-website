@@ -18,6 +18,8 @@ export default function ValueCard({
   yDrift,
   delay,
   glare = false,
+  bubbleSize = 62,
+  bubbleShape = 0,
 }: {
   name: string;
   description: string;
@@ -25,8 +27,10 @@ export default function ValueCard({
   fromLeft: boolean;
   xDist: number;
   yDrift: number;
-  delay: number; // seconds
+  delay: number;
   glare?: boolean;
+  bubbleSize?: number;
+  bubbleShape?: number;
 }) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [open,  setOpen]  = useState(false);
@@ -71,11 +75,13 @@ export default function ValueCard({
           className={s.bubble}
           data-phase={phase}
           data-glare={glare ? "true" : undefined}
+          data-shape={bubbleShape}
           style={{
-            "--from-x":   `${fromLeft ? -xDist : xDist}px`,
-            "--y-drift":  `${yDrift}px`,
-            "--delay":    `${delay}s`,
-            "--float-ms": `${FLOAT_MS}ms`,
+            "--from-x":      `${fromLeft ? -xDist : xDist}px`,
+            "--y-drift":     `${yDrift}px`,
+            "--delay":       `${delay}s`,
+            "--float-ms":    `${FLOAT_MS}ms`,
+            "--bubble-size": `${bubbleSize}px`,
           } as React.CSSProperties}
         />
       )}

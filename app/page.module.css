@@ -171,8 +171,6 @@
 }
 
 .valuesGuide {
-  margin-top: clamp(1.75rem, 3vw, 2.5rem);
-  margin-bottom: 2.25rem;
   font-size: 1.25rem;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -287,83 +285,136 @@
 .bubble {
   position: absolute;
   inset: 0;
-  width: 62px;
-  height: 62px;
+  width:  var(--bubble-size, 62px);
+  height: var(--bubble-size, 62px);
   margin: auto;
-  /* Organic base — slightly irregular, like a real soap bubble */
-  border-radius: 54% 46% 45% 55% / 57% 43% 60% 40%;
   background: transparent;
-  border: 1px solid rgba(40, 40, 40, 0.26);
+  border: 1px solid rgba(40, 40, 40, 0.24);
   pointer-events: none;
   will-change: transform, opacity;
 }
+
+/* Shape variants — each starts from a distinct organic form */
+.bubble[data-shape="0"] { border-radius: 54% 46% 45% 55% / 57% 43% 60% 40%; }
+.bubble[data-shape="1"] { border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; }
+.bubble[data-shape="2"] { border-radius: 65% 35% 48% 52% / 54% 46% 38% 62%; }
+.bubble[data-shape="3"] { border-radius: 42% 58% 56% 44% / 60% 40% 52% 48%; }
+.bubble[data-shape="4"] { border-radius: 58% 42% 40% 60% / 44% 56% 62% 38%; }
+.bubble[data-shape="5"] { border-radius: 70% 30% 55% 45% / 50% 50% 42% 58%; }
+.bubble[data-shape="title"] { border-radius: 52% 48% 46% 54% / 54% 46% 58% 42%; }
 
 /* Primary glare blob — top-left highlight */
 .bubble::before {
   content: '';
   position: absolute;
-  top: 13%;
-  left: 15%;
-  width: 38%;
-  height: 14%;
+  top: 12%;
+  left: 14%;
+  width: 36%;
+  height: 13%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.66);
-  transform: rotate(-32deg);
+  background: rgba(255, 255, 255, 0.62);
+  transform: rotate(-30deg);
   filter: blur(1.5px);
 }
 
-/* Secondary line glare — thin arc sweep, only on select bubbles */
+/* Secondary line glare — thin arc, only on select bubbles */
 .bubble[data-glare="true"]::after {
   content: '';
   position: absolute;
-  top: 34%;
-  left: 9%;
-  width: 60%;
+  top: 33%;
+  left: 8%;
+  width: 58%;
   height: 5%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.36);
-  transform: rotate(-16deg);
+  background: rgba(255, 255, 255, 0.34);
+  transform: rotate(-14deg);
   filter: blur(0.8px);
 }
 
-/* Float phase — slow dreamy drift, gentle organic breath */
-.bubble[data-phase="floating"] {
+/* Float + wobble — 3 distinct personalities tied to shape group */
+.bubble[data-shape="0"][data-phase="floating"],
+.bubble[data-shape="1"][data-phase="floating"],
+.bubble[data-shape="title"][data-phase="floating"] {
   animation:
     bubbleFloat var(--float-ms, 3800ms) cubic-bezier(0.14, 0.8, 0.28, 1) var(--delay, 0s) both,
-    bubbleWobble 4.2s ease-in-out var(--delay, 0s) infinite;
+    bubbleWobbleA 4.8s ease-in-out var(--delay, 0s) infinite;
 }
 
-/* Pop phase — expand and burst */
+.bubble[data-shape="2"][data-phase="floating"],
+.bubble[data-shape="3"][data-phase="floating"] {
+  animation:
+    bubbleFloat var(--float-ms, 3800ms) cubic-bezier(0.14, 0.8, 0.28, 1) var(--delay, 0s) both,
+    bubbleWobbleB 3.7s ease-in-out var(--delay, 0s) infinite;
+}
+
+.bubble[data-shape="4"][data-phase="floating"],
+.bubble[data-shape="5"][data-phase="floating"] {
+  animation:
+    bubbleFloat var(--float-ms, 3800ms) cubic-bezier(0.14, 0.8, 0.28, 1) var(--delay, 0s) both,
+    bubbleWobbleC 5.4s ease-in-out var(--delay, 0s) infinite;
+}
+
+/* Pop phase */
 .bubble[data-phase="popping"] {
   animation: bubblePop 0.40s ease-out forwards;
 }
 
 @keyframes bubbleFloat {
   0% {
-    transform: translateX(var(--from-x, -440px)) translateY(var(--y-drift, 0px)) scale(0.42);
+    transform: translateX(var(--from-x, -440px)) translateY(var(--y-drift, 0px)) scale(0.38);
     opacity: 0;
   }
-  8%   { opacity: 0.82; }
+  8%   { opacity: 0.78; }
   100% { transform: translateX(0) translateY(0) scale(1); opacity: 1; }
 }
 
-/* Organic shape morphing — gentle breathing, not jittery */
-@keyframes bubbleWobble {
+/* Wobble A — rounded, gently rolling */
+@keyframes bubbleWobbleA {
   0%   { border-radius: 54% 46% 45% 55% / 57% 43% 60% 40%; }
-  17%  { border-radius: 44% 56% 54% 46% / 48% 58% 44% 56%; }
-  34%  { border-radius: 60% 40% 48% 52% / 43% 61% 55% 45%; }
-  51%  { border-radius: 46% 54% 60% 40% / 58% 42% 46% 54%; }
-  68%  { border-radius: 56% 44% 41% 59% / 44% 57% 58% 42%; }
-  85%  { border-radius: 40% 60% 52% 48% / 54% 46% 42% 58%; }
+  18%  { border-radius: 44% 56% 54% 46% / 48% 58% 44% 56%; }
+  36%  { border-radius: 60% 40% 48% 52% / 43% 61% 55% 45%; }
+  54%  { border-radius: 46% 54% 60% 40% / 58% 42% 46% 54%; }
+  72%  { border-radius: 38% 62% 44% 56% / 52% 48% 62% 38%; }
+  90%  { border-radius: 56% 44% 41% 59% / 44% 57% 38% 62%; }
   100% { border-radius: 54% 46% 45% 55% / 57% 43% 60% 40%; }
+}
+
+/* Wobble B — blobby, more exaggerated */
+@keyframes bubbleWobbleB {
+  0%   { border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; }
+  20%  { border-radius: 62% 38% 44% 56% / 58% 42% 46% 54%; }
+  40%  { border-radius: 48% 52% 55% 45% / 36% 64% 52% 48%; }
+  60%  { border-radius: 70% 30% 38% 62% / 50% 50% 62% 38%; }
+  80%  { border-radius: 44% 56% 62% 38% / 60% 40% 42% 58%; }
+  100% { border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; }
+}
+
+/* Wobble C — slow, subtle, almost round */
+@keyframes bubbleWobbleC {
+  0%   { border-radius: 58% 42% 40% 60% / 44% 56% 62% 38%; }
+  25%  { border-radius: 50% 50% 52% 48% / 54% 46% 48% 52%; }
+  50%  { border-radius: 44% 56% 58% 42% / 60% 40% 54% 46%; }
+  75%  { border-radius: 52% 48% 44% 56% / 46% 54% 42% 58%; }
+  100% { border-radius: 58% 42% 40% 60% / 44% 56% 62% 38%; }
 }
 
 /* Expand → blur → gone */
 @keyframes bubblePop {
   0%   { transform: scale(1);    opacity: 1;    filter: blur(0);    }
-  36%  { transform: scale(1.20); opacity: 0.88; filter: blur(0);    }
-  72%  { transform: scale(1.44); opacity: 0.26; filter: blur(1.5px); }
-  100% { transform: scale(1.60); opacity: 0;    filter: blur(3px);  }
+  36%  { transform: scale(1.22); opacity: 0.86; filter: blur(0);    }
+  72%  { transform: scale(1.46); opacity: 0.24; filter: blur(1.5px); }
+  100% { transform: scale(1.62); opacity: 0;    filter: blur(3px);  }
+}
+
+/* ── Title bubble wrapper ── */
+.titleBubbleWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 2.25rem;
+  min-height: 2rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
