@@ -88,6 +88,12 @@ export default function Home() {
             />
           </div>
 
+          <p className={`${s.valuesText} ${s.valuesBody}`}>
+            Grounded in developmental and naturalistic approaches, including
+            ESDM, DIR/Floortime, JASPER, and PRT, with an emphasis on
+            connection, communication, and co-regulation.
+          </p>
+
         </div>
       </section>
 
