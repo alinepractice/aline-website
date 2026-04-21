@@ -86,9 +86,22 @@ export default function Home() {
               name="Safe Choices"
               description="Recognizing limits and responding with clarity."
             />
-            {["ESDM", "DIR/Floortime", "JASPER", "PRT"].map(name => (
-              <div key={name} className={s.approachName}>{name}</div>
-            ))}
+            <ValueCard
+              name="ESDM"
+              description="A developmental, play-based model that integrates learning into everyday interactions."
+            />
+            <ValueCard
+              name="DIR/Floortime"
+              description="A developmental, relationship-based model focused on connection, interaction, and following the child's lead."
+            />
+            <ValueCard
+              name="JASPER"
+              description="A developmental approach that supports joint attention, play, and early communication."
+            />
+            <ValueCard
+              name="PRT"
+              description="A naturalistic, motivation-based approach that supports learning within everyday interactions."
+            />
           </div>
 
         </div>
