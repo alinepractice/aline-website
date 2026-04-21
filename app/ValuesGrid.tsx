@@ -16,19 +16,20 @@ const VALUES = [
 ];
 
 export default function ValuesGrid() {
-  const gridRef  = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
-  // Stable random offsets per card — each flies in from a unique direction
+  // Each card gets a stable random starting position and a deliberate stagger delay.
+  // Base delay grows with index so landings feel sequential, jitter keeps it organic.
   const offsets = useRef(
-    VALUES.map(() => {
+    VALUES.map((_, i) => {
       const angle = Math.random() * Math.PI * 2;
-      const dist  = 130 + Math.random() * 150;      // 130–280 px away
+      const dist  = 140 + Math.random() * 140;
       return {
         x:      Math.cos(angle) * dist,
         y:      Math.sin(angle) * dist,
-        rotate: (Math.random() - 0.5) * 32,          // –16 to +16 deg
-        delay:  Math.random() * 0.28,                 // staggered arrival
+        rotate: (Math.random() - 0.5) * 30,
+        delay:  0.1 * i + Math.random() * 0.15,   // 0 → ~0.95s across 8 cards
       };
     })
   );
@@ -42,10 +43,14 @@ export default function ValuesGrid() {
     const el = gridRef.current;
     if (!el) return;
 
-    // No disconnect → re-fires every time the section enters or exits view
+    // Fire when the grid is well into the viewport (roughly centred),
+    // and re-fire each time it enters or exits so scrolling replays it.
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.15 }
+      {
+        threshold:  0.5,                // 50 % visible = roughly centred
+        rootMargin: "-8% 0px",          // nudge trigger zone inward
+      }
     );
 
     observer.observe(el);
@@ -57,13 +62,13 @@ export default function ValuesGrid() {
       {VALUES.map(({ name, description }, i) => {
         const { x, y, rotate, delay } = offsets.current[i];
 
-        // Entry: spring bounce with individual delays (bee landing)
-        // Exit:  quick scatter, no delay
         const transition = visible
-          ? `transform 0.9s cubic-bezier(0.34, 1.18, 0.64, 1) ${delay}s,
-             opacity   0.6s ease                              ${delay}s`
-          : `transform 0.45s ease-in,
-             opacity   0.35s ease`;
+          // Entry: slow spring with per-card delay — each one lands distinctly
+          ? `transform 1.2s cubic-bezier(0.34, 1.15, 0.64, 1) ${delay}s,
+             opacity   1.0s ease                              ${delay}s`
+          // Exit: quick scatter, all at once
+          : `transform 0.4s ease-in,
+             opacity   0.3s ease`;
 
         return (
           <ValueCard
