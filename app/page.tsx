@@ -131,31 +131,52 @@ export default function Home() {
             viewBox="0 0 900 240"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/*
-              Compound evenodd path — black oval with the ring interior
-              punched out as a transparent hole, revealing the page background.
-            */}
-            <path
-              fillRule="evenodd"
-              fill="#000000"
-              d="M 10,120 A 440,104,0,1,0,890,120 A 440,104,0,1,0,10,120 Z
-                 M 76,120 A 142,60,0,1,0,360,120 A 142,60,0,1,0,76,120 Z"
+            <defs>
+              {/* Dark radial gradient inside ring — light source above-center, depth below */}
+              <radialGradient id="ringDepth" cx="48%" cy="30%" r="70%">
+                <stop offset="0%"   stopColor="#0a0a0a" />
+                <stop offset="45%"  stopColor="#050505" />
+                <stop offset="80%"  stopColor="#020202" />
+                <stop offset="100%" stopColor="#000000" />
+              </radialGradient>
+              {/* Soft glow on the crimson ring */}
+              <filter id="ringGlow" x="-22%" y="-42%" width="144%" height="184%">
+                <feGaussianBlur stdDeviation="3.5" in="SourceGraphic" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            {/* Black oval */}
+            <ellipse cx="450" cy="120" rx="440" ry="104" fill="#000000" />
+
+            {/* Depth fill — dark gradient inside ring suggests a 3D cylinder opening */}
+            <ellipse cx="218" cy="120" rx="145" ry="62" fill="url(#ringDepth)" />
+
+            {/* Inner rim highlight — faint arc at top-left suggests curved 3D surface */}
+            <ellipse
+              cx="218" cy="109"
+              rx="136" ry="51"
+              fill="none" stroke="rgba(255,255,255,0.055)" strokeWidth="3"
             />
 
-            {/* Crimson ring — drawn on top of the hole edge */}
+            {/* Crimson ring with soft glow */}
             <ellipse
               cx="218" cy="120"
-              rx="142" ry="60"
-              fill="none" stroke="#981327" strokeWidth="4.5"
+              rx="145" ry="62"
+              fill="none" stroke="#981327" strokeWidth="5"
+              filter="url(#ringGlow)"
             />
 
-            {/* Sub-text sits on the cream background inside the transparent ring */}
+            {/* Sub-text — cream on dark, sized to hug the ring */}
             <text
               x="218" y="120"
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="rgba(0,0,0,0.72)"
-              fontSize="12.5"
+              fill="rgba(243,238,218,0.84)"
+              fontSize="13.5"
               fontWeight="300"
               fontFamily="'Source Sans 3', sans-serif"
               letterSpacing="0.3"

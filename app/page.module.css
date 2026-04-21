@@ -533,6 +533,9 @@
   width: 100%;
   height: auto;
   display: block;
+  /* Soft shadow lifts the oval off the page — 3D floating feel */
+  filter: drop-shadow(0 10px 36px rgba(0, 0, 0, 0.38))
+          drop-shadow(0 2px 8px rgba(0, 0, 0, 0.22));
 }
 
 /* ── Mobile ── */
