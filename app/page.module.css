@@ -526,7 +526,7 @@
   font-weight: 400;
   letter-spacing: 0.03em;
   color: var(--text);
-  margin-bottom: clamp(0.6rem, 1.5vw, 1rem);
+  margin-bottom: 0.25rem;
 }
 
 .connectOvalSvg {

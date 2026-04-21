@@ -131,38 +131,34 @@ export default function Home() {
             viewBox="0 0 900 240"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <defs>
-              {/* Radial gradient deepens the ring interior — makes it feel like a portal */}
-              <radialGradient id="holeDepth" cx="50%" cy="38%" r="62%">
-                <stop offset="0%"   stopColor="#050504" />
-                <stop offset="60%"  stopColor="#0e0e0d" />
-                <stop offset="100%" stopColor="#1E1E1B" />
-              </radialGradient>
-            </defs>
+            {/*
+              Compound evenodd path — black oval with the ring interior
+              punched out as a transparent hole, revealing the page background.
+            */}
+            <path
+              fillRule="evenodd"
+              fill="#000000"
+              d="M 10,120 A 440,104,0,1,0,890,120 A 440,104,0,1,0,10,120 Z
+                 M 76,120 A 142,60,0,1,0,360,120 A 142,60,0,1,0,76,120 Z"
+            />
 
-            {/* Outer black oval */}
-            <ellipse cx="450" cy="120" rx="440" ry="104" fill="#1E1E1B" />
-
-            {/* Depth fill inside ring — the "hole" */}
-            <ellipse cx="218" cy="120" rx="142" ry="60" fill="url(#holeDepth)" />
-
-            {/* Crimson ring */}
+            {/* Crimson ring — drawn on top of the hole edge */}
             <ellipse
               cx="218" cy="120"
               rx="142" ry="60"
               fill="none" stroke="#981327" strokeWidth="4.5"
             />
 
-            {/* "We can take it one step at a time." — centred inside the ring */}
+            {/* Sub-text sits on the cream background inside the transparent ring */}
             <text
               x="218" y="120"
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="rgba(243,238,218,0.74)"
-              fontSize="11.5"
+              fill="rgba(0,0,0,0.72)"
+              fontSize="12.5"
               fontWeight="300"
               fontFamily="'Source Sans 3', sans-serif"
-              letterSpacing="0.4"
+              letterSpacing="0.3"
             >
               We can take it one step at a time.
             </text>
