@@ -1,5 +1,5 @@
 import s from "./page.module.css";
-import ValueCard from "./ValueCard";
+import ValuesGrid from "./ValuesGrid";
 import FadeIn from "./FadeIn";
 import BioCard from "./BioCard";
 import StaggerList from "./StaggerList";
@@ -69,40 +69,7 @@ export default function Home() {
             Values and approach
           </p>
 
-          <div className={s.principlesGrid}>
-            <ValueCard
-              name="Flexibility"
-              description="Staying connected through change."
-            />
-            <ValueCard
-              name="Independence"
-              description="Noticing yourself and your needs."
-            />
-            <ValueCard
-              name="Bravery"
-              description="Engagement with uncertainty."
-            />
-            <ValueCard
-              name="Safe Choices"
-              description="Recognizing limits and responding with clarity."
-            />
-            <ValueCard
-              name="ESDM"
-              description="A developmental, play-based model that integrates learning into everyday interactions."
-            />
-            <ValueCard
-              name="DIR/Floortime"
-              description="A developmental, relationship-based model focused on connection, interaction, and following the child's lead."
-            />
-            <ValueCard
-              name="JASPER"
-              description="A developmental approach that supports joint attention, play, and communication."
-            />
-            <ValueCard
-              name="PRT"
-              description="A naturalistic, motivation-based approach that supports learning within everyday interactions."
-            />
-          </div>
+          <ValuesGrid />
 
         </div>
       </section>

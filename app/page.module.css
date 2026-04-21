@@ -187,6 +187,25 @@
   margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
 }
 
+/* fly-in: columns 1&2 from left, 3&4 from right, all arrive together */
+.principlesGrid .principle {
+  transition: transform 0.85s cubic-bezier(0.25, 0, 0.2, 1),
+              opacity  0.85s ease;
+}
+
+.principlesGrid:not(.principlesGridVisible) .principle:nth-child(4n+1) {
+  opacity: 0; transform: translateX(-180px);
+}
+.principlesGrid:not(.principlesGridVisible) .principle:nth-child(4n+2) {
+  opacity: 0; transform: translateX(-90px);
+}
+.principlesGrid:not(.principlesGridVisible) .principle:nth-child(4n+3) {
+  opacity: 0; transform: translateX(90px);
+}
+.principlesGrid:not(.principlesGridVisible) .principle:nth-child(4n+4) {
+  opacity: 0; transform: translateX(180px);
+}
+
 .principle {
   background: none;
   border: none;
