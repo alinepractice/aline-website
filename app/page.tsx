@@ -136,7 +136,7 @@ export default function Home() {
               <g transform="translate(218,121) scale(1,1.32) translate(-218,-121)">
                 <text
                   fill="#9A1124"
-                  fontSize="17"
+                  fontSize="13"
                   fontWeight="300"
                   fontFamily="'Source Sans 3', sans-serif"
                   letterSpacing="0.6"
