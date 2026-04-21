@@ -132,42 +132,22 @@ export default function Home() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
-              {/* Dark radial gradient inside ring — light source above-center, depth below */}
-              <radialGradient id="ringDepth" cx="48%" cy="30%" r="70%">
-                <stop offset="0%"   stopColor="#0a0a0a" />
-                <stop offset="45%"  stopColor="#050505" />
-                <stop offset="80%"  stopColor="#020202" />
+              {/* Subtle gradient on the oval — rim catches light at top, deepens toward center */}
+              <radialGradient id="ovalDepth" cx="50%" cy="16%" r="78%">
+                <stop offset="0%"   stopColor="#242424" />
+                <stop offset="22%"  stopColor="#0d0d0d" />
                 <stop offset="100%" stopColor="#000000" />
               </radialGradient>
-              {/* Soft glow on the crimson ring */}
-              <filter id="ringGlow" x="-22%" y="-42%" width="144%" height="184%">
-                <feGaussianBlur stdDeviation="3.5" in="SourceGraphic" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
             </defs>
 
-            {/* Black oval */}
-            <ellipse cx="450" cy="120" rx="440" ry="104" fill="#000000" />
+            {/* Black oval — gradient gives rim-light at top for 3D disc feel */}
+            <ellipse cx="450" cy="120" rx="440" ry="104" fill="url(#ovalDepth)" />
 
-            {/* Depth fill — dark gradient inside ring suggests a 3D cylinder opening */}
-            <ellipse cx="218" cy="120" rx="145" ry="62" fill="url(#ringDepth)" />
-
-            {/* Inner rim highlight — faint arc at top-left suggests curved 3D surface */}
-            <ellipse
-              cx="218" cy="109"
-              rx="136" ry="51"
-              fill="none" stroke="rgba(255,255,255,0.055)" strokeWidth="3"
-            />
-
-            {/* Crimson ring with soft glow */}
+            {/* Red ring — clean, flat, no 3D treatment */}
             <ellipse
               cx="218" cy="120"
               rx="145" ry="62"
-              fill="none" stroke="#981327" strokeWidth="5"
-              filter="url(#ringGlow)"
+              fill="none" stroke="#9A1124" strokeWidth="4.5"
             />
 
             {/* Sub-text — cream on dark, sized to hug the ring */}

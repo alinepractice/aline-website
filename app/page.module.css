@@ -533,11 +533,15 @@
   padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 
-/* Centered wrapper — caps the oval width */
+/* Centered wrapper — perspective context for 3D tilt */
 .connectOvalWrap {
   width: 100%;
   max-width: 880px;
   margin: 0 auto;
+  perspective: 700px;
+  /* Shadow on wrapper so it follows the 3D transform correctly */
+  filter: drop-shadow(0 14px 44px rgba(0, 0, 0, 0.44))
+          drop-shadow(0 3px 10px rgba(0, 0, 0, 0.26));
 }
 
 .connectHeading {
@@ -552,9 +556,9 @@
   width: 100%;
   height: auto;
   display: block;
-  /* Soft shadow lifts the oval off the page — 3D floating feel */
-  filter: drop-shadow(0 10px 36px rgba(0, 0, 0, 0.38))
-          drop-shadow(0 2px 8px rgba(0, 0, 0, 0.22));
+  /* Tilt back in 3D — top recedes, bottom comes forward, reads as a disc/plane */
+  transform: rotateX(10deg);
+  transform-origin: center center;
 }
 
 /* ── Mobile ── */
