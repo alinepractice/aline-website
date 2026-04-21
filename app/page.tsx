@@ -134,7 +134,7 @@ export default function Home() {
                 shapeRendering="geometricPrecision"
               />
               <text
-                fill="rgba(243,238,218,0.90)"
+                fill="rgba(0,0,0,0.70)"
                 fontSize="15"
                 fontWeight="300"
                 fontFamily="'Source Sans 3', sans-serif"
