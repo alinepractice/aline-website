@@ -3,7 +3,6 @@ import ValuesGrid from "./ValuesGrid";
 import FadeIn from "./FadeIn";
 import BioCard from "./BioCard";
 import StaggerList from "./StaggerList";
-import DrawCircle from "./DrawCircle";
 import BlobTransition from "./BlobTransition";
 
 export default function Home() {
@@ -124,13 +123,18 @@ export default function Home() {
       {/* ── Connect ── */}
       <section id="connect" className={`${s.section} ${s.connect}`}>
         <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
-        <div className={s.connectRow}>
-          <p className={s.connectSub}>
-            <span className={s.connectCircleWrap}>
-              We can take it one step at a time.
-              <DrawCircle />
-            </span>
-          </p>
+        <div className={s.connectOval}>
+          {/* Crimson ring — references the logo ring, flattened in perspective */}
+          <svg
+            className={s.connectRingSvg}
+            viewBox="0 0 210 72"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <ellipse cx="105" cy="36" rx="96" ry="30" fill="none" stroke="#981327" strokeWidth="3.5" />
+          </svg>
+
+          {/* Links */}
           <div className={s.connectLinks}>
             <a
               href="https://instagram.com/aline.practice"

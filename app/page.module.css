@@ -509,69 +509,62 @@
 
 /* ── Connect ── */
 .connect {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.5rem, 1vw, 0.75rem);
-  padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
-  padding-bottom: clamp(1.5rem, 3vw, 2rem);
-  background: #1E1E1B;
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  background: none;
 }
-
 
 .connectHeading {
   font-size: clamp(1.265rem, 2.2vw, 1.54rem);
   font-weight: 400;
   letter-spacing: 0.03em;
-  color: rgba(243, 238, 218, 0.95);
+  color: var(--text);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
-.connectRow {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+/* Large flat oval — bleeds to section edges */
+.connectOval {
+  position: relative;
+  margin-left: calc(-1 * var(--side-padding));
+  margin-right: calc(-1 * var(--side-padding));
+  height: clamp(140px, 17vw, 210px);
+  background: #1E1E1B;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.connectSub {
-  font-size: clamp(0.82rem, 1.35vw, 0.94rem);
-  font-weight: 300;
-  color: rgba(243, 238, 218, 0.5);
-  white-space: nowrap;
+/* Crimson ring — left side, perspective-flattened */
+.connectRingSvg {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(88px, 12vw, 155px);
+  height: auto;
 }
 
+/* Links — right side, vertically centered */
 .connectLinks {
-  flex: 1;
+  position: absolute;
+  right: clamp(2rem, 6vw, 7rem);
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: clamp(1.25rem, 3vw, 2.5rem);
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-end;
 }
 
 .connectBtn {
   font-size: clamp(0.78rem, 1.25vw, 0.88rem);
   font-weight: 300;
   letter-spacing: 0.02em;
-  color: rgba(243, 238, 218, 0.42);
+  color: rgba(243, 238, 218, 0.48);
   transition: opacity 0.3s ease;
 }
 
 .connectBtn:hover {
-  opacity: 0.45;
-}
-
-.connectCircleWrap {
-  position: relative;
-  display: inline-block;
-}
-
-.connectCircleSvg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% + 2.4em);
-  height: 3em;
-  pointer-events: none;
-  overflow: visible;
+  opacity: 0.8;
 }
 
 /* ── Mobile ── */
@@ -598,17 +591,11 @@
     transform: translateY(32px);
   }
 
-  .connectRow {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .connectSub {
-    white-space: normal;
-  }
-
   .connectLinks {
-    gap: 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .connectBtn {
+    font-size: 0.76rem;
   }
 }
