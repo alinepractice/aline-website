@@ -561,6 +561,36 @@
   transform-origin: center center;
 }
 
+.connectLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  margin-top: clamp(0.6rem, 1.4vw, 1rem);
+}
+
+.connectLink {
+  font-size: clamp(0.78rem, 1.5vw, 0.92rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
+}
+
+.connectLink:hover {
+  opacity: 1;
+}
+
+.connectDivider {
+  display: block;
+  width: 1px;
+  height: 0.95em;
+  background: rgba(0, 0, 0, 0.22);
+  flex-shrink: 0;
+}
+
 /* ── Mobile ── */
 @media (max-width: 680px) {
   .header {

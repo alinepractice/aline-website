@@ -173,46 +173,26 @@ export default function Home() {
               </textPath>
             </text>
 
-            {/* Thin divider between links */}
-            <line
-              x1="648" y1="106" x2="648" y2="134"
-              stroke="rgba(243,238,218,0.22)" strokeWidth="1"
-            />
-
-            {/* @aline.practice */}
-            <a href="https://instagram.com/aline.practice" target="_blank" rel="noopener noreferrer">
-              <text
-                x="515" y="120"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fill="rgba(243,238,218,0.93)"
-                fontSize="18"
-                fontWeight="300"
-                fontFamily="'Source Sans 3', sans-serif"
-                letterSpacing="0.4"
-                style={{ cursor: "pointer" }}
-              >
-                @aline.practice
-              </text>
-            </a>
-
-            {/* connect@alinepractice.com */}
-            <a href="mailto:connect@alinepractice.com">
-              <text
-                x="790" y="120"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fill="rgba(243,238,218,0.93)"
-                fontSize="16"
-                fontWeight="300"
-                fontFamily="'Source Sans 3', sans-serif"
-                letterSpacing="0.3"
-                style={{ cursor: "pointer" }}
-              >
-                connect@alinepractice.com
-              </text>
-            </a>
           </svg>
+
+          {/* Links — HTML so they scale properly on mobile */}
+          <div className={s.connectLinks}>
+            <a
+              href="https://instagram.com/aline.practice"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.connectLink}
+            >
+              @aline.practice
+            </a>
+            <span className={s.connectDivider} aria-hidden="true" />
+            <a
+              href="mailto:connect@alinepractice.com"
+              className={s.connectLink}
+            >
+              connect@alinepractice.com
+            </a>
+          </div>
         </div>
       </section>
     </>
