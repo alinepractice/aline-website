@@ -86,6 +86,9 @@ export default function Home() {
               name="Safe Choices"
               description="Recognizing limits and responding with clarity."
             />
+            {["ESDM", "DIR/Floortime", "JASPER", "PRT"].map(name => (
+              <div key={name} className={s.approachName}>{name}</div>
+            ))}
           </div>
 
         </div>
