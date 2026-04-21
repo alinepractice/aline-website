@@ -639,7 +639,7 @@
 }
 
 .connectLink {
-  font-size: clamp(0.9rem, 1.7vw, 1.05rem);
+  font-size: clamp(0.99rem, 1.87vw, 1.155rem);
   font-weight: 300;
   letter-spacing: 0.04em;
   color: var(--text);
