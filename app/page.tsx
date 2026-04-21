@@ -139,8 +139,8 @@ export default function Home() {
                   fontSize="13"
                   fontWeight="300"
                   fontFamily="'Source Sans 3', sans-serif"
-                  letterSpacing="0.6"
-                  textLength="248"
+                  letterSpacing="0.2"
+                  textLength="190"
                   lengthAdjust="spacingAndGlyphs"
                 >
                   <textPath href="#ringArc" startOffset="50%" textAnchor="middle">
