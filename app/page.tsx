@@ -125,7 +125,7 @@ export default function Home() {
               aria-hidden="true"
             >
               <defs>
-                <path id="ringArc" d="M 90 125 C 90 110 345 110 345 125" />
+                <path id="ringArc" d="M 90 132 C 90 117 345 117 345 132" />
               </defs>
               <path
                 d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
@@ -139,6 +139,8 @@ export default function Home() {
                 fontWeight="300"
                 fontFamily="'Source Sans 3', sans-serif"
                 letterSpacing="0.6"
+                textLength="248"
+                lengthAdjust="spacingAndGlyphs"
               >
                 <textPath href="#ringArc" startOffset="50%" textAnchor="middle">
                   one step at a time
