@@ -6,11 +6,11 @@ import s from "./page.module.css";
 export default function ValueCard({
   name,
   description,
-  secondary = false,
+  style,
 }: {
   name: string;
   description: string;
-  secondary?: boolean;
+  style?: React.CSSProperties;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -21,6 +21,7 @@ export default function ValueCard({
   return (
     <button
       type="button"
+      style={style}
       className={`${s.principle} ${open ? s.principleOpen : ""}`}
       aria-expanded={open}
       onClick={handleClick}
