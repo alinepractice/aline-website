@@ -96,7 +96,7 @@ export default function Home() {
             />
             <ValueCard
               name="JASPER"
-              description="A developmental approach that supports joint attention, play, and early communication."
+              description="A developmental approach that supports joint attention, play, and communication."
             />
             <ValueCard
               name="PRT"
