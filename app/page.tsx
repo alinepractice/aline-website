@@ -147,12 +147,12 @@ export default function Home() {
               shapeRendering="geometricPrecision"
             />
 
-            {/* Red ring — elongated organic oval, 3.5:1 ratio, rotated horizontal */}
+            {/* Red ring — exact brand path from footer.eps, rotated 90° horizontal.
+                 Compound path (outer oval + inner oval) with evenodd fill = crisp ring. */}
             <path
-              d="M 43 120 C 43 96.5 135.75 70 218 70 C 300.25 70 393 96.5 393 120 C 393 143.5 300.25 170 218 170 C 135.75 170 43 143.5 43 120 Z"
-              fill="none"
-              stroke="#9A1124"
-              strokeWidth="4"
+              d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
+              fill="#9A1124"
+              fillRule="evenodd"
               shapeRendering="geometricPrecision"
             />
 
