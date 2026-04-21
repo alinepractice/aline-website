@@ -142,7 +142,7 @@ export default function Home() {
 
             {/* Lens / surfboard shape — smooth pointed ends, rotated horizontal */}
             <path
-              d="M 9 120 C 9 52 155 14 450 14 C 745 14 891 52 891 120 C 891 188 745 226 450 226 C 155 226 9 188 9 120 Z"
+              d="M 9 120 C 9 58.8 155 24.6 450 24.6 C 745 24.6 891 58.8 891 120 C 891 181.2 745 215.4 450 215.4 C 155 215.4 9 181.2 9 120 Z"
               fill="url(#ovalDepth)"
               shapeRendering="geometricPrecision"
             />
