@@ -140,8 +140,12 @@ export default function Home() {
               </radialGradient>
             </defs>
 
-            {/* Black oval — gradient gives rim-light at top for 3D disc feel */}
-            <ellipse cx="450" cy="120" rx="440" ry="104" fill="url(#ovalDepth)" />
+            {/* Lens / surfboard shape — smooth pointed ends, rotated horizontal */}
+            <path
+              d="M 9 120 C 9 52 155 14 450 14 C 745 14 891 52 891 120 C 891 188 745 226 450 226 C 155 226 9 188 9 120 Z"
+              fill="url(#ovalDepth)"
+              shapeRendering="geometricPrecision"
+            />
 
             {/* Red ring — clean, flat, smaller to hug the two-line text */}
             <ellipse
