@@ -509,39 +509,30 @@
 
 /* ── Connect ── */
 .connect {
-  padding-top: clamp(2rem, 4vw, 3.5rem);
-  padding-bottom: clamp(2rem, 4vw, 3rem);
   background: none;
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 
-.connectInner {
-  display: flex;
-  align-items: flex-start;
-  gap: clamp(1rem, 2.5vw, 2.5rem);
+/* Centered wrapper — caps the oval width */
+.connectOvalWrap {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
 }
 
-/* Blob container — sized proportionally */
-.connectBlobWrap {
-  flex-shrink: 0;
-  width: clamp(100px, 13vw, 180px);
+.connectHeading {
+  font-size: clamp(1.265rem, 2.2vw, 1.54rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  margin-bottom: clamp(0.6rem, 1.5vw, 1rem);
 }
 
-.connectBlobSvg {
+.connectOvalSvg {
   width: 100%;
   height: auto;
   display: block;
-  overflow: visible;
-}
-
-/* "Let's connect" — runs vertically beside the blob */
-.connectHeading {
-  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  color: var(--text);
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  margin-top: clamp(0.5rem, 3vw, 1.5rem);
 }
 
 /* ── Mobile ── */
@@ -568,7 +559,4 @@
     transform: translateY(32px);
   }
 
-  .connectBlobWrap {
-    width: clamp(80px, 22vw, 130px);
-  }
 }

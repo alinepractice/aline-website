@@ -122,82 +122,89 @@ export default function Home() {
 
       {/* ── Connect ── */}
       <section id="connect" className={`${s.section} ${s.connect}`}>
-        <div className={s.connectInner}>
-
-          {/* Blob — same shape as hero logo, filled black */}
-          <div className={s.connectBlobWrap}>
-            <svg
-              className={s.connectBlobSvg}
-              viewBox="265 290 390 505"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              {/* Black blob */}
-              <path
-                fill="#1E1E1B"
-                d="M 283.957 519.5625 C 282.988 466.8086 304.902 410.4219 353.7266 366.0234 C 388.414 334.4805 429.1719 313.625 476.3594 308.9258 C 537.0742 302.8828 582.8828 328.1094 613.9141 379.9531 C 633.3516 412.418 639.6133 448.2852 637.5664 485.793 C 635.6523 520.8164 626.5273 554.2031 614.3203 586.8242 C 598.8398 628.1797 579.6328 667.6992 553.6992 703.6055 C 537.6563 725.8164 518.0859 744.4023 493.3789 756.8828 C 450.4531 778.5625 407.0156 773.1406 370.5625 741.8242 C 307.5273 687.6719 285.4219 599.4336 283.957 519.5625 Z"
-              />
-
-              {/* Crimson ring near top — the Aline logo ring */}
-              <ellipse
-                cx="461" cy="418"
-                rx="48" ry="26"
-                fill="none" stroke="#981327" strokeWidth="5"
-              />
-
-              {/* "We can take it one step at a time." — runs vertically through the ring */}
-              <text
-                x="461" y="418"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fill="rgba(243,238,218,0.72)"
-                fontSize="11"
-                fontWeight="300"
-                fontFamily="'Source Sans 3', sans-serif"
-                transform="rotate(-90, 461, 418)"
-              >
-                We can take it one step at a time.
-              </text>
-
-              {/* @aline.practice */}
-              <a href="https://instagram.com/aline.practice" target="_blank" rel="noopener noreferrer">
-                <text
-                  x="461" y="585"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  fill="rgba(243,238,218,0.88)"
-                  fontSize="14"
-                  fontWeight="300"
-                  fontFamily="'Source Sans 3', sans-serif"
-                  transform="rotate(-90, 461, 585)"
-                  style={{ cursor: "pointer" }}
-                >
-                  @aline.practice
-                </text>
-              </a>
-
-              {/* connect@alinepractice.com */}
-              <a href="mailto:connect@alinepractice.com">
-                <text
-                  x="461" y="693"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  fill="rgba(243,238,218,0.88)"
-                  fontSize="12"
-                  fontWeight="300"
-                  fontFamily="'Source Sans 3', sans-serif"
-                  transform="rotate(-90, 461, 693)"
-                  style={{ cursor: "pointer" }}
-                >
-                  connect@alinepractice.com
-                </text>
-              </a>
-            </svg>
-          </div>
-
-          {/* "Let's connect" — vertical text beside the blob */}
+        <div className={s.connectOvalWrap}>
           <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
 
+          {/* Horizontal oval — black hole with crimson ring for depth */}
+          <svg
+            className={s.connectOvalSvg}
+            viewBox="0 0 900 240"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              {/* Radial gradient deepens the ring interior — makes it feel like a portal */}
+              <radialGradient id="holeDepth" cx="50%" cy="38%" r="62%">
+                <stop offset="0%"   stopColor="#050504" />
+                <stop offset="60%"  stopColor="#0e0e0d" />
+                <stop offset="100%" stopColor="#1E1E1B" />
+              </radialGradient>
+            </defs>
+
+            {/* Outer black oval */}
+            <ellipse cx="450" cy="120" rx="440" ry="104" fill="#1E1E1B" />
+
+            {/* Depth fill inside ring — the "hole" */}
+            <ellipse cx="218" cy="120" rx="142" ry="60" fill="url(#holeDepth)" />
+
+            {/* Crimson ring */}
+            <ellipse
+              cx="218" cy="120"
+              rx="142" ry="60"
+              fill="none" stroke="#981327" strokeWidth="4.5"
+            />
+
+            {/* "We can take it one step at a time." — centred inside the ring */}
+            <text
+              x="218" y="120"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="rgba(243,238,218,0.74)"
+              fontSize="11.5"
+              fontWeight="300"
+              fontFamily="'Source Sans 3', sans-serif"
+              letterSpacing="0.4"
+            >
+              We can take it one step at a time.
+            </text>
+
+            {/* Thin divider between links */}
+            <line
+              x1="648" y1="103" x2="648" y2="137"
+              stroke="rgba(243,238,218,0.18)" strokeWidth="1"
+            />
+
+            {/* @aline.practice */}
+            <a href="https://instagram.com/aline.practice" target="_blank" rel="noopener noreferrer">
+              <text
+                x="510" y="120"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="rgba(243,238,218,0.88)"
+                fontSize="14"
+                fontWeight="300"
+                fontFamily="'Source Sans 3', sans-serif"
+                style={{ cursor: "pointer" }}
+              >
+                @aline.practice
+              </text>
+            </a>
+
+            {/* connect@alinepractice.com */}
+            <a href="mailto:connect@alinepractice.com">
+              <text
+                x="762" y="120"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="rgba(243,238,218,0.88)"
+                fontSize="13"
+                fontWeight="300"
+                fontFamily="'Source Sans 3', sans-serif"
+                style={{ cursor: "pointer" }}
+              >
+                connect@alinepractice.com
+              </text>
+            </a>
+          </svg>
         </div>
       </section>
     </>
