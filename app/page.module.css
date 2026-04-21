@@ -141,7 +141,7 @@
 }
 
 .valuesInner {
-  max-width: 580px;
+  max-width: 680px;
   width: 100%;
   text-align: center;
 }
@@ -173,17 +173,17 @@
 .valuesGuide {
   margin-top: clamp(3rem, 5vw, 4.5rem);
   margin-bottom: 2rem;
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-faint);
+  color: var(--text);
 }
 
 .principlesGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem clamp(1rem, 3vw, 2rem);
+  gap: 2rem clamp(1.5rem, 4vw, 3rem);
   text-align: center;
   margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
 }
