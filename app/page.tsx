@@ -150,7 +150,7 @@ export default function Home() {
           {/* Black oval — clean, no ring */}
           <svg
             className={s.connectOvalSvg}
-            viewBox="-60 0 1020 240"
+            viewBox="-60 52 1020 188"
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
