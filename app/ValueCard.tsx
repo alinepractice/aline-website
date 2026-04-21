@@ -6,9 +6,11 @@ import s from "./page.module.css";
 export default function ValueCard({
   name,
   description,
+  secondary = false,
 }: {
   name: string;
   description: string;
+  secondary?: boolean;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -23,7 +25,7 @@ export default function ValueCard({
       aria-expanded={open}
       onClick={handleClick}
     >
-      <h3 className={s.principleName}>{name}</h3>
+      <h3 className={secondary ? s.principleNameSecondary : s.principleName}>{name}</h3>
       <p className={s.principleDesc}>{description}</p>
     </button>
   );

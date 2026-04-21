@@ -86,19 +86,19 @@ export default function Home() {
               name="Safe Choices"
               description="Recognizing limits and responding with clarity."
             />
-            <ValueCard
+            <ValueCard secondary
               name="ESDM"
               description="A developmental, play-based model that integrates learning into everyday interactions."
             />
-            <ValueCard
+            <ValueCard secondary
               name="DIR/Floortime"
               description="A developmental, relationship-based model focused on connection, interaction, and following the child's lead."
             />
-            <ValueCard
+            <ValueCard secondary
               name="JASPER"
               description="A developmental approach that supports joint attention, play, and communication."
             />
-            <ValueCard
+            <ValueCard secondary
               name="PRT"
               description="A naturalistic, motivation-based approach that supports learning within everyday interactions."
             />

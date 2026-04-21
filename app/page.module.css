@@ -209,6 +209,14 @@
   transition: opacity 0.3s ease;
 }
 
+.principleNameSecondary {
+  font-size: clamp(0.8rem, 1.45vw, 0.9rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-bottom: 0;
+  transition: opacity 0.3s ease;
+}
 
 .principleDesc {
   max-width: 280px;
