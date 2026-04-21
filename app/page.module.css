@@ -489,11 +489,10 @@
 }
 
 .servicesLabel {
-  font-size: clamp(0.68rem, 1.1vw, 0.78rem);
-  font-weight: 300;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-faint);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: rgba(0, 0, 0, 0.62);
   padding: 0 var(--side-padding);
   margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
