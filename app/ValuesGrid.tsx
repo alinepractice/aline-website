@@ -17,26 +17,21 @@ const VALUES = [
 
 export default function ValuesGrid() {
   const gridRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [animate, setAnimate] = useState(false);
 
-  // Cards drift in from off the sides — large horizontal offset, gentle vertical float
+  // Stable random offsets, generated once per mount
   const offsets = useRef(
-    VALUES.map((_, i) => {
-      const fromLeft = Math.random() < 0.5;
-      const xDist    = 280 + Math.random() * 160;   // 280–440px off screen
-      const yDrift   = (Math.random() - 0.5) * 48;  // ±24px gentle vertical drift
-      return {
-        x:      fromLeft ? -xDist : xDist,
-        y:      yDrift,
-        rotate: (Math.random() - 0.5) * 18,          // subtle tilt
-        delay:  0.14 * i + Math.random() * 0.18,     // 0 → ~1.26s, each clearly distinct
-      };
-    })
+    VALUES.map((_, i) => ({
+      fromLeft: Math.random() < 0.5,
+      xDist:    340 + Math.random() * 200,     // 340–540 px — clearly off-screen
+      yDrift:   (Math.random() - 0.5) * 36,    // ±18 px arc
+      delay:    0.16 * i + Math.random() * 0.2, // 0 → ~1.5 s stagger
+    }))
   );
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
+      setAnimate(true);
       return;
     }
 
@@ -44,8 +39,8 @@ export default function ValuesGrid() {
     if (!el) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.5, rootMargin: "-8% 0px" }
+      ([entry]) => setAnimate(entry.isIntersecting),
+      { threshold: 0.4, rootMargin: "-5% 0px" }
     );
 
     observer.observe(el);
@@ -55,28 +50,17 @@ export default function ValuesGrid() {
   return (
     <div ref={gridRef} className={s.principlesGrid}>
       {VALUES.map(({ name, description }, i) => {
-        const { x, y, rotate, delay } = offsets.current[i];
-
-        const transition = visible
-          // Slow, smooth ease-out — floats in like a bubble settling
-          ? `transform 1.9s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s,
-             opacity   1.6s ease                          ${delay}s`
-          // Exit: gentle scatter
-          : `transform 0.5s ease-in,
-             opacity   0.35s ease`;
-
+        const { fromLeft, xDist, yDrift, delay } = offsets.current[i];
         return (
           <ValueCard
             key={name}
             name={name}
             description={description}
-            style={{
-              opacity:   visible ? 1 : 0,
-              transform: visible
-                ? "translateX(0) translateY(0) rotate(0deg)"
-                : `translateX(${x}px) translateY(${y}px) rotate(${rotate}deg)`,
-              transition,
-            }}
+            animate={animate}
+            fromLeft={fromLeft}
+            xDist={xDist}
+            yDrift={yDrift}
+            delay={delay}
           />
         );
       })}

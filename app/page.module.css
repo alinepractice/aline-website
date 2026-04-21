@@ -257,6 +257,101 @@
   }
 }
 
+/* ── Bubble cards ── */
+.cardWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+}
+
+/* Hidden until the bubble pops and the word lands */
+.cardHidden {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Word settles in with a gentle spring bounce */
+.cardLanded {
+  animation: cardReveal 0.52s cubic-bezier(0.34, 1.18, 0.64, 1) both;
+}
+
+@keyframes cardReveal {
+  from { opacity: 0; transform: scale(0.80); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Soap bubble ── */
+.bubble {
+  position: absolute;
+  inset: 0;
+  width: 62px;
+  height: 62px;
+  margin: auto;
+  border-radius: 50%;
+  /* iridescent soap film on cream */
+  background: radial-gradient(
+    circle at 31% 27%,
+    rgba(255, 255, 255, 0.94)  0%,
+    rgba(215, 237, 255, 0.62) 18%,
+    rgba(188, 218, 250, 0.36) 38%,
+    rgba(210, 190, 252, 0.20) 58%,
+    rgba(190, 238, 215, 0.11) 78%,
+    rgba(250, 244, 220, 0.03) 100%
+  );
+  border: 1px solid rgba(218, 238, 255, 0.50);
+  box-shadow:
+    inset 5px 5px 14px rgba(255, 255, 255, 0.72),
+    inset -3px -3px 8px rgba(175, 200, 240, 0.18),
+    0 4px 20px rgba(175, 200, 240, 0.14);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Float phase — slow dreamy drift from the side */
+.bubble[data-phase="floating"] {
+  animation:
+    bubbleFloat var(--float-ms, 3000ms) cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s) both,
+    bubbleWobble 2.6s ease-in-out var(--delay, 0s) infinite;
+}
+
+/* Pop phase — expand and burst */
+.bubble[data-phase="popping"] {
+  animation: bubblePop 0.40s ease-out forwards;
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateX(var(--from-x, -440px)) translateY(var(--y-drift, 0px)) scale(0.52);
+    opacity: 0;
+  }
+  6%   { opacity: 0.88; }
+  100% { transform: translateX(0) translateY(0) scale(1); opacity: 1; }
+}
+
+/* Gentle organic wobble while floating */
+@keyframes bubbleWobble {
+  0%, 100% { border-radius: 50%; }
+  28% { border-radius: 46% 54% 52% 48% / 54% 48% 52% 46%; }
+  58% { border-radius: 54% 46% 47% 53% / 45% 53% 47% 55%; }
+}
+
+/* Expand → blur → gone */
+@keyframes bubblePop {
+  0%   { transform: scale(1);    opacity: 1;    filter: blur(0);    }
+  36%  { transform: scale(1.20); opacity: 0.88; filter: blur(0);    }
+  72%  { transform: scale(1.44); opacity: 0.26; filter: blur(1.5px); }
+  100% { transform: scale(1.60); opacity: 0;    filter: blur(3px);  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble[data-phase="floating"],
+  .bubble[data-phase="popping"] { animation: none; opacity: 1; }
+  .cardLanded { animation: none; }
+}
+
 /* ── Bios ── */
 .bios {
   display: grid;
