@@ -291,23 +291,24 @@
   height: 62px;
   margin: auto;
   border-radius: 50%;
-  /* iridescent soap film on cream */
-  background: radial-gradient(
-    circle at 31% 27%,
-    rgba(255, 255, 255, 0.94)  0%,
-    rgba(215, 237, 255, 0.62) 18%,
-    rgba(188, 218, 250, 0.36) 38%,
-    rgba(210, 190, 252, 0.20) 58%,
-    rgba(190, 238, 215, 0.11) 78%,
-    rgba(250, 244, 220, 0.03) 100%
-  );
-  border: 1px solid rgba(218, 238, 255, 0.50);
-  box-shadow:
-    inset 5px 5px 14px rgba(255, 255, 255, 0.72),
-    inset -3px -3px 8px rgba(175, 200, 240, 0.18),
-    0 4px 20px rgba(175, 200, 240, 0.14);
+  background: transparent;
+  border: 1px solid rgba(40, 40, 40, 0.28);
   pointer-events: none;
   will-change: transform, opacity;
+}
+
+/* Simple glare arc for depth */
+.bubble::before {
+  content: '';
+  position: absolute;
+  top: 16%;
+  left: 19%;
+  width: 34%;
+  height: 12%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.70);
+  transform: rotate(-30deg);
+  filter: blur(1.5px);
 }
 
 /* Float phase — slow dreamy drift from the side */
