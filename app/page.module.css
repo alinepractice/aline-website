@@ -495,17 +495,20 @@
   text-transform: uppercase;
   color: var(--text-faint);
   padding: 0 var(--side-padding);
-  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
 
+/* Centre-snap track — padding pulls first/last cards to viewport centre */
 .carouselTrack {
   display: flex;
-  gap: clamp(0.85rem, 1.6vw, 1.1rem);
+  gap: clamp(1rem, 2.5vw, 1.5rem);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: calc((100% - min(68vw, 540px)) / 2);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 0.5rem var(--side-padding) 2rem;
+  padding-block: 0.75rem 3rem;
+  padding-inline: calc((100% - min(68vw, 540px)) / 2);
   cursor: grab;
   user-select: none;
 }
@@ -518,51 +521,41 @@
   cursor: grabbing;
 }
 
+/* Dark editorial card — warm near-black, cream text, strong contrast */
 .serviceCard {
-  flex: 0 0 clamp(180px, 24vw, 240px);
-  scroll-snap-align: start;
+  flex: 0 0 min(68vw, 540px);
+  scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: clamp(88px, 11vw, 108px);
-  background: rgba(255, 255, 255, 0.52);
-  backdrop-filter: blur(10px) saturate(1.2);
-  -webkit-backdrop-filter: blur(10px) saturate(1.2);
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 16px;
-  padding: clamp(1.25rem, 2.5vw, 1.75rem) clamp(1rem, 2vw, 1.5rem);
-  box-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  min-height: clamp(130px, 16vw, 165px);
+  background: rgba(18, 16, 12, 0.91);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: clamp(2.25rem, 4.5vw, 3rem) clamp(2rem, 5vw, 3.5rem);
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.14);
   cursor: pointer;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  transition: box-shadow 0.24s ease, opacity 0.24s ease;
   text-align: center;
 }
 
 .serviceCard:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 6px 24px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
-}
-
-.serviceCardOpen {
-  justify-content: flex-start;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.22);
+  opacity: 0.95;
 }
 
 .serviceTitle {
-  font-size: clamp(0.82rem, 1.4vw, 0.92rem);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: var(--text);
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(243, 238, 218, 0.95);
 }
 
 /* Smooth reveal using grid-row height trick */
 .serviceDescWrap {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.32s ease;
+  transition: grid-template-rows 0.35s ease;
   width: 100%;
 }
 
@@ -575,11 +568,11 @@
 }
 
 .serviceDesc {
-  padding-top: 0.7rem;
-  font-size: clamp(0.75rem, 1.2vw, 0.83rem);
+  padding-top: clamp(0.85rem, 1.8vw, 1.1rem);
+  font-size: clamp(0.82rem, 1.5vw, 0.92rem);
   font-weight: 300;
-  line-height: 1.65;
-  color: var(--text-light);
+  line-height: 1.72;
+  color: rgba(243, 238, 218, 0.58);
   text-align: center;
 }
 

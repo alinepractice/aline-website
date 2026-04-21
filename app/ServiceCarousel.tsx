@@ -52,7 +52,7 @@ function ServiceCard({
 
   return (
     <article
-      className={`${s.serviceCard} ${open ? s.serviceCardOpen : ""}`}
+      className={s.serviceCard}
       onClick={() => setOpen((v) => !v)}
       aria-expanded={open}
       role="button"
@@ -61,7 +61,6 @@ function ServiceCard({
     >
       <h3 className={s.serviceTitle}>{title}</h3>
 
-      {/* Grid-row trick for smooth height animation */}
       <div className={s.serviceDescWrap} aria-hidden={!open}>
         <div className={s.serviceDescInner}>
           <p className={s.serviceDesc}>{description}</p>
