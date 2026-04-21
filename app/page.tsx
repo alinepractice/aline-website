@@ -134,8 +134,9 @@ export default function Home() {
             <ellipse cx="105" cy="36" rx="96" ry="30" fill="none" stroke="#981327" strokeWidth="3.5" />
           </svg>
 
-          {/* Links */}
+          {/* Links + sub-text */}
           <div className={s.connectLinks}>
+            <p className={s.connectSub}>We can take it one step at a time.</p>
             <a
               href="https://instagram.com/aline.practice"
               target="_blank"

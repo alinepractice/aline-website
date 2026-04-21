@@ -519,7 +519,7 @@
   font-weight: 400;
   letter-spacing: 0.03em;
   color: var(--text);
-  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: 0.35rem;
 }
 
 /* Large flat oval — bleeds to section edges */
@@ -555,16 +555,24 @@
   align-items: flex-end;
 }
 
+.connectSub {
+  font-size: clamp(0.76rem, 1.2vw, 0.86rem);
+  font-weight: 300;
+  color: rgba(243, 238, 218, 0.58);
+  margin-bottom: 0.55rem;
+  text-align: right;
+}
+
 .connectBtn {
   font-size: clamp(0.78rem, 1.25vw, 0.88rem);
   font-weight: 300;
   letter-spacing: 0.02em;
-  color: rgba(243, 238, 218, 0.48);
+  color: rgba(243, 238, 218, 0.88);
   transition: opacity 0.3s ease;
 }
 
 .connectBtn:hover {
-  opacity: 0.8;
+  opacity: 0.55;
 }
 
 /* ── Mobile ── */
