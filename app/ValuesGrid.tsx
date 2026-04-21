@@ -26,6 +26,7 @@ export default function ValuesGrid() {
       xDist:    340 + Math.random() * 200,     // 340–540 px — clearly off-screen
       yDrift:   (Math.random() - 0.5) * 52,    // ±26 px arc — more organic path
       delay:    0.16 * i + Math.random() * 0.2, // 0 → ~1.5 s stagger
+      glare:    Math.random() < 0.55,           // ~half get a second line glare
     }))
   );
 
@@ -50,7 +51,7 @@ export default function ValuesGrid() {
   return (
     <div ref={gridRef} className={s.principlesGrid}>
       {VALUES.map(({ name, description }, i) => {
-        const { fromLeft, xDist, yDrift, delay } = offsets.current[i];
+        const { fromLeft, xDist, yDrift, delay, glare } = offsets.current[i];
         return (
           <ValueCard
             key={name}
@@ -61,6 +62,7 @@ export default function ValuesGrid() {
             xDist={xDist}
             yDrift={yDrift}
             delay={delay}
+            glare={glare}
           />
         );
       })}

@@ -298,7 +298,7 @@
   will-change: transform, opacity;
 }
 
-/* Glare highlight — offset to match organic shape */
+/* Primary glare blob — top-left highlight */
 .bubble::before {
   content: '';
   position: absolute;
@@ -310,6 +310,20 @@
   background: rgba(255, 255, 255, 0.66);
   transform: rotate(-32deg);
   filter: blur(1.5px);
+}
+
+/* Secondary line glare — thin arc sweep, only on select bubbles */
+.bubble[data-glare="true"]::after {
+  content: '';
+  position: absolute;
+  top: 34%;
+  left: 9%;
+  width: 60%;
+  height: 5%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.36);
+  transform: rotate(-16deg);
+  filter: blur(0.8px);
 }
 
 /* Float phase — slow dreamy drift, gentle organic breath */

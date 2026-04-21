@@ -17,6 +17,7 @@ export default function ValueCard({
   xDist,
   yDrift,
   delay,
+  glare = false,
 }: {
   name: string;
   description: string;
@@ -25,6 +26,7 @@ export default function ValueCard({
   xDist: number;
   yDrift: number;
   delay: number; // seconds
+  glare?: boolean;
 }) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [open,  setOpen]  = useState(false);
@@ -68,6 +70,7 @@ export default function ValueCard({
         <div
           className={s.bubble}
           data-phase={phase}
+          data-glare={glare ? "true" : undefined}
           style={{
             "--from-x":   `${fromLeft ? -xDist : xDist}px`,
             "--y-drift":  `${yDrift}px`,
