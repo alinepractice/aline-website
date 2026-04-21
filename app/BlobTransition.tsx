@@ -134,9 +134,9 @@ export default function BlobTransition() {
         <div
           ref={bodyRef}
           style={{
-            fontSize:   "clamp(0.92rem, 1.65vw, 1.05rem)",
+            fontSize:   "clamp(1rem, 1.8vw, 1.12rem)",
             fontWeight: 300,
-            lineHeight: 1.85,
+            lineHeight: 1.7,
             textAlign:  "center",
             color:      "#9A1124",
             opacity:    0,
