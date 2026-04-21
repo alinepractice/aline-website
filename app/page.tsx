@@ -134,14 +134,14 @@ export default function Home() {
                 shapeRendering="geometricPrecision"
               />
               <text
-                fill="rgba(0,0,0,0.70)"
-                fontSize="15"
+                fill="#9A1124"
+                fontSize="20"
                 fontWeight="300"
                 fontFamily="'Source Sans 3', sans-serif"
-                letterSpacing="0.5"
+                letterSpacing="0.6"
               >
                 <textPath href="#ringArc" startOffset="50%" textAnchor="middle">
-                  We can take it one step at a time.
+                  one step at a time
                 </textPath>
               </text>
             </svg>
