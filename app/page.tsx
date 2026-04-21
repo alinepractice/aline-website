@@ -128,7 +128,7 @@ export default function Home() {
           {/* Horizontal oval — black hole with crimson ring for depth */}
           <svg
             className={s.connectOvalSvg}
-            viewBox="0 0 900 240"
+            viewBox="-60 0 1020 240"
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
@@ -143,7 +143,7 @@ export default function Home() {
             {/* Black shape — exact 9-segment brand path from footer.eps, rotated 90° horizontal.
                  Converted from EPS coords (y-flipped), rotated, scaled to fill SVG width. */}
             <path
-              d="M 22.43 128.11 C 36.76 145.46 159.24 163.32 419.80 160.24 C 634.67 157.72 803.73 143.51 850.04 121.40 C 890.01 102.34 796.37 89.38 667.73 82.03 C 613.33 78.93 558.62 77.56 506.75 77.07 C 465.46 76.68 426.55 76.86 390.24 77.22 C 348.76 77.64 310.19 78.27 272.06 79.29 C 249.61 79.89 226.96 80.73 203.11 82.01 C 160.88 84.26 124.36 87.39 96.97 91.39 C 32.00 100.83 9.99 113.04 22.43 128.11 Z"
+              d="M -41.71 129.33 C -25.23 149.28 115.63 169.82 415.27 166.28 C 662.37 163.38 856.79 147.04 910.05 121.61 C 956.01 99.69 848.33 84.79 700.39 76.33 C 637.83 72.77 574.91 71.19 515.26 70.63 C 467.78 70.18 423.03 70.39 381.28 70.80 C 333.57 71.29 289.22 72.01 245.37 73.18 C 219.55 73.87 193.50 74.84 166.08 76.31 C 117.51 78.90 75.51 82.50 44.02 87.10 C -30.70 97.95 -56.01 112.00 -41.71 129.33 Z"
               fill="url(#ovalDepth)"
               shapeRendering="geometricPrecision"
             />
