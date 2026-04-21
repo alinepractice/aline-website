@@ -26,7 +26,7 @@ export default function ValueCard({
       aria-expanded={open}
       onClick={handleClick}
     >
-      <h3 className={secondary ? s.principleNameSecondary : s.principleName}>{name}</h3>
+      <h3 className={s.principleName}>{name}</h3>
       <p className={s.principleDesc}>{description}</p>
     </button>
   );
