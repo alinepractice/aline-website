@@ -133,19 +133,21 @@ export default function Home() {
                 fillRule="evenodd"
                 shapeRendering="geometricPrecision"
               />
-              <text
-                fill="#9A1124"
-                fontSize="20"
-                fontWeight="300"
-                fontFamily="'Source Sans 3', sans-serif"
-                letterSpacing="0.6"
-                textLength="248"
-                lengthAdjust="spacingAndGlyphs"
-              >
-                <textPath href="#ringArc" startOffset="50%" textAnchor="middle">
-                  one step at a time
-                </textPath>
-              </text>
+              <g transform="translate(218,121) scale(1,1.32) translate(-218,-121)">
+                <text
+                  fill="#9A1124"
+                  fontSize="17"
+                  fontWeight="300"
+                  fontFamily="'Source Sans 3', sans-serif"
+                  letterSpacing="0.6"
+                  textLength="248"
+                  lengthAdjust="spacingAndGlyphs"
+                >
+                  <textPath href="#ringArc" startOffset="50%" textAnchor="middle">
+                    one step at a time
+                  </textPath>
+                </text>
+              </g>
             </svg>
           </div>
 
