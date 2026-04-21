@@ -173,19 +173,19 @@ export default function Home() {
           {/* Links */}
           <div className={s.connectLinks}>
             <a
+              href="mailto:connect@alinepractice.com"
+              className={s.connectLink}
+            >
+              connect@alinepractice.com
+            </a>
+            <span className={s.connectDivider} aria-hidden="true" />
+            <a
               href="https://instagram.com/aline.practice"
               target="_blank"
               rel="noopener noreferrer"
               className={s.connectLink}
             >
               @aline.practice
-            </a>
-            <span className={s.connectDivider} aria-hidden="true" />
-            <a
-              href="mailto:connect@alinepractice.com"
-              className={s.connectLink}
-            >
-              connect@alinepractice.com
             </a>
           </div>
         </div>
