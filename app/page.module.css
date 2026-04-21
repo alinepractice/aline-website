@@ -594,9 +594,14 @@
   max-width: 880px;
   margin: 0 auto;
   perspective: 700px;
-  /* Shadow on wrapper so it follows the 3D transform correctly */
-  filter: drop-shadow(0 14px 44px rgba(0, 0, 0, 0.44))
-          drop-shadow(0 3px 10px rgba(0, 0, 0, 0.26));
+}
+
+/* Header row: "Let's connect" left, ring right — vertically centred */
+.connectHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(0.75rem, 1.5vw, 1.1rem);
 }
 
 .connectHeading {
@@ -604,16 +609,25 @@
   font-weight: 400;
   letter-spacing: 0.03em;
   color: var(--text);
-  margin-bottom: 0.25rem;
+}
+
+/* Ring SVG — sits top-right, proportionally sized */
+.connectRingSvg {
+  width: clamp(160px, 24vw, 260px);
+  height: auto;
+  flex-shrink: 0;
 }
 
 .connectOvalSvg {
   width: 100%;
   height: auto;
   display: block;
-  /* Tilt back in 3D — top recedes, bottom comes forward, reads as a disc/plane */
+  /* Tilt back in 3D — top recedes, bottom comes forward */
   transform: rotateX(10deg);
   transform-origin: center center;
+  /* Shadow lives here so it follows the 3D transform */
+  filter: drop-shadow(0 14px 44px rgba(0, 0, 0, 0.44))
+          drop-shadow(0 3px 10px rgba(0, 0, 0, 0.26));
 }
 
 .connectLinks {

@@ -112,59 +112,63 @@ export default function Home() {
       {/* ── Connect ── */}
       <section id="connect" className={`${s.section} ${s.connect}`}>
         <div className={s.connectOvalWrap}>
-          <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
 
-          {/* Horizontal oval — black hole with crimson ring for depth */}
+          {/* Header row: heading left, ring right */}
+          <div className={s.connectHeader}>
+            <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
+
+            {/* Red ring + arc text — lifted out of the oval, sits top-right */}
+            <svg
+              className={s.connectRingSvg}
+              viewBox="38 82 360 76"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <defs>
+                <path id="ringArc" d="M 90 120 C 90 138 345 138 345 120" />
+              </defs>
+              <path
+                d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
+                fill="#9A1124"
+                fillRule="evenodd"
+                shapeRendering="geometricPrecision"
+              />
+              <text
+                fill="rgba(243,238,218,0.90)"
+                fontSize="15"
+                fontWeight="300"
+                fontFamily="'Source Sans 3', sans-serif"
+                letterSpacing="0.5"
+              >
+                <textPath href="#ringArc" startOffset="50%" textAnchor="middle">
+                  We can take it one step at a time.
+                </textPath>
+              </text>
+            </svg>
+          </div>
+
+          {/* Black oval — clean, no ring */}
           <svg
             className={s.connectOvalSvg}
             viewBox="-60 0 1020 240"
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
-              {/* Subtle gradient on the oval — rim catches light at top, deepens toward center */}
               <radialGradient id="ovalDepth" cx="50%" cy="16%" r="78%">
                 <stop offset="0%"   stopColor="#242424" />
                 <stop offset="22%"  stopColor="#0d0d0d" />
                 <stop offset="100%" stopColor="#000000" />
               </radialGradient>
-              {/* Arc path for warped sub-text — gentle bottom arch, text sits inside ring below centre */}
-              <path id="ringArc" d="M 90 120 C 90 138 345 138 345 120" />
             </defs>
-
-            {/* Black shape — exact 9-segment brand path from footer.eps, rotated 90° horizontal.
-                 0.5° CW tilt around centre balances both tips to the same y. */}
             <path
               transform="rotate(0.5, 450, 120)"
               d="M -41.71 129.33 C -25.23 149.28 115.63 169.82 415.27 166.28 C 662.37 163.38 856.79 147.04 910.05 121.61 C 956.01 99.69 848.33 84.79 700.39 76.33 C 637.83 72.77 574.91 71.19 515.26 70.63 C 467.78 70.18 423.03 70.39 381.28 70.80 C 333.57 71.29 289.22 72.01 245.37 73.18 C 219.55 73.87 193.50 74.84 166.08 76.31 C 117.51 78.90 75.51 82.50 44.02 87.10 C -30.70 97.95 -56.01 112.00 -41.71 129.33 Z"
               fill="url(#ovalDepth)"
               shapeRendering="geometricPrecision"
             />
-
-            {/* Red ring — exact brand path from footer.eps, rotated 90° horizontal.
-                 Compound path (outer oval + inner oval) with evenodd fill = crisp ring. */}
-            <path
-              d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
-              fill="#9A1124"
-              fillRule="evenodd"
-              shapeRendering="geometricPrecision"
-            />
-
-            {/* Sub-text — single line warped along a gentle arc inside the red ring */}
-            <text
-              fill="rgba(243,238,218,0.90)"
-              fontSize="15"
-              fontWeight="300"
-              fontFamily="'Source Sans 3', sans-serif"
-              letterSpacing="0.5"
-            >
-              <textPath href="#ringArc" startOffset="50%" textAnchor="middle">
-                We can take it one step at a time.
-              </textPath>
-            </text>
-
           </svg>
 
-          {/* Links — HTML so they scale properly on mobile */}
+          {/* Links */}
           <div className={s.connectLinks}>
             <a
               href="https://instagram.com/aline.practice"
