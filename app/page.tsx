@@ -147,11 +147,13 @@ export default function Home() {
               shapeRendering="geometricPrecision"
             />
 
-            {/* Red ring — clean, flat, smaller to hug the two-line text */}
-            <ellipse
-              cx="218" cy="120"
-              rx="112" ry="52"
-              fill="none" stroke="#9A1124" strokeWidth="4"
+            {/* Red ring — organic lens shape, rotated horizontal to hug text */}
+            <path
+              d="M 106 120 C 106 80 146 67 218 67 C 290 67 330 80 330 120 C 330 160 290 173 218 173 C 146 173 106 160 106 120 Z"
+              fill="none"
+              stroke="#9A1124"
+              strokeWidth="4"
+              shapeRendering="geometricPrecision"
             />
 
             {/* Sub-text — two lines, larger font, centred inside the ring */}
