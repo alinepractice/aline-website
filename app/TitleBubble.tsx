@@ -57,7 +57,7 @@ export default function TitleBubble() {
             "--y-drift":     "12px",
             "--delay":       "0s",
             "--float-ms":    `${FLOAT_MS}ms`,
-            "--bubble-size": "108px",
+            "--bubble-size": "180px",
           } as React.CSSProperties}
         />
       )}
