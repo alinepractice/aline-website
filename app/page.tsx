@@ -147,9 +147,9 @@ export default function Home() {
               shapeRendering="geometricPrecision"
             />
 
-            {/* Red ring — organic lens shape, rotated horizontal to hug text */}
+            {/* Red ring — elongated organic oval, 3.5:1 ratio, rotated horizontal */}
             <path
-              d="M 106 120 C 106 80 146 67 218 67 C 290 67 330 80 330 120 C 330 160 290 173 218 173 C 146 173 106 160 106 120 Z"
+              d="M 43 120 C 43 96.5 135.75 70 218 70 C 300.25 70 393 96.5 393 120 C 393 143.5 300.25 170 218 170 C 135.75 170 43 143.5 43 120 Z"
               fill="none"
               stroke="#9A1124"
               strokeWidth="4"
