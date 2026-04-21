@@ -504,11 +504,11 @@
   gap: clamp(1rem, 2.5vw, 1.5rem);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding-inline: calc((100% - min(68vw, 540px)) / 2);
+  scroll-padding-inline: calc((100% - min(88vw, 760px)) / 2);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding-block: 0.75rem 3rem;
-  padding-inline: calc((100% - min(68vw, 540px)) / 2);
+  padding-inline: calc((100% - min(88vw, 760px)) / 2);
   cursor: grab;
   user-select: none;
 }
@@ -521,27 +521,26 @@
   cursor: grabbing;
 }
 
-/* Dark editorial card — warm near-black, cream text, strong contrast */
+/* Dark editorial card — pure logo black, cream text */
 .serviceCard {
-  flex: 0 0 min(68vw, 540px);
+  flex: 0 0 min(88vw, 760px);
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: clamp(130px, 16vw, 165px);
-  background: rgba(18, 16, 12, 0.91);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  min-height: clamp(150px, 18vw, 190px);
+  background: #000000;
+  border: none;
   border-radius: 20px;
-  padding: clamp(2.25rem, 4.5vw, 3rem) clamp(2rem, 5vw, 3.5rem);
+  padding: clamp(2.5rem, 5vw, 3.5rem) clamp(2.25rem, 6vw, 4.5rem);
   box-shadow: 0 6px 40px rgba(0, 0, 0, 0.14);
   cursor: pointer;
-  transition: box-shadow 0.24s ease, opacity 0.24s ease;
+  transition: opacity 0.22s ease;
   text-align: center;
 }
 
 .serviceCard:hover {
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.22);
-  opacity: 0.95;
+  opacity: 0.88;
 }
 
 .serviceTitle {
