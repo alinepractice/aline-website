@@ -158,7 +158,7 @@ export default function Home() {
               shapeRendering="geometricPrecision"
             />
 
-            {/* Sub-text — two lines, larger font, centred inside the ring */}
+            {/* Sub-text — shifted down so caps sit fully inside inner ring (ring top ≈ y100) */}
             <text
               textAnchor="middle"
               fill="rgba(243,238,218,0.90)"
@@ -167,26 +167,27 @@ export default function Home() {
               fontFamily="'Source Sans 3', sans-serif"
               letterSpacing="0.3"
             >
-              <tspan x="218" y="109">We can take it</tspan>
-              <tspan x="218" y="132">one step at a time.</tspan>
+              <tspan x="218" y="114">We can take it</tspan>
+              <tspan x="218" y="134">one step at a time.</tspan>
             </text>
 
             {/* Thin divider between links */}
             <line
-              x1="648" y1="103" x2="648" y2="137"
-              stroke="rgba(243,238,218,0.18)" strokeWidth="1"
+              x1="648" y1="106" x2="648" y2="134"
+              stroke="rgba(243,238,218,0.22)" strokeWidth="1"
             />
 
             {/* @aline.practice */}
             <a href="https://instagram.com/aline.practice" target="_blank" rel="noopener noreferrer">
               <text
-                x="510" y="120"
+                x="515" y="120"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fill="rgba(243,238,218,0.88)"
-                fontSize="14"
+                fill="rgba(243,238,218,0.93)"
+                fontSize="18"
                 fontWeight="300"
                 fontFamily="'Source Sans 3', sans-serif"
+                letterSpacing="0.4"
                 style={{ cursor: "pointer" }}
               >
                 @aline.practice
@@ -196,13 +197,14 @@ export default function Home() {
             {/* connect@alinepractice.com */}
             <a href="mailto:connect@alinepractice.com">
               <text
-                x="762" y="120"
+                x="790" y="120"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fill="rgba(243,238,218,0.88)"
-                fontSize="13"
+                fill="rgba(243,238,218,0.93)"
+                fontSize="16"
                 fontWeight="300"
                 fontFamily="'Source Sans 3', sans-serif"
+                letterSpacing="0.3"
                 style={{ cursor: "pointer" }}
               >
                 connect@alinepractice.com
