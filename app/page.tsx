@@ -138,8 +138,8 @@ export default function Home() {
                 <stop offset="22%"  stopColor="#0d0d0d" />
                 <stop offset="100%" stopColor="#000000" />
               </radialGradient>
-              {/* Arc path for warped sub-text — gentle bottom curve inside the red ring */}
-              <path id="ringArc" d="M 82 120 C 100 133 336 133 354 120" />
+              {/* Arc path for warped sub-text — deeper top arch echoing the ring's upper curve */}
+              <path id="ringArc" d="M 82 120 C 82 96 354 96 354 120" />
             </defs>
 
             {/* Black shape — exact 9-segment brand path from footer.eps, rotated 90° horizontal.
