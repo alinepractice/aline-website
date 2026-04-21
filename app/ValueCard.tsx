@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useState } from "react";
 import s from "./page.module.css";
 
 export default function ValueCard({
@@ -12,19 +12,8 @@ export default function ValueCard({
 }) {
   const [open, setOpen] = useState(false);
 
-  // On mobile, auto-hide after showing
-  useEffect(() => {
-    if (!open) return;
-    // Only auto-dismiss on touch devices (no hover capability)
-    const mq = window.matchMedia("(hover: none)");
-    if (!mq.matches) return;
-
-    const timer = setTimeout(() => setOpen(false), 2000);
-    return () => clearTimeout(timer);
-  }, [open]);
-
   const handleClick = useCallback(() => {
-    setOpen(true);
+    setOpen(prev => !prev);
   }, []);
 
   return (
