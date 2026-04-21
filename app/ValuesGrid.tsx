@@ -24,7 +24,7 @@ export default function ValuesGrid() {
     VALUES.map((_, i) => ({
       fromLeft: Math.random() < 0.5,
       xDist:    340 + Math.random() * 200,     // 340–540 px — clearly off-screen
-      yDrift:   (Math.random() - 0.5) * 36,    // ±18 px arc
+      yDrift:   (Math.random() - 0.5) * 52,    // ±26 px arc — more organic path
       delay:    0.16 * i + Math.random() * 0.2, // 0 → ~1.5 s stagger
     }))
   );

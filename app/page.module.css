@@ -290,32 +290,33 @@
   width: 62px;
   height: 62px;
   margin: auto;
-  border-radius: 50%;
+  /* Organic base — slightly irregular, like a real soap bubble */
+  border-radius: 54% 46% 45% 55% / 57% 43% 60% 40%;
   background: transparent;
-  border: 1px solid rgba(40, 40, 40, 0.28);
+  border: 1px solid rgba(40, 40, 40, 0.26);
   pointer-events: none;
   will-change: transform, opacity;
 }
 
-/* Simple glare arc for depth */
+/* Glare highlight — offset to match organic shape */
 .bubble::before {
   content: '';
   position: absolute;
-  top: 16%;
-  left: 19%;
-  width: 34%;
-  height: 12%;
+  top: 13%;
+  left: 15%;
+  width: 38%;
+  height: 14%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.70);
-  transform: rotate(-30deg);
+  background: rgba(255, 255, 255, 0.66);
+  transform: rotate(-32deg);
   filter: blur(1.5px);
 }
 
-/* Float phase — slow dreamy drift from the side */
+/* Float phase — slow dreamy drift, gentle organic breath */
 .bubble[data-phase="floating"] {
   animation:
-    bubbleFloat var(--float-ms, 3000ms) cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s) both,
-    bubbleWobble 2.6s ease-in-out var(--delay, 0s) infinite;
+    bubbleFloat var(--float-ms, 3800ms) cubic-bezier(0.14, 0.8, 0.28, 1) var(--delay, 0s) both,
+    bubbleWobble 4.2s ease-in-out var(--delay, 0s) infinite;
 }
 
 /* Pop phase — expand and burst */
@@ -325,18 +326,22 @@
 
 @keyframes bubbleFloat {
   0% {
-    transform: translateX(var(--from-x, -440px)) translateY(var(--y-drift, 0px)) scale(0.52);
+    transform: translateX(var(--from-x, -440px)) translateY(var(--y-drift, 0px)) scale(0.42);
     opacity: 0;
   }
-  6%   { opacity: 0.88; }
+  8%   { opacity: 0.82; }
   100% { transform: translateX(0) translateY(0) scale(1); opacity: 1; }
 }
 
-/* Gentle organic wobble while floating */
+/* Organic shape morphing — gentle breathing, not jittery */
 @keyframes bubbleWobble {
-  0%, 100% { border-radius: 50%; }
-  28% { border-radius: 46% 54% 52% 48% / 54% 48% 52% 46%; }
-  58% { border-radius: 54% 46% 47% 53% / 45% 53% 47% 55%; }
+  0%   { border-radius: 54% 46% 45% 55% / 57% 43% 60% 40%; }
+  17%  { border-radius: 44% 56% 54% 46% / 48% 58% 44% 56%; }
+  34%  { border-radius: 60% 40% 48% 52% / 43% 61% 55% 45%; }
+  51%  { border-radius: 46% 54% 60% 40% / 58% 42% 46% 54%; }
+  68%  { border-radius: 56% 44% 41% 59% / 44% 57% 58% 42%; }
+  85%  { border-radius: 40% 60% 52% 48% / 54% 46% 42% 58%; }
+  100% { border-radius: 54% 46% 45% 55% / 57% 43% 60% 40%; }
 }
 
 /* Expand → blur → gone */

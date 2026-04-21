@@ -5,7 +5,7 @@ import s from "./page.module.css";
 
 type Phase = "idle" | "floating" | "popping" | "landed";
 
-const FLOAT_MS = 3000; // slow, dreamy float
+const FLOAT_MS = 3800; // slow, dreamy float
 const POP_MS   = 400;  // pop duration
 const BUFFER   = 80;   // padding so float fully finishes
 
