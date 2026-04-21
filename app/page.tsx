@@ -122,33 +122,82 @@ export default function Home() {
 
       {/* ── Connect ── */}
       <section id="connect" className={`${s.section} ${s.connect}`}>
-        <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
-        <div className={s.connectOval}>
-          {/* Crimson ring — references the logo ring, flattened in perspective */}
-          <svg
-            className={s.connectRingSvg}
-            viewBox="0 0 210 72"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <ellipse cx="105" cy="36" rx="96" ry="30" fill="none" stroke="#981327" strokeWidth="3.5" />
-          </svg>
+        <div className={s.connectInner}>
 
-          {/* Links + sub-text */}
-          <div className={s.connectLinks}>
-            <p className={s.connectSub}>We can take it one step at a time.</p>
-            <a
-              href="https://instagram.com/aline.practice"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={s.connectBtn}
+          {/* Blob — same shape as hero logo, filled black */}
+          <div className={s.connectBlobWrap}>
+            <svg
+              className={s.connectBlobSvg}
+              viewBox="265 290 390 505"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
-              @aline.practice
-            </a>
-            <a href="mailto:connect@alinepractice.com" className={s.connectBtn}>
-              connect@alinepractice.com
-            </a>
+              {/* Black blob */}
+              <path
+                fill="#1E1E1B"
+                d="M 283.957 519.5625 C 282.988 466.8086 304.902 410.4219 353.7266 366.0234 C 388.414 334.4805 429.1719 313.625 476.3594 308.9258 C 537.0742 302.8828 582.8828 328.1094 613.9141 379.9531 C 633.3516 412.418 639.6133 448.2852 637.5664 485.793 C 635.6523 520.8164 626.5273 554.2031 614.3203 586.8242 C 598.8398 628.1797 579.6328 667.6992 553.6992 703.6055 C 537.6563 725.8164 518.0859 744.4023 493.3789 756.8828 C 450.4531 778.5625 407.0156 773.1406 370.5625 741.8242 C 307.5273 687.6719 285.4219 599.4336 283.957 519.5625 Z"
+              />
+
+              {/* Crimson ring near top — the Aline logo ring */}
+              <ellipse
+                cx="461" cy="418"
+                rx="48" ry="26"
+                fill="none" stroke="#981327" strokeWidth="5"
+              />
+
+              {/* "We can take it one step at a time." — runs vertically through the ring */}
+              <text
+                x="461" y="418"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="rgba(243,238,218,0.72)"
+                fontSize="11"
+                fontWeight="300"
+                fontFamily="'Source Sans 3', sans-serif"
+                transform="rotate(-90, 461, 418)"
+              >
+                We can take it one step at a time.
+              </text>
+
+              {/* @aline.practice */}
+              <a href="https://instagram.com/aline.practice" target="_blank" rel="noopener noreferrer">
+                <text
+                  x="461" y="585"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fill="rgba(243,238,218,0.88)"
+                  fontSize="14"
+                  fontWeight="300"
+                  fontFamily="'Source Sans 3', sans-serif"
+                  transform="rotate(-90, 461, 585)"
+                  style={{ cursor: "pointer" }}
+                >
+                  @aline.practice
+                </text>
+              </a>
+
+              {/* connect@alinepractice.com */}
+              <a href="mailto:connect@alinepractice.com">
+                <text
+                  x="461" y="693"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fill="rgba(243,238,218,0.88)"
+                  fontSize="12"
+                  fontWeight="300"
+                  fontFamily="'Source Sans 3', sans-serif"
+                  transform="rotate(-90, 461, 693)"
+                  style={{ cursor: "pointer" }}
+                >
+                  connect@alinepractice.com
+                </text>
+              </a>
+            </svg>
           </div>
+
+          {/* "Let's connect" — vertical text beside the blob */}
+          <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
+
         </div>
       </section>
     </>

@@ -509,70 +509,39 @@
 
 /* ── Connect ── */
 .connect {
-  padding-top: clamp(1.5rem, 3vw, 2.25rem);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
   background: none;
 }
 
-.connectHeading {
-  font-size: clamp(1.265rem, 2.2vw, 1.54rem);
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  color: var(--text);
-  margin-bottom: 0.35rem;
-}
-
-/* Large flat oval — bleeds to section edges */
-.connectOval {
-  position: relative;
-  margin-left: calc(-1 * var(--side-padding));
-  margin-right: calc(-1 * var(--side-padding));
-  height: clamp(140px, 17vw, 210px);
-  background: #1E1E1B;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-/* Crimson ring — left side, perspective-flattened */
-.connectRingSvg {
-  position: absolute;
-  left: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(88px, 12vw, 155px);
-  height: auto;
-}
-
-/* Links — right side, vertically centered */
-.connectLinks {
-  position: absolute;
-  right: clamp(2rem, 6vw, 7rem);
-  top: 50%;
-  transform: translateY(-50%);
+.connectInner {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  align-items: flex-end;
+  align-items: flex-start;
+  gap: clamp(1rem, 2.5vw, 2.5rem);
 }
 
-.connectSub {
-  font-size: clamp(0.76rem, 1.2vw, 0.86rem);
-  font-weight: 300;
-  color: rgba(243, 238, 218, 0.58);
-  margin-bottom: 0.55rem;
-  text-align: right;
+/* Blob container — sized proportionally */
+.connectBlobWrap {
+  flex-shrink: 0;
+  width: clamp(100px, 13vw, 180px);
 }
 
-.connectBtn {
-  font-size: clamp(0.78rem, 1.25vw, 0.88rem);
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  color: rgba(243, 238, 218, 0.88);
-  transition: opacity 0.3s ease;
+.connectBlobSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
 }
 
-.connectBtn:hover {
-  opacity: 0.55;
+/* "Let's connect" — runs vertically beside the blob */
+.connectHeading {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin-top: clamp(0.5rem, 3vw, 1.5rem);
 }
 
 /* ── Mobile ── */
@@ -599,11 +568,7 @@
     transform: translateY(32px);
   }
 
-  .connectLinks {
-    gap: 0.35rem;
-  }
-
-  .connectBtn {
-    font-size: 0.76rem;
+  .connectBlobWrap {
+    width: clamp(80px, 22vw, 130px);
   }
 }
