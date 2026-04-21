@@ -519,40 +519,68 @@
 }
 
 .serviceCard {
-  flex: 0 0 clamp(210px, 28vw, 270px);
+  flex: 0 0 clamp(180px, 24vw, 240px);
   scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(88px, 11vw, 108px);
   background: rgba(255, 255, 255, 0.52);
   backdrop-filter: blur(10px) saturate(1.2);
   -webkit-backdrop-filter: blur(10px) saturate(1.2);
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 16px;
-  padding: clamp(1.35rem, 2.5vw, 1.85rem);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) clamp(1rem, 2vw, 1.5rem);
   box-shadow:
     0 2px 12px rgba(0, 0, 0, 0.05),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  cursor: pointer;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
+  text-align: center;
 }
 
 .serviceCard:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow:
-    0 8px 28px rgba(0, 0, 0, 0.09),
+    0 6px 24px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
+.serviceCardOpen {
+  justify-content: flex-start;
+}
+
 .serviceTitle {
-  font-size: clamp(0.88rem, 1.5vw, 0.98rem);
+  font-size: clamp(0.82rem, 1.4vw, 0.92rem);
   font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   color: var(--text);
-  margin-bottom: 0.55rem;
+}
+
+/* Smooth reveal using grid-row height trick */
+.serviceDescWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s ease;
+  width: 100%;
+}
+
+.serviceCard[aria-expanded="true"] .serviceDescWrap {
+  grid-template-rows: 1fr;
+}
+
+.serviceDescInner {
+  overflow: hidden;
 }
 
 .serviceDesc {
-  font-size: clamp(0.78rem, 1.3vw, 0.86rem);
+  padding-top: 0.7rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.83rem);
   font-weight: 300;
-  line-height: 1.68;
+  line-height: 1.65;
   color: var(--text-light);
+  text-align: center;
 }
 
 /* ── Connect ── */

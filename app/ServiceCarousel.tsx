@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import s from "./page.module.css";
 
 const SERVICES = [
@@ -41,14 +41,46 @@ const SERVICES = [
   },
 ];
 
+function ServiceCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <article
+      className={`${s.serviceCard} ${open ? s.serviceCardOpen : ""}`}
+      onClick={() => setOpen((v) => !v)}
+      aria-expanded={open}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === "Enter" && setOpen((v) => !v)}
+    >
+      <h3 className={s.serviceTitle}>{title}</h3>
+
+      {/* Grid-row trick for smooth height animation */}
+      <div className={s.serviceDescWrap} aria-hidden={!open}>
+        <div className={s.serviceDescInner}>
+          <p className={s.serviceDesc}>{description}</p>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function ServiceCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
+  const dragMoved = useRef(false);
 
   function onMouseDown(e: React.MouseEvent) {
     isDragging.current = true;
+    dragMoved.current = false;
     startX.current = e.pageX - (trackRef.current?.offsetLeft ?? 0);
     scrollLeft.current = trackRef.current?.scrollLeft ?? 0;
     if (trackRef.current) trackRef.current.dataset.dragging = "true";
@@ -58,7 +90,9 @@ export default function ServiceCarousel() {
     if (!isDragging.current || !trackRef.current) return;
     e.preventDefault();
     const x = e.pageX - trackRef.current.offsetLeft;
-    trackRef.current.scrollLeft = scrollLeft.current - (x - startX.current);
+    const walk = x - startX.current;
+    if (Math.abs(walk) > 4) dragMoved.current = true;
+    trackRef.current.scrollLeft = scrollLeft.current - walk;
   }
 
   function onMouseUp() {
@@ -76,10 +110,7 @@ export default function ServiceCarousel() {
       onMouseLeave={onMouseUp}
     >
       {SERVICES.map(({ title, description }) => (
-        <article key={title} className={s.serviceCard}>
-          <h3 className={s.serviceTitle}>{title}</h3>
-          <p className={s.serviceDesc}>{description}</p>
-        </article>
+        <ServiceCard key={title} title={title} description={description} />
       ))}
     </div>
   );
