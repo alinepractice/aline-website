@@ -138,6 +138,8 @@ export default function Home() {
                 <stop offset="22%"  stopColor="#0d0d0d" />
                 <stop offset="100%" stopColor="#000000" />
               </radialGradient>
+              {/* Arc path for warped sub-text — gentle bottom curve inside the red ring */}
+              <path id="ringArc" d="M 82 120 C 100 133 336 133 354 120" />
             </defs>
 
             {/* Black shape — exact 9-segment brand path from footer.eps, rotated 90° horizontal.
@@ -158,17 +160,17 @@ export default function Home() {
               shapeRendering="geometricPrecision"
             />
 
-            {/* Sub-text — shifted down so caps sit fully inside inner ring (ring top ≈ y100) */}
+            {/* Sub-text — single line warped along a gentle arc inside the red ring */}
             <text
-              textAnchor="middle"
               fill="rgba(243,238,218,0.90)"
-              fontSize="18"
+              fontSize="15"
               fontWeight="300"
               fontFamily="'Source Sans 3', sans-serif"
-              letterSpacing="0.3"
+              letterSpacing="0.5"
             >
-              <tspan x="218" y="114">We can take it</tspan>
-              <tspan x="218" y="134">one step at a time.</tspan>
+              <textPath href="#ringArc" startOffset="50%" textAnchor="middle">
+                We can take it one step at a time.
+              </textPath>
             </text>
 
             {/* Thin divider between links */}
