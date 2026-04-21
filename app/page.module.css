@@ -501,14 +501,14 @@
 /* Centre-snap track — padding pulls first/last cards to viewport centre */
 .carouselTrack {
   display: flex;
-  gap: clamp(1rem, 2.5vw, 1.5rem);
+  gap: clamp(1.25rem, 3vw, 1.75rem);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding-inline: calc((100% - min(88vw, 760px)) / 2);
+  scroll-padding-inline: calc((100% - min(78vw, 400px)) / 2);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding-block: 0.75rem 3rem;
-  padding-inline: calc((100% - min(88vw, 760px)) / 2);
+  padding-inline: calc((100% - min(78vw, 400px)) / 2);
   cursor: grab;
   user-select: none;
 }
@@ -521,19 +521,20 @@
   cursor: grabbing;
 }
 
-/* Dark editorial card — pure logo black, cream text */
+/* Square soft card — pure logo black, cream text */
 .serviceCard {
-  flex: 0 0 min(88vw, 760px);
+  flex: 0 0 min(78vw, 400px);
+  aspect-ratio: 1;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: clamp(150px, 18vw, 190px);
+  justify-content: center;
   background: #000000;
   border: none;
-  border-radius: 20px;
-  padding: clamp(2.5rem, 5vw, 3.5rem) clamp(2.25rem, 6vw, 4.5rem);
-  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.14);
+  border-radius: 28px;
+  padding: clamp(2rem, 5vw, 3rem);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
   cursor: pointer;
   transition: opacity 0.22s ease;
   text-align: center;
@@ -541,6 +542,12 @@
 
 .serviceCard:hover {
   opacity: 0.88;
+}
+
+.serviceCard[aria-expanded="true"] {
+  aspect-ratio: unset;
+  justify-content: flex-start;
+  padding-top: clamp(2.25rem, 5vw, 3.25rem);
 }
 
 .serviceTitle {
