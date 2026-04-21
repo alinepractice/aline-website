@@ -482,48 +482,77 @@
   margin-bottom: 0;
 }
 
-/* ── Practices ── */
-.practices {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  padding-top: var(--section-spacing);
-  padding-bottom: var(--section-spacing);
+/* ── Services carousel ── */
+.services {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.practiceColumns {
-  display: flex;
-  justify-content: center;
-  gap: clamp(4rem, 12vw, 10rem);
-}
-
-.practiceHeading {
-  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
-  font-weight: 200;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text);
-}
-
-.practiceList {
-  text-align: center;
-  list-style: none;
-}
-
-.practiceList li {
-  font-size: clamp(0.9rem, 1.8vw, 1rem);
+.servicesLabel {
+  font-size: clamp(0.68rem, 1.1vw, 0.78rem);
   font-weight: 300;
-  line-height: 2.4;
-  color: var(--text-light);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 0 var(--side-padding);
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
-.practiceListVisible li {
-  opacity: 1;
-  transform: translateY(0);
+.carouselTrack {
+  display: flex;
+  gap: clamp(0.85rem, 1.6vw, 1.1rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.5rem var(--side-padding) 2rem;
+  cursor: grab;
+  user-select: none;
+}
+
+.carouselTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselTrack[data-dragging] {
+  cursor: grabbing;
+}
+
+.serviceCard {
+  flex: 0 0 clamp(210px, 28vw, 270px);
+  scroll-snap-align: start;
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(10px) saturate(1.2);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 16px;
+  padding: clamp(1.35rem, 2.5vw, 1.85rem);
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.serviceTitle {
+  font-size: clamp(0.88rem, 1.5vw, 0.98rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  margin-bottom: 0.55rem;
+}
+
+.serviceDesc {
+  font-size: clamp(0.78rem, 1.3vw, 0.86rem);
+  font-weight: 300;
+  line-height: 1.68;
+  color: var(--text-light);
 }
 
 /* ── Connect ── */
@@ -599,10 +628,6 @@
 
   .heroLogo {
     width: 200px;
-  }
-
-  .practiceColumns {
-    gap: 3rem;
   }
 
   .bios {

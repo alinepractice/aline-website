@@ -2,7 +2,7 @@ import s from "./page.module.css";
 import ValuesGrid from "./ValuesGrid";
 import FadeIn from "./FadeIn";
 import BioCard from "./BioCard";
-import StaggerList from "./StaggerList";
+import ServiceCarousel from "./ServiceCarousel";
 import BlobTransition from "./BlobTransition";
 
 export default function Home() {
@@ -101,22 +101,11 @@ export default function Home() {
         />
       </section>
 
-      {/* ── Practices ── */}
+      {/* ── Services ── */}
       <FadeIn>
-        <section className={`${s.section} ${s.practices}`}>
-          <div className={s.practiceColumns}>
-            <h2 className={s.practiceHeading}>ABA</h2>
-            <h2 className={s.practiceHeading}>Speech</h2>
-          </div>
-          <StaggerList
-            items={[
-              "2:1 consultation",
-              "Parent",
-              "Support",
-              "Social",
-              "School",
-            ]}
-          />
+        <section className={`${s.section} ${s.services}`}>
+          <p className={s.servicesLabel}>Services</p>
+          <ServiceCarousel />
         </section>
       </FadeIn>
 
