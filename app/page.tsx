@@ -66,7 +66,7 @@ export default function Home() {
           </h2>
 
           <p className={s.valuesGuide}>
-            The values that guide our approach
+            Values and approach
           </p>
 
           <div className={s.principlesGrid}>
@@ -87,12 +87,6 @@ export default function Home() {
               description="Recognizing limits and responding with clarity."
             />
           </div>
-
-          <p className={`${s.valuesText} ${s.valuesBody}`}>
-            Grounded in developmental and naturalistic approaches, including
-            ESDM, DIR/Floortime, JASPER, and PRT, with an emphasis on
-            connection, communication, and co-regulation.
-          </p>
 
         </div>
       </section>
