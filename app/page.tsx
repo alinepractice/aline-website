@@ -143,25 +143,24 @@ export default function Home() {
             {/* Black oval — gradient gives rim-light at top for 3D disc feel */}
             <ellipse cx="450" cy="120" rx="440" ry="104" fill="url(#ovalDepth)" />
 
-            {/* Red ring — clean, flat, no 3D treatment */}
+            {/* Red ring — clean, flat, smaller to hug the two-line text */}
             <ellipse
               cx="218" cy="120"
-              rx="145" ry="62"
-              fill="none" stroke="#9A1124" strokeWidth="4.5"
+              rx="112" ry="52"
+              fill="none" stroke="#9A1124" strokeWidth="4"
             />
 
-            {/* Sub-text — cream on dark, sized to hug the ring */}
+            {/* Sub-text — two lines, larger font, centred inside the ring */}
             <text
-              x="218" y="120"
               textAnchor="middle"
-              dominantBaseline="middle"
-              fill="rgba(243,238,218,0.84)"
-              fontSize="13.5"
+              fill="rgba(243,238,218,0.90)"
+              fontSize="18"
               fontWeight="300"
               fontFamily="'Source Sans 3', sans-serif"
               letterSpacing="0.3"
             >
-              We can take it one step at a time.
+              <tspan x="218" y="109">We can take it</tspan>
+              <tspan x="218" y="132">one step at a time.</tspan>
             </text>
 
             {/* Thin divider between links */}
