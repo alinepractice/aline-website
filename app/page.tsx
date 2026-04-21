@@ -141,8 +141,9 @@ export default function Home() {
             </defs>
 
             {/* Black shape — exact 9-segment brand path from footer.eps, rotated 90° horizontal.
-                 Converted from EPS coords (y-flipped), rotated, scaled to fill SVG width. */}
+                 0.5° CW tilt around centre balances both tips to the same y. */}
             <path
+              transform="rotate(0.5, 450, 120)"
               d="M -41.71 129.33 C -25.23 149.28 115.63 169.82 415.27 166.28 C 662.37 163.38 856.79 147.04 910.05 121.61 C 956.01 99.69 848.33 84.79 700.39 76.33 C 637.83 72.77 574.91 71.19 515.26 70.63 C 467.78 70.18 423.03 70.39 381.28 70.80 C 333.57 71.29 289.22 72.01 245.37 73.18 C 219.55 73.87 193.50 74.84 166.08 76.31 C 117.51 78.90 75.51 82.50 44.02 87.10 C -30.70 97.95 -56.01 112.00 -41.71 129.33 Z"
               fill="url(#ovalDepth)"
               shapeRendering="geometricPrecision"
