@@ -27,7 +27,7 @@ export default function ValuesGrid() {
       yDrift:      (Math.random() - 0.5) * 64,    // ±32 px — wider arc
       delay:       0.16 * i + Math.random() * 0.2,
       glare:       Math.random() < 0.55,
-      bubbleSize:  Math.round(90 + Math.random() * 80), // 90–170 px
+      bubbleSize:  Math.round(52 + Math.random() * 118), // 52–170 px — wide variety
       bubbleShape: Math.floor(Math.random() * 6),        // 0–5
     }))
   );

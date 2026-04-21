@@ -288,8 +288,11 @@
   width:  var(--bubble-size, 62px);
   height: var(--bubble-size, 62px);
   margin: auto;
-  background: transparent;
-  border: 1px solid rgba(40, 40, 40, 0.24);
+  overflow: hidden;
+  /* Softer outer stroke — more soap-like */
+  border: 1px solid rgba(40, 40, 40, 0.13);
+  /* Faint inner glow on lower-left — depth */
+  background: radial-gradient(ellipse at 28% 72%, rgba(255,255,255,0.07) 0%, transparent 58%);
   pointer-events: none;
   will-change: transform, opacity;
 }
@@ -303,32 +306,32 @@
 .bubble[data-shape="5"] { border-radius: 70% 30% 55% 45% / 50% 50% 42% 58%; }
 .bubble[data-shape="title"] { border-radius: 52% 48% 46% 54% / 54% 46% 58% 42%; }
 
-/* Primary glare blob — top-left highlight */
+/* Pill highlight — top-right, like light catching the surface */
 .bubble::before {
   content: '';
   position: absolute;
-  top: 12%;
-  left: 14%;
-  width: 36%;
-  height: 13%;
+  top: 14%;
+  right: 16%;
+  width: 22%;
+  height: 8%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.62);
-  transform: rotate(-30deg);
-  filter: blur(1.5px);
+  background: rgba(255, 255, 255, 0.52);
+  transform: rotate(-38deg);
+  filter: blur(0.8px);
 }
 
-/* Secondary line glare — thin arc, only on select bubbles */
+/* Inner arc reflection — left-side sweep, clipped by overflow:hidden */
 .bubble[data-glare="true"]::after {
   content: '';
   position: absolute;
-  top: 33%;
-  left: 8%;
-  width: 58%;
-  height: 5%;
+  top: 18%;
+  left: -18%;
+  width: 68%;
+  height: 65%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.34);
-  transform: rotate(-14deg);
-  filter: blur(0.8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: transparent;
+  transform: rotate(-6deg);
 }
 
 /* Float + wobble — 3 distinct personalities tied to shape group */
