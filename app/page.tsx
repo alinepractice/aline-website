@@ -140,9 +140,10 @@ export default function Home() {
               </radialGradient>
             </defs>
 
-            {/* Lens / surfboard shape — smooth pointed ends, rotated horizontal */}
+            {/* Black shape — exact 9-segment brand path from footer.eps, rotated 90° horizontal.
+                 Converted from EPS coords (y-flipped), rotated, scaled to fill SVG width. */}
             <path
-              d="M 9 120 C 9 58.8 155 24.6 450 24.6 C 745 24.6 891 58.8 891 120 C 891 181.2 745 215.4 450 215.4 C 155 215.4 9 181.2 9 120 Z"
+              d="M 22.43 128.11 C 36.76 145.46 159.24 163.32 419.80 160.24 C 634.67 157.72 803.73 143.51 850.04 121.40 C 890.01 102.34 796.37 89.38 667.73 82.03 C 613.33 78.93 558.62 77.56 506.75 77.07 C 465.46 76.68 426.55 76.86 390.24 77.22 C 348.76 77.64 310.19 78.27 272.06 79.29 C 249.61 79.89 226.96 80.73 203.11 82.01 C 160.88 84.26 124.36 87.39 96.97 91.39 C 32.00 100.83 9.99 113.04 22.43 128.11 Z"
               fill="url(#ovalDepth)"
               shapeRendering="geometricPrecision"
             />
