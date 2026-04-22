@@ -528,6 +528,8 @@
 
 /* ── Services carousel ── */
 .services {
+  padding-top: clamp(2rem, 3.5vw, 3rem);
+  padding-bottom: clamp(8rem, 13vw, 11rem);
   padding-left: 0;
   padding-right: 0;
 }
