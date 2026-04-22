@@ -676,9 +676,8 @@
   margin-top: clamp(0.5rem, 1vw, 0.75rem);
   transform: rotateX(6deg);
   transform-origin: center center;
-  opacity: 0.58;
-  filter: drop-shadow(0 5px 22px rgba(0, 0, 0, 0.10))
-          drop-shadow(0 1px 6px rgba(0, 0, 0, 0.05));
+  opacity: 0.92;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.18));
 }
 
 .connectLinks {
