@@ -654,7 +654,7 @@
 
 .connectHeading {
   font-size: clamp(1.75rem, 3.2vw, 2.4rem);
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.82);
 }
