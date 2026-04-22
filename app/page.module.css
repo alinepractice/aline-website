@@ -673,6 +673,8 @@
   justify-content: flex-end;
   flex-shrink: 0;
   margin-right: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: clamp(1rem, 2.5vw, 1.75rem);
+  align-self: flex-start;
 }
 
 .connectRingSvg {
