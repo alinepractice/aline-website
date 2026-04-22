@@ -164,9 +164,6 @@ export default function Home() {
             />
           </svg>
 
-          {/* Heading — below oval, above links */}
-          <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
-
           {/* Links */}
           <div className={s.connectLinks}>
             <a

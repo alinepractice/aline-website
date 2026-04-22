@@ -631,8 +631,8 @@
 /* ── Connect ── */
 .connect {
   background: none;
-  padding-top: clamp(5rem, 9vw, 8rem);
-  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+  padding-top: clamp(4rem, 7vw, 6rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 /* Wrapper */
@@ -686,7 +686,7 @@
   align-items: center;
   justify-content: center;
   gap: clamp(1rem, 3vw, 1.75rem);
-  margin-top: clamp(0.75rem, 1.5vw, 1.1rem);
+  margin-top: clamp(1rem, 2vw, 1.5rem);
 }
 
 .connectLink {
