@@ -110,9 +110,33 @@ export default function Home() {
       <section id="connect" className={`${s.section} ${s.connect}`}>
         <div className={s.connectOvalWrap}>
 
-          {/* Header row: heading left, ring right */}
-          <div className={s.connectHeader}>
-            <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
+          {/* Heading — centered */}
+          <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
+
+          {/* Black oval */}
+          <svg
+            className={s.connectOvalSvg}
+            viewBox="-60 52 1020 188"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <defs>
+              <radialGradient id="ovalDepth" cx="50%" cy="16%" r="78%">
+                <stop offset="0%"   stopColor="#1e1e1e" />
+                <stop offset="30%"  stopColor="#0e0e0e" />
+                <stop offset="100%" stopColor="#030303" />
+              </radialGradient>
+            </defs>
+            <path
+              transform="rotate(0.5, 450, 120)"
+              d="M -41.71 129.33 C -25.23 149.28 115.63 169.82 415.27 166.28 C 662.37 163.38 856.79 147.04 910.05 121.61 C 956.01 99.69 848.33 84.79 700.39 76.33 C 637.83 72.77 574.91 71.19 515.26 70.63 C 467.78 70.18 423.03 70.39 381.28 70.80 C 333.57 71.29 289.22 72.01 245.37 73.18 C 219.55 73.87 193.50 74.84 166.08 76.31 C 117.51 78.90 75.51 82.50 44.02 87.10 C -30.70 97.95 -56.01 112.00 -41.71 129.33 Z"
+              fill="url(#ovalDepth)"
+              shapeRendering="geometricPrecision"
+            />
+          </svg>
+
+          {/* Red ring — below oval */}
+          <div className={s.connectRingWrap}>
             <svg
               className={s.connectRingSvg}
               viewBox="38 82 360 76"
@@ -141,28 +165,6 @@ export default function Home() {
               </text>
             </svg>
           </div>
-
-          {/* Black oval */}
-          <svg
-            className={s.connectOvalSvg}
-            viewBox="-60 52 1020 188"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <defs>
-              <radialGradient id="ovalDepth" cx="50%" cy="16%" r="78%">
-                <stop offset="0%"   stopColor="#1e1e1e" />
-                <stop offset="30%"  stopColor="#0e0e0e" />
-                <stop offset="100%" stopColor="#030303" />
-              </radialGradient>
-            </defs>
-            <path
-              transform="rotate(0.5, 450, 120)"
-              d="M -41.71 129.33 C -25.23 149.28 115.63 169.82 415.27 166.28 C 662.37 163.38 856.79 147.04 910.05 121.61 C 956.01 99.69 848.33 84.79 700.39 76.33 C 637.83 72.77 574.91 71.19 515.26 70.63 C 467.78 70.18 423.03 70.39 381.28 70.80 C 333.57 71.29 289.22 72.01 245.37 73.18 C 219.55 73.87 193.50 74.84 166.08 76.31 C 117.51 78.90 75.51 82.50 44.02 87.10 C -30.70 97.95 -56.01 112.00 -41.71 129.33 Z"
-              fill="url(#ovalDepth)"
-              shapeRendering="geometricPrecision"
-            />
-          </svg>
 
           {/* Links */}
           <div className={s.connectLinks}>
