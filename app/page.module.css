@@ -323,19 +323,6 @@
   filter: blur(0.6px);
 }
 
-/* Inner arc — subtle shadow ring (dark reads on cream, white did not) */
-.bubble[data-glare="true"]::after {
-  content: '';
-  position: absolute;
-  top: 18%;
-  left: -18%;
-  width: 68%;
-  height: 65%;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.09);
-  background: transparent;
-  transform: rotate(-6deg);
-}
 
 /* Float + wobble — 3 distinct personalities tied to shape group */
 .bubble[data-shape="0"][data-phase="floating"],
