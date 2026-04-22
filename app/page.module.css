@@ -651,11 +651,11 @@
   text-align: center;
 }
 
-/* Ring wrapper — closing signature below links */
+/* Ring wrapper — sits between heading and oval */
 .connectRingWrap {
   display: flex;
   justify-content: center;
-  margin-top: clamp(0.75rem, 1.5vw, 1.1rem);
+  margin-top: clamp(0.5rem, 1vw, 0.75rem);
 }
 
 .connectRingSvg {
@@ -668,7 +668,7 @@
   width: 100%;
   height: auto;
   display: block;
-  margin-top: clamp(0.4rem, 0.8vw, 0.6rem);
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
   /* Subtle tilt — less heavy, more floating */
   transform: rotateX(6deg);
   transform-origin: center center;
@@ -683,7 +683,7 @@
   align-items: center;
   justify-content: center;
   gap: clamp(1rem, 3vw, 1.75rem);
-  margin-top: clamp(0.5rem, 1vw, 0.75rem);
+  margin-top: clamp(0.6rem, 1.2vw, 0.9rem);
 }
 
 .connectLink {
