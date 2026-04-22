@@ -533,10 +533,10 @@
 }
 
 .servicesLabel {
-  font-size: 1.25rem;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  color: rgba(0, 0, 0, 0.62);
+  font-size: 1.05rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.52);
   padding: 0 var(--side-padding);
   margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
@@ -649,10 +649,10 @@
 }
 
 .connectHeading {
-  font-size: clamp(1.265rem, 2.2vw, 1.54rem);
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  color: var(--text);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.62);
 }
 
 /* Ring SVG — sits top-right, proportionally sized */
