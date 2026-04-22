@@ -133,7 +133,7 @@ export default function Home() {
                 x="218"
                 y="120"
                 fill="#9A1124"
-                fontSize="12"
+                fontSize="17"
                 fontWeight="300"
                 fontFamily="'Source Sans 3', sans-serif"
                 letterSpacing="0.5"
