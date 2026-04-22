@@ -145,15 +145,15 @@ export default function Home() {
               >
                 <path
                   d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
-                  fill="#922030"
-                  fillOpacity="0.82"
+                  fill="#981327"
+                  fillOpacity="0.52"
                   fillRule="evenodd"
                   shapeRendering="geometricPrecision"
                 />
                 <text
                   x="218"
                   y="120"
-                  fill="#922030"
+                  fill="#981327"
                   fontSize="20"
                   fontWeight="600"
                   fontFamily="'Source Sans 3', sans-serif"
