@@ -644,37 +644,23 @@
 }
 
 .connectHeading {
-  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
   font-weight: 300;
-  letter-spacing: 0.02em;
-  color: rgba(0, 0, 0, 0.82);
+  letter-spacing: 0.06em;
+  color: rgba(0, 0, 0, 0.55);
   text-align: center;
-  flex: 1;
-}
-
-/* Header: spacer | heading centered | ring right */
-.connectHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
-  margin-bottom: 0;
+  margin-top: clamp(0.5rem, 1vw, 0.75rem);
+  margin-bottom: clamp(0.25rem, 0.5vw, 0.4rem);
 }
 
-/* Invisible left spacer — mirrors ring width to keep heading truly centered */
-.connectRingSpacer {
-  width: clamp(120px, 16vw, 188px);
-  flex-shrink: 0;
-}
-
-/* Ring wrapper — right side of header row, nudged left to align with oval */
+/* Ring wrapper — floats right above the oval */
 .connectRingWrap {
   display: flex;
   justify-content: flex-end;
-  flex-shrink: 0;
+  width: 100%;
   margin-right: clamp(1.5rem, 4vw, 3.5rem);
-  margin-top: clamp(1rem, 2.5vw, 1.75rem);
-  align-self: flex-start;
+  margin-bottom: clamp(0.25rem, 0.5vw, 0.4rem);
 }
 
 .connectRingSvg {

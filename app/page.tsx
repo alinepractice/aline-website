@@ -110,40 +110,36 @@ export default function Home() {
       <section id="connect" className={`${s.section} ${s.connect}`}>
         <div className={s.connectOvalWrap}>
 
-          {/* Header row: spacer | heading centered | ring right */}
-          <div className={s.connectHeader}>
-            <div className={s.connectRingSpacer} aria-hidden="true" />
-            <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
-            <div className={s.connectRingWrap}>
-              <svg
-                className={s.connectRingSvg}
-                viewBox="38 82 360 76"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
+          {/* Ring — top right */}
+          <div className={s.connectRingWrap}>
+            <svg
+              className={s.connectRingSvg}
+              viewBox="38 82 360 76"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
+                fill="#981327"
+                fillOpacity="0.52"
+                fillRule="evenodd"
+                shapeRendering="geometricPrecision"
+              />
+              <text
+                x="218"
+                y="120"
+                fill="#981327"
+                fillOpacity="0.52"
+                fontSize="20"
+                fontWeight="600"
+                fontFamily="'Source Sans 3', sans-serif"
+                letterSpacing="0.5"
+                textAnchor="middle"
+                dominantBaseline="central"
               >
-                <path
-                  d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
-                  fill="#981327"
-                  fillOpacity="0.52"
-                  fillRule="evenodd"
-                  shapeRendering="geometricPrecision"
-                />
-                <text
-                  x="218"
-                  y="120"
-                  fill="#981327"
-                  fillOpacity="0.52"
-                  fontSize="20"
-                  fontWeight="600"
-                  fontFamily="'Source Sans 3', sans-serif"
-                  letterSpacing="0.5"
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                >
-                  one step at a time
-                </text>
-              </svg>
-            </div>
+                one step at a time
+              </text>
+            </svg>
           </div>
 
           {/* Black oval */}
@@ -167,6 +163,9 @@ export default function Home() {
               shapeRendering="geometricPrecision"
             />
           </svg>
+
+          {/* Heading — below oval, above links */}
+          <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
 
           {/* Links */}
           <div className={s.connectLinks}>
