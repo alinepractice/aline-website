@@ -134,7 +134,26 @@ export default function Home() {
             />
           </svg>
 
-          {/* Red ring — flows below the oval */}
+          {/* Links */}
+          <div className={s.connectLinks}>
+            <a
+              href="https://instagram.com/aline.practice"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.connectLink}
+            >
+              @aline.practice
+            </a>
+            <span className={s.connectDivider} aria-hidden="true" />
+            <a
+              href="mailto:connect@alinepractice.com"
+              className={s.connectLink}
+            >
+              connect@alinepractice.com
+            </a>
+          </div>
+
+          {/* Red ring — closing signature */}
           <div className={s.connectRingWrap}>
             <svg
               className={s.connectRingSvg}
@@ -163,25 +182,6 @@ export default function Home() {
                 one step at a time
               </text>
             </svg>
-          </div>
-
-          {/* Links */}
-          <div className={s.connectLinks}>
-            <a
-              href="https://instagram.com/aline.practice"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={s.connectLink}
-            >
-              @aline.practice
-            </a>
-            <span className={s.connectDivider} aria-hidden="true" />
-            <a
-              href="mailto:connect@alinepractice.com"
-              className={s.connectLink}
-            >
-              connect@alinepractice.com
-            </a>
           </div>
         </div>
       </section>

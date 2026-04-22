@@ -651,15 +651,15 @@
   text-align: center;
 }
 
-/* Ring wrapper — centers the ring below the oval */
+/* Ring wrapper — closing signature below links */
 .connectRingWrap {
   display: flex;
   justify-content: center;
-  margin-top: -1.25rem;
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
 }
 
 .connectRingSvg {
-  width: clamp(145px, 20vw, 224px);
+  width: clamp(120px, 16vw, 188px);
   height: auto;
   flex-shrink: 0;
 }
