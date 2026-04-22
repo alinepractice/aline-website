@@ -657,7 +657,7 @@
 
 /* Ring SVG — sits top-right, proportionally sized */
 .connectRingSvg {
-  width: clamp(200px, 30vw, 320px);
+  width: clamp(170px, 25.5vw, 272px);
   height: auto;
   flex-shrink: 0;
 }
