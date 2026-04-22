@@ -110,64 +110,12 @@ export default function Home() {
       <section id="connect" className={`${s.section} ${s.connect}`}>
         <div className={s.connectOvalWrap}>
 
-          {/* Heading */}
-          <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
-
-          {/* Red ring — above the oval */}
-          <div className={s.connectRingWrap}>
-            <svg
-              className={s.connectRingSvg}
-              viewBox="38 82 360 76"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
-                fill="#922030"
-                fillOpacity="0.82"
-                fillRule="evenodd"
-                shapeRendering="geometricPrecision"
-              />
-              <text
-                x="218"
-                y="120"
-                fill="#922030"
-                fontSize="20"
-                fontWeight="600"
-                fontFamily="'Source Sans 3', sans-serif"
-                letterSpacing="0.5"
-                textAnchor="middle"
-                dominantBaseline="central"
-              >
-                one step at a time
-              </text>
-            </svg>
-          </div>
-
-          {/* Links */}
-          <div className={s.connectLinks}>
-            <a
-              href="https://instagram.com/aline.practice"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={s.connectLink}
-            >
-              @aline.practice
-            </a>
-            <span className={s.connectDivider} aria-hidden="true" />
-            <a
-              href="mailto:connect@alinepractice.com"
-              className={s.connectLink}
-            >
-              connect@alinepractice.com
-            </a>
-          </div>
-
-          {/* Black oval — grounding base */}
+          {/* Black oval — absolute background layer */}
           <svg
             className={s.connectOvalSvg}
             viewBox="-60 52 1020 188"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
           >
             <defs>
               <radialGradient id="ovalDepth" cx="50%" cy="16%" r="78%">
@@ -183,6 +131,59 @@ export default function Home() {
               shapeRendering="geometricPrecision"
             />
           </svg>
+
+          {/* Text content — floats above the oval */}
+          <div className={s.connectContent}>
+            <h2 className={s.connectHeading}>Let&rsquo;s connect</h2>
+
+            <div className={s.connectRingWrap}>
+              <svg
+                className={s.connectRingSvg}
+                viewBox="38 82 360 76"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
+                  fill="#922030"
+                  fillOpacity="0.82"
+                  fillRule="evenodd"
+                  shapeRendering="geometricPrecision"
+                />
+                <text
+                  x="218"
+                  y="120"
+                  fill="#922030"
+                  fontSize="20"
+                  fontWeight="600"
+                  fontFamily="'Source Sans 3', sans-serif"
+                  letterSpacing="0.5"
+                  textAnchor="middle"
+                  dominantBaseline="central"
+                >
+                  one step at a time
+                </text>
+              </svg>
+            </div>
+
+            <div className={s.connectLinks}>
+              <a
+                href="https://instagram.com/aline.practice"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={s.connectLink}
+              >
+                @aline.practice
+              </a>
+              <span className={s.connectDivider} aria-hidden="true" />
+              <a
+                href="mailto:connect@alinepractice.com"
+                className={s.connectLink}
+              >
+                connect@alinepractice.com
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </>

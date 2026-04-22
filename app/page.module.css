@@ -635,12 +635,27 @@
   padding-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 
-/* Centered wrapper — perspective context for 3D tilt */
+/* Wrapper — stage for all 4 elements */
 .connectOvalWrap {
+  position: relative;
   width: 100%;
   max-width: 880px;
   margin: 0 auto;
   perspective: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* Text stack — sits above the oval */
+.connectContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
 }
 
 .connectHeading {
@@ -651,11 +666,10 @@
   text-align: center;
 }
 
-/* Ring wrapper — sits between heading and oval */
+/* Ring wrapper */
 .connectRingWrap {
   display: flex;
   justify-content: center;
-  margin-top: clamp(0.5rem, 1vw, 0.75rem);
 }
 
 .connectRingSvg {
@@ -665,14 +679,14 @@
 }
 
 .connectOvalSvg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: auto;
-  display: block;
-  margin-top: clamp(1.5rem, 3vw, 2.25rem);
-  /* Subtle tilt — less heavy, more floating */
+  z-index: 0;
   transform: rotateX(6deg);
-  transform-origin: center center;
-  /* Atmospheric — lighter opacity so it reads as a soft ground, not solid object */
+  transform-origin: bottom center;
   opacity: 0.76;
   filter: drop-shadow(0 5px 22px rgba(0, 0, 0, 0.14))
           drop-shadow(0 1px 6px rgba(0, 0, 0, 0.07));
@@ -683,7 +697,6 @@
   align-items: center;
   justify-content: center;
   gap: clamp(1rem, 3vw, 1.75rem);
-  margin-top: clamp(0.6rem, 1.2vw, 0.9rem);
 }
 
 .connectLink {
