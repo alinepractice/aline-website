@@ -649,14 +649,29 @@
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.82);
   text-align: center;
-  width: 100%;
+  flex: 1;
 }
 
-/* Ring wrapper — centered below oval */
+/* Header: spacer | heading centered | ring right */
+.connectHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* Invisible left spacer — mirrors ring width to keep heading truly centered */
+.connectRingSpacer {
+  width: clamp(120px, 16vw, 188px);
+  flex-shrink: 0;
+}
+
+/* Ring wrapper — right side of header row */
 .connectRingWrap {
   display: flex;
-  justify-content: center;
-  margin-top: clamp(0.75rem, 1.5vw, 1.1rem);
+  justify-content: flex-end;
+  flex-shrink: 0;
 }
 
 .connectRingSvg {
