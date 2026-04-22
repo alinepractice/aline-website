@@ -66,6 +66,19 @@ export default function ValueCard({
     if (phase === "landed") setOpen(p => !p);
   }, [phase]);
 
+  // Clicking the bubble while it floats: skip straight to pop → open
+  const handleBubbleClick = useCallback(() => {
+    timers.current.forEach(clearTimeout);
+    timers.current = [];
+    setPhase("popping");
+    timers.current = [
+      setTimeout(() => {
+        setPhase("landed");
+        setOpen(true);
+      }, POP_MS),
+    ];
+  }, []);
+
   return (
     <div className={s.cardWrapper}>
 
@@ -76,12 +89,15 @@ export default function ValueCard({
           data-phase={phase}
           data-glare={glare ? "true" : undefined}
           data-shape={bubbleShape}
+          onClick={phase === "floating" ? handleBubbleClick : undefined}
           style={{
             "--from-x":      `${fromLeft ? -xDist : xDist}px`,
             "--y-drift":     `${yDrift}px`,
             "--delay":       `${delay}s`,
             "--float-ms":    `${FLOAT_MS}ms`,
             "--bubble-size": `${bubbleSize}px`,
+            pointerEvents:   phase === "floating" ? "auto" : "none",
+            cursor:          phase === "floating" ? "pointer" : "default",
           } as React.CSSProperties}
         />
       )}
