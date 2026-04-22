@@ -643,23 +643,21 @@
   perspective: 700px;
 }
 
-/* Centered stack: heading → ring */
-.connectHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(0.5rem, 0.8vw, 0.7rem);
-  margin-bottom: 0;
-}
-
 .connectHeading {
   font-size: clamp(1.75rem, 3.2vw, 2.4rem);
   font-weight: 300;
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.82);
+  text-align: center;
 }
 
-/* Ring SVG — sits top-right, proportionally sized */
+/* Ring wrapper — centers the ring below the oval */
+.connectRingWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: -1.25rem;
+}
+
 .connectRingSvg {
   width: clamp(145px, 20vw, 224px);
   height: auto;
@@ -670,7 +668,7 @@
   width: 100%;
   height: auto;
   display: block;
-  margin-top: -3.5rem;
+  margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
   /* Subtle tilt — less heavy, more floating */
   transform: rotateX(6deg);
   transform-origin: center center;
@@ -685,7 +683,7 @@
   align-items: center;
   justify-content: center;
   gap: clamp(1rem, 3vw, 1.75rem);
-  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 .connectLink {
