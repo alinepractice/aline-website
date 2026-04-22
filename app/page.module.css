@@ -667,11 +667,12 @@
   flex-shrink: 0;
 }
 
-/* Ring wrapper — right side of header row */
+/* Ring wrapper — right side of header row, nudged left to align with oval */
 .connectRingWrap {
   display: flex;
   justify-content: flex-end;
   flex-shrink: 0;
+  margin-right: clamp(1.5rem, 4vw, 3.5rem);
 }
 
 .connectRingSvg {
