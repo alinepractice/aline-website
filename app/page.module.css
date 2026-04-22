@@ -289,10 +289,13 @@
   height: var(--bubble-size, 62px);
   margin: auto;
   overflow: hidden;
-  /* Softer outer stroke — more soap-like */
-  border: 1px solid rgba(40, 40, 40, 0.13);
-  /* Faint inner glow on lower-left — depth */
-  background: radial-gradient(ellipse at 28% 72%, rgba(255,255,255,0.07) 0%, transparent 58%);
+  /* Visible stroke — reads against cream */
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  /* Cool iridescent body — blue-gray pool contrasts against warm cream */
+  background:
+    radial-gradient(ellipse at 66% 20%, rgba(255, 255, 255, 0.26) 0%, transparent 44%),
+    radial-gradient(ellipse at 28% 72%, rgba(170, 210, 235, 0.22) 0%, transparent 60%);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
   pointer-events: none;
   will-change: transform, opacity;
 }
@@ -306,7 +309,7 @@
 .bubble[data-shape="5"] { border-radius: 70% 30% 55% 45% / 50% 50% 42% 58%; }
 .bubble[data-shape="title"] { border-radius: 52% 48% 46% 54% / 54% 46% 58% 42%; }
 
-/* Pill highlight — top-right, like light catching the surface */
+/* Pill highlight — top-right, crisp specular catch */
 .bubble::before {
   content: '';
   position: absolute;
@@ -315,12 +318,12 @@
   width: 22%;
   height: 8%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.52);
+  background: rgba(255, 255, 255, 0.82);
   transform: rotate(-38deg);
-  filter: blur(0.8px);
+  filter: blur(0.6px);
 }
 
-/* Inner arc reflection — left-side sweep, clipped by overflow:hidden */
+/* Inner arc — subtle shadow ring (dark reads on cream, white did not) */
 .bubble[data-glare="true"]::after {
   content: '';
   position: absolute;
@@ -329,7 +332,7 @@
   width: 68%;
   height: 65%;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.09);
   background: transparent;
   transform: rotate(-6deg);
 }
