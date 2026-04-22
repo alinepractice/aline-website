@@ -703,9 +703,9 @@
   font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   font-weight: 300;
   letter-spacing: 0.04em;
-  color: var(--text);
+  color: #F7F6EF;
   text-decoration: none;
-  opacity: 0.58;
+  opacity: 0.90;
   transition: opacity 0.2s ease;
 }
 
