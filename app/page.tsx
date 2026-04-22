@@ -123,30 +123,25 @@ export default function Home() {
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
             >
-              <defs>
-                <path id="ringArc" d="M 90 124 C 90 119 345 119 345 124" />
-              </defs>
               <path
                 d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
                 fill="#9A1124"
                 fillRule="evenodd"
                 shapeRendering="geometricPrecision"
               />
-              <g transform="translate(218,120) scale(1,1.14) translate(-218,-120)">
-                <text
-                  fill="#9A1124"
-                  fontSize="13"
-                  fontWeight="300"
-                  fontFamily="'Source Sans 3', sans-serif"
-                  letterSpacing="0.2"
-                  textLength="190"
-                  lengthAdjust="spacingAndGlyphs"
-                >
-                  <textPath href="#ringArc" startOffset="50%" textAnchor="middle">
-                    one step at a time
-                  </textPath>
-                </text>
-              </g>
+              <text
+                x="218"
+                y="120"
+                fill="#9A1124"
+                fontSize="12"
+                fontWeight="300"
+                fontFamily="'Source Sans 3', sans-serif"
+                letterSpacing="0.5"
+                textAnchor="middle"
+                dominantBaseline="central"
+              >
+                one step at a time
+              </text>
             </svg>
           </div>
 
