@@ -123,14 +123,15 @@ export default function Home() {
             >
               <path
                 d="M 50.9 120 C 43.1 86.7 392.9 86.7 385.1 120 C 392.9 153.3 43.1 153.3 50.9 120 Z M 354.3 120 C 360.4 147.2 75.5 147.3 81.7 120 C 76.5 93.0 358.4 92.9 354.3 120 Z"
-                fill="#9A1124"
+                fill="#922030"
+                fillOpacity="0.82"
                 fillRule="evenodd"
                 shapeRendering="geometricPrecision"
               />
               <text
                 x="218"
                 y="120"
-                fill="#9A1124"
+                fill="#922030"
                 fontSize="17"
                 fontWeight="300"
                 fontFamily="'Source Sans 3', sans-serif"
@@ -151,9 +152,9 @@ export default function Home() {
           >
             <defs>
               <radialGradient id="ovalDepth" cx="50%" cy="16%" r="78%">
-                <stop offset="0%"   stopColor="#242424" />
-                <stop offset="22%"  stopColor="#0d0d0d" />
-                <stop offset="100%" stopColor="#000000" />
+                <stop offset="0%"   stopColor="#1e1e1e" />
+                <stop offset="30%"  stopColor="#0e0e0e" />
+                <stop offset="100%" stopColor="#030303" />
               </radialGradient>
             </defs>
             <path

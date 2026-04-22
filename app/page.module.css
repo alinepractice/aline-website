@@ -652,15 +652,15 @@
 }
 
 .connectHeading {
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-size: clamp(1.2rem, 2.1vw, 1.45rem);
   font-weight: 300;
-  letter-spacing: 0.04em;
-  color: rgba(0, 0, 0, 0.62);
+  letter-spacing: 0.03em;
+  color: rgba(0, 0, 0, 0.80);
 }
 
 /* Ring SVG — sits top-right, proportionally sized */
 .connectRingSvg {
-  width: clamp(170px, 25.5vw, 272px);
+  width: clamp(145px, 20vw, 224px);
   height: auto;
   flex-shrink: 0;
 }
@@ -669,12 +669,14 @@
   width: 100%;
   height: auto;
   display: block;
-  /* Tilt back in 3D — top recedes, bottom comes forward */
-  transform: rotateX(10deg);
+  margin-top: -0.5rem;
+  /* Subtle tilt — less heavy, more floating */
+  transform: rotateX(6deg);
   transform-origin: center center;
-  /* Shadow lives here so it follows the 3D transform */
-  filter: drop-shadow(0 14px 44px rgba(0, 0, 0, 0.44))
-          drop-shadow(0 3px 10px rgba(0, 0, 0, 0.26));
+  /* Atmospheric — lighter opacity so it reads as a soft ground, not solid object */
+  opacity: 0.76;
+  filter: drop-shadow(0 5px 22px rgba(0, 0, 0, 0.14))
+          drop-shadow(0 1px 6px rgba(0, 0, 0, 0.07));
 }
 
 .connectLinks {
@@ -682,16 +684,16 @@
   align-items: center;
   justify-content: center;
   gap: clamp(1rem, 3vw, 1.75rem);
-  margin-top: clamp(0.6rem, 1.4vw, 1rem);
+  margin-top: clamp(0.3rem, 0.6vw, 0.45rem);
 }
 
 .connectLink {
-  font-size: clamp(0.99rem, 1.87vw, 1.155rem);
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   font-weight: 300;
   letter-spacing: 0.04em;
   color: var(--text);
   text-decoration: none;
-  opacity: 0.72;
+  opacity: 0.48;
   transition: opacity 0.2s ease;
 }
 
